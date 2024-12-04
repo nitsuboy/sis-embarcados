@@ -1,0 +1,87 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d680e: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:975
+[0m
+[0;33m--- 0x400d6a78: u8x8_ascii_next at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8x8_8x8.c:291
+[0m
+[0;33m--- 0x400014fd: strlen in ROM
+0x4000150d: strlen in ROM
+[0m
+[0;33m--- 0x400d680b: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:972
+0x400d6889: u8g2_DrawStr at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:1042
+0x400d6099: task1 at /home/suco/esp/web-hearth-rate/main/web-hearth-rate.c:30
+0x40087271: vPortTaskWrapper at /home/suco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d680e: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:975
+[0m
+[0;33m--- 0x400d6a78: u8x8_ascii_next at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8x8_8x8.c:291
+[0m
+[0;33m--- 0x400014fd: strlen in ROM
+0x4000150d: strlen in ROM
+[0m
+[0;33m--- 0x400d680b: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:972
+0x400d6889: u8g2_DrawStr at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:1042
+0x400d6099: task1 at /home/suco/esp/web-hearth-rate/main/web-hearth-rate.c:30
+0x40087271: vPortTaskWrapper at /home/suco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d680e: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:975
+[0m
+[0;33m--- 0x400d6a78: u8x8_ascii_next at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8x8_8x8.c:291
+[0m
+[0;33m--- 0x400014fd: strlen in ROM
+0x4000150d: strlen in ROM
+[0m
+[0;33m--- 0x400d680b: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:972
+0x400d6889: u8g2_DrawStr at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:1042
+0x400d6099: task1 at /home/suco/esp/web-hearth-rate/main/web-hearth-rate.c:30
+0x40087271: vPortTaskWrapper at /home/suco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d680e: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:975
+[0m
+[0;33m--- 0x400d6a78: u8x8_ascii_next at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8x8_8x8.c:291
+[0m
+[0;33m--- 0x400014fd: strlen in ROM
+0x4000150d: strlen in ROM
+[0m
+[0;33m--- 0x400d680b: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:972
+0x400d6889: u8g2_DrawStr at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:1042
+0x400d6099: task1 at /home/suco/esp/web-hearth-rate/main/web-hearth-rate.c:30
+0x40087271: vPortTaskWrapper at /home/suco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d680e: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:975
+[0m
+[0;33m--- 0x400d6a78: u8x8_ascii_next at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8x8_8x8.c:291
+[0m
+[0;33m--- 0x400014fd: strlen in ROM
+0x4000150d: strlen in ROM
+[0m
+[0;33m--- 0x400d680b: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:972
+0x400d6889: u8g2_DrawStr at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:1042
+0x400d6099: task1 at /home/suco/esp/web-hearth-rate/main/web-hearth-rate.c:30
+0x40087271: vPortTaskWrapper at /home/suco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d680e: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:975
+[0m
+[0;33m--- 0x400d6a78: u8x8_ascii_next at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8x8_8x8.c:291
+[0m
+[0;33m--- 0x400014fd: strlen in ROM
+0x4000150d: strlen in ROM
+[0m
+[0;33m--- 0x400d680b: u8g2_draw_string at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:972
+0x400d6889: u8g2_DrawStr at /home/suco/esp/web-hearth-rate/components/u8g2/csrc/u8g2_font.c:1042
+0x400d6099: task1 at /home/suco/esp/web-hearth-rate/main/web-hearth-rate.c:30
+0x40087271: vPortTaskWrapper at /home/suco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0m
