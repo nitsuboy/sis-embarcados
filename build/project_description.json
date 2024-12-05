@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "web-hearth-rate",
-    "project_version":    "4ce86da-dirty",
+    "project_version":    "01a11a0-dirty",
     "project_path":       "/home/suco/sis-embarcados",
     "idf_path":           "/home/suco/esp/esp-idf",
     "build_dir":          "/home/suco/sis-embarcados/build",

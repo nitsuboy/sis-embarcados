@@ -63,7 +63,8 @@ static TaskHandle_t                         task1_handle;
 static TaskHandle_t                         task2_handle;
 static TaskHandle_t                         task3_handle;
 static TaskHandle_t                         task4_handle;
-static QueueHandle_t                        queue_handle;
+static QueueHandle_t                        queue_raw_handle;
+static QueueHandle_t                        queue_BPM_handle;
 static u8g2_t                               u8g2;
 static const char* TAG =                    "Prot";
 
@@ -160,37 +161,38 @@ void task1()
   int raw;
   for(;;)
   {
-    if( queue_handle != 0 )
-    {
-      if( xQueueReceive( queue_handle, &(raw), ( TickType_t ) 0 ) )
-      {
-      }
-    }
-    posy = (posy + 1) % 128;
+
+    posy++;
     snprintf(BPM, sizeof(BPM), "BPM:%0*d",3, BPMn);
-    new_read = (int) (raw*0.16) - 336;
-    
     //keep all lines
     if(posy >=128){
+      posy = 0;
       u8g2_ClearBuffer(&u8g2);
     }
-
-    if(posy == 0 || posy >=128){
-      u8g2_ClearBuffer(&u8g2);
-    }
-
-    //(int) (adc_raw[i]*0.16) - 336
-    ESP_LOGI(TAG,"display out + %d",reads);
     
     //draw BPM
     u8g2_SetFont(&u8g2, u8g2_font_6x13_tf);
     u8g2_DrawStr(&u8g2, 0, 9, BPM);
     
     //draw line
-    u8g2_DrawLine(&u8g2, posy,64 - last_read, posy + 1, 64 - new_read);
+    //(int) (adc_raw[i]*0.16) - 336
+    if( queue_raw_handle != 0 )
+    {
+      uint8_t mw = uxQueueMessagesWaiting(queue_raw_handle);
+      for(uint8_t i = 0 ; i < mw;i++)
+      {
+        if( xQueueReceive( queue_raw_handle, &raw, ( TickType_t ) 10 ) )
+        {
+        }
+        new_read = (int) (raw*0.16) - 336;
+        u8g2_DrawLine(&u8g2, posy,64 - last_read, posy + 1, 64 - new_read);
+        last_read = new_read;
+        posy++;
+      }
+    }
 
     u8g2_SendBuffer(&u8g2);
-    last_read = new_read;
+    ESP_LOGI(TAG,"display out");
     
     vTaskDelay(100/portTICK_PERIOD_MS);
   }
@@ -199,15 +201,17 @@ void task1()
 void task2() 
 {
   int adc_raw;
+  uint64_t tmsp;
   for(;;)
   {
     ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw));
     if(adc_raw>2500)
     {
-      beats++;
+      ESP_ERROR_CHECK(gptimer_get_raw_count(gptimer_handle, &tmsp));
+      xQueueSend(queue_BPM_handle,&tmsp,( TickType_t ) 0);
     }
     ESP_LOGI(TAG, "adc read %d",adc_raw);
-    xQueueSend(queue_handle,( void * )adc_raw,( TickType_t ) 0);
+    xQueueSend(queue_raw_handle,&adc_raw,( TickType_t ) 0);
     vTaskDelay(50/portTICK_PERIOD_MS);
   }
 }
@@ -224,18 +228,24 @@ void task3()
 
 void task4()
 {
-  uint64_t count = 0;
-  uint64_t countd;
-
+  uint64_t count1;
+  uint64_t count2;
   for(;;)
   {
-    ESP_ERROR_CHECK(gptimer_get_raw_count(gptimer_handle, &countd));
-    BPMn = (int)(beats/(countd - count)) * 600000;
-    if(countd - count > 600000)
+    if( queue_BPM_handle != 0 )
     {
-      ESP_ERROR_CHECK(gptimer_set_raw_count(gptimer_handle, 0));
-      count = 0;
+      uint8_t mwb = uxQueueMessagesWaiting(queue_BPM_handle);
+      if (mwb > 2){
+        if( xQueueReceive( queue_BPM_handle, &count1, ( TickType_t ) 0 ) )
+        {
+        }
+        if( xQueueReceive( queue_BPM_handle, &count2, ( TickType_t ) 0 ) )
+        {
+        }
+      }
     }
+    BPMn = (int)(2/(count2 - count1)) * 600000;
+    ESP_LOGI(TAG, "BPMn %llu %llu",count1,count2);
     vTaskDelay(100/portTICK_PERIOD_MS);
   }
 
@@ -385,11 +395,19 @@ void app_main(void) {
   setup_adc2();
   setup_timer();
 
-  queue_handle = xQueueCreate( 10, sizeof( int ) );
+  queue_raw_handle = xQueueCreate( 10, sizeof( int ) );
   
-  if( queue_handle == 0 )
+  if( queue_raw_handle == 0 )
   {
-    ESP_LOGI(TAG, "Failed to create queue");
+    ESP_LOGI(TAG, "Failed to create queue raw");
+    return;
+  }
+
+  queue_BPM_handle = xQueueCreate( 4, sizeof( uint64_t ) );
+  
+  if( queue_BPM_handle == 0 )
+  {
+    ESP_LOGI(TAG, "Failed to create queue BPM");
     return;
   }
 
