@@ -3,6 +3,7 @@
 #include <esp_log.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
+#include <freertos/queue.h>
 #include <freertos/event_groups.h>
 #include <driver/gptimer.h>
 #include <stdio.h>
@@ -55,21 +56,21 @@
 #define WIFI_CONNECTED_BIT                  BIT0
 #define WIFI_FAIL_BIT                       BIT1
 
-static u8g2_t                           u8g2;
-static EventGroupHandle_t s_wifi_event_group;
-static adc_oneshot_unit_handle_t adc2_handle;
-static gptimer_handle_t              gptimer;
-static TaskHandle_t             task1_handle;
-static TaskHandle_t             task2_handle;
-static TaskHandle_t             task3_handle;
-static TaskHandle_t             task4_handle;
+static EventGroupHandle_t                   s_wifi_event_group;
+static adc_oneshot_unit_handle_t            adc2_handle;
+static gptimer_handle_t                     gptimer_handle;
+static TaskHandle_t                         task1_handle;
+static TaskHandle_t                         task2_handle;
+static TaskHandle_t                         task3_handle;
+static TaskHandle_t                         task4_handle;
+static QueueHandle_t                        queue_handle;
+static u8g2_t                               u8g2;
+static const char* TAG =                    "Prot";
 
 uint8_t reads = 0;
 uint8_t beats = 0;
 uint8_t BPMn = 0;
 uint8_t s_retry_num = 0;
-static int adc_raw[10];
-static const char* TAG = "prot";
 
 static void wifi_event_handler(void *arg, esp_event_base_t event_base,
                                int32_t event_id, void *event_data)
@@ -156,11 +157,18 @@ void task1()
   uint8_t posy      = 0;
   uint8_t last_read = 0;
   uint8_t new_read  = 0;
+  int raw;
   for(;;)
   {
+    if( queue_handle != 0 )
+    {
+      if( xQueueReceive( queue_handle, &(raw), ( TickType_t ) 0 ) )
+      {
+      }
+    }
     posy = (posy + 1) % 128;
     snprintf(BPM, sizeof(BPM), "BPM:%0*d",3, BPMn);
-    new_read = (int) (adc_raw[0]*0.16) - 336;
+    new_read = (int) (raw*0.16) - 336;
     
     //keep all lines
     if(posy >=128){
@@ -190,25 +198,26 @@ void task1()
 
 void task2() 
 {
+  int adc_raw;
   for(;;)
   {
-    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw[0]));
-    if(adc_raw[0]>2500)
+    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw));
+    if(adc_raw>2500)
     {
       beats++;
     }
-    ESP_LOGI(TAG, "adc read %d",beats);
+    ESP_LOGI(TAG, "adc read %d",adc_raw);
+    xQueueSend(queue_handle,( void * )adc_raw,( TickType_t ) 0);
     vTaskDelay(50/portTICK_PERIOD_MS);
   }
 }
 
 void task3()
 {
-  int ftstp = 0;
-  int ststp = 0;
+  // send udp package trough sta
   for(;;)
   {
-    BPMn = (beats/ftstp - ststp) * 60;
+    ESP_LOGI(TAG, "package sent");
     vTaskDelay(50/portTICK_PERIOD_MS);
   }
 }
@@ -220,11 +229,11 @@ void task4()
 
   for(;;)
   {
-    ESP_ERROR_CHECK(gptimer_get_raw_count(gptimer, &countd));
+    ESP_ERROR_CHECK(gptimer_get_raw_count(gptimer_handle, &countd));
     BPMn = (int)(beats/(countd - count)) * 600000;
     if(countd - count > 600000)
     {
-      ESP_ERROR_CHECK(gptimer_set_raw_count(gptimer, 0));
+      ESP_ERROR_CHECK(gptimer_set_raw_count(gptimer_handle, 0));
       count = 0;
     }
     vTaskDelay(100/portTICK_PERIOD_MS);
@@ -317,9 +326,9 @@ void setup_timer()
     .direction = GPTIMER_COUNT_UP,
     .resolution_hz = 1 * 1000*10, // 1MHz, 1 tick = 1us
   };
-  ESP_ERROR_CHECK(gptimer_new_timer(&timer_config, &gptimer));
-  ESP_ERROR_CHECK(gptimer_enable(gptimer));
-  ESP_ERROR_CHECK(gptimer_start(gptimer));
+  ESP_ERROR_CHECK(gptimer_new_timer(&timer_config, &gptimer_handle));
+  ESP_ERROR_CHECK(gptimer_enable(gptimer_handle));
+  ESP_ERROR_CHECK(gptimer_start(gptimer_handle));
 
   ESP_LOGI(TAG, "Timer setup done");
   // Retrieve the timestamp at any time
@@ -375,6 +384,15 @@ void app_main(void) {
   setup_display();
   setup_adc2();
   setup_timer();
+
+  queue_handle = xQueueCreate( 10, sizeof( int ) );
+  
+  if( queue_handle == 0 )
+  {
+    ESP_LOGI(TAG, "Failed to create queue");
+    return;
+  }
+
 
   // core 1
   xTaskCreatePinnedToCore(task1,
