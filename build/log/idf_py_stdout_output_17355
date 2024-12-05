@@ -1,0 +1,2406 @@
+[0;32mI (184) esp_image: segment 5: paddr=0003c280 vaddr=400816f8 s�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec  4 2024 19:05:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c520h ( 50464) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001c548 vaddr=3ff80000 size=00004h (     4) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0001c554 vaddr=3ffb0000 size=023c4h (  9156) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=0001e920 vaddr=40080000 size=016f8h (  5880) load[0m
+[0;32mI (138) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1c258h (115288) map[0m
+[0;32mI (184) esp_image: segment 5: paddr=0003c280 vaddr=400816f8 size=0ccf8h ( 52472) load[0m
+[0;32mI (212) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (212) boot: Disabling RNG early entropy source...[0m
+[0;32mI (224) cpu_start: Multicore app[0m
+[0;32mI (232) cpu_start: Pro cpu start user code[0m
+[0;32mI (232) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (232) app_init: Application information:[0m
+[0;32mI (235) app_init: Project name:     web-hearth-rate[0m
+[0;32mI (241) app_init: App version:      4b19fef-dirty[0m
+[0;32mI (246) app_init: Compile time:     Dec  4 2024 19:05:38[0m
+[0;32mI (252) app_init: ELF file SHA256:  fe926d59e...[0m
+[0;32mI (257) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (262) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (267) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (272) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (277) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (284) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFB31B0 len 0002CE50 (179 KiB): DRAM[0m
+[0;32mI (296) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (302) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (309) heap_init: At 4008E3F0 len 00011C10 (71 KiB): IRAM[0m
+[0;32mI (317) spi_flash: detected chip: generic[0m
+[0;32mI (320) spi_flash: flash io: dio[0m
+[0;33mW (324) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (335) main_task: Started on CPU0[0m
+[0;32mI (345) main_task: Calling app_main()[0m
+[0;32mI (345) prot: u8g2_InitDisplay[0m
+[0;32mI (345) u8g2_hal: sda_io_num 21[0m
+[0;32mI (345) u8g2_hal: scl_io_num 22[0m
+[0;32mI (345) u8g2_hal: clk_speed 50000[0m
+[0;32mI (355) u8g2_hal: i2c_param_config 1[0m
+[0;32mI (355) u8g2_hal: i2c_driver_install 1[0m
+[0;32mI (675) prot: u8g2_SetPowerSave[0m
+[0;32mI (675) prot: u8g2_ClearBuffer[0m
+[0;32mI (915) prot: All done![0m
+[0;32mI (915) main_task: Returned from app_main()[0m
+[0;32mI (915) prot: display out + 0[0m
+[0;32mI (915) prot: adc read[0m
+[0;32mI (975) prot: adc read[0m
+[0;32mI (1025) prot: adc read[0m
+[0;32mI (1075) prot: adc read[0m
+[0;32mI (1125) prot: adc read[0m
+[0;32mI (1175) prot: adc read[0m
+[0;32mI (1225) prot: adc read[0m
+[0;32mI (1275) prot: adc read[0m
+[0;32mI (1275) prot: display out + 0[0m
+[0;32mI (1325) prot: adc read[0m
+[0;32mI (1375) prot: adc read[0m
+[0;32mI (1425) prot: adc read[0m
+[0;32mI (1475) prot: adc read[0m
+[0;32mI (1525) prot: adc read[0m
+[0;32mI (1575) prot: adc read[0m
+[0;32mI (1625) prot: adc read[0m
+[0;32mI (1625) prot: display out + 0[0m
+[0;32mI (1675) prot: adc read[0m
+[0;32mI (1725) prot: adc read[0m
+[0;32mI (1775) prot: adc read[0m
+[0;32mI (1825) prot: adc read[0m
+[0;32mI (1875) prot: adc read[0m
+[0;32mI (1925) prot: adc read[0m
+[0;32mI (1975) prot: adc read[0m
+[0;32mI (1975) prot: display out + 0[0m
+[0;32mI (2025) prot: adc read[0m
+[0;32mI (2075) prot: adc read[0m
+[0;32mI (2125) prot: adc read[0m
+[0;32mI (2175) prot: adc read[0m
+[0;32mI (2225) prot: adc read[0m
+[0;32mI (2275) prot: adc read[0m
+[0;32mI (2325) prot: adc read[0m
+[0;32mI (2325) prot: display out + 0[0m
+[0;32mI (2375) prot: adc read[0m
+[0;32mI (2425) prot: adc read[0m
+[0;32mI (2475) prot: adc read[0m
+[0;32mI (2525) prot: adc read[0m
+[0;32mI (2575) prot: adc read[0m
+[0;32mI (2625) prot: adc read[0m
+[0;32mI (2675) prot: adc read[0m
+[0;32mI (2675) prot: display out + 0[0m
+[0;32mI (2725) prot: adc read[0m
+[0;32mI (2775) prot: adc read[0m
+[0;32mI (2825) prot: adc read[0m
+[0;32mI (2875) prot: adc read[0m
+[0;32mI (2925) prot: adc read[0m
+[0;32mI (2975) prot: adc read[0m
+[0;32mI (3025) prot: adc read[0m
+[0;32mI (3025) prot: display out + 0[0m
+[0;32mI (3075) prot: adc read[0m
+[0;32mI (3125) prot: adc read[0m
+[0;32mI (3175) prot: adc read[0m
+[0;32mI (3225) prot: adc read[0m
+[0;32mI (3275) prot: adc read[0m
+[0;32mI (3325) prot: adc read[0m
+[0;32mI (3375) prot: adc read[0m
+[0;32mI (3375) prot: display out + 0[0m
+[0;32mI (3425) prot: adc read[0m
+[0;32mI (3475) prot: adc read[0m
+[0;32mI (3525) prot: adc read[0m
+[0;32mI (3575) prot: adc read[0m
+[0;32mI (3625) prot: adc read[0m
+[0;32mI (3675) prot: adc read[0m
+[0;32mI (3725) prot: adc read[0m
+[0;32mI (3725) prot: display out + 0[0m
+[0;32mI (3775) prot: adc read[0m
+[0;32mI (3825) prot: adc read[0m
+[0;32mI (3875) prot: adc read[0m
+[0;32mI (3925) prot: adc read[0m
+[0;32mI (3975) prot: adc read[0m
+[0;32mI (4025) prot: adc read[0m
+[0;32mI (4075) prot: adc read[0m
+[0;32mI (4075) prot: display out + 0[0m
+[0;32mI (4125) prot: adc read[0m
+[0;32mI (4175) prot: adc read[0m
+[0;32mI (4225) prot: adc read[0m
+[0;32mI (4275) prot: adc read[0m
+[0;32mI (4325) prot: adc read[0m
+[0;32mI (4375) prot: adc read[0m
+[0;32mI (4425) prot: adc read[0m
+[0;32mI (4425) prot: display out + 0[0m
+[0;32mI (4475) prot: adc read[0m
+[0;32mI (4525) prot: adc read[0m
+[0;32mI (4575) prot: adc read[0m
+[0;32mI (4625) prot: adc read[0m
+[0;32mI (4675) prot: adc read[0m
+[0;32mI (4725) prot: adc read[0m
+[0;32mI (4775) prot: adc read[0m
+[0;32mI (4775) prot: display out + 0[0m
+[0;32mI (4825) prot: adc read[0m
+[0;32mI (4875) prot: adc read[0m
+[0;32mI (4925) prot: adc read[0m
+[0;32mI (4975) prot: adc read[0m
+[0;32mI (5025) prot: adc read[0m
+[0;32mI (5075) prot: adc read[0m
+[0;32mI (5125) prot: adc read[0m
+[0;32mI (5125) prot: display out + 0[0m
+[0;32mI (5175) prot: adc read[0m
+[0;32mI (5225) prot: adc read[0m
+[0;32mI (5275) prot: adc read[0m
+[0;32mI (5325) prot: adc read[0m
+[0;32mI (5375) prot: adc read[0m
+[0;32mI (5425) prot: adc read[0m
+[0;32mI (5475) prot: adc read[0m
+[0;32mI (5475) prot: display out + 0[0m
+[0;32mI (5525) prot: adc read[0m
+[0;32mI (5575) prot: adc read[0m
+[0;32mI (5625) prot: adc read[0m
+[0;32mI (5675) prot: adc read[0m
+[0;32mI (5725) prot: adc read[0m
+[0;32mI (5775) prot: adc read[0m
+[0;32mI (5825) prot: adc read[0m
+[0;32mI (5825) prot: display out + 0[0m
+[0;32mI (5875) prot: adc read[0m
+[0;32mI (5925) prot: adc read[0m
+[0;32mI (5975) prot: adc read[0m
+[0;32mI (6025) prot: adc read[0m
+[0;32mI (6075) prot: adc read[0m
+[0;32mI (6125) prot: adc read[0m
+[0;32mI (6175) prot: adc read[0m
+[0;32mI (6175) prot: display out + 0[0m
+[0;32mI (6225) prot: adc read[0m
+[0;32mI (6275) prot: adc read[0m
+[0;32mI (6325) prot: adc read[0m
+[0;32mI (6375) prot: adc read[0m
+[0;32mI (6425) prot: adc read[0m
+[0;32mI (6475) prot: adc read[0m
+[0;32mI (6525) prot: adc read[0m
+[0;32mI (6525) prot: display out + 0[0m
+[0;32mI (6575) prot: adc read[0m
+[0;32mI (6625) prot: adc read[0m
+[0;32mI (6675) prot: adc read[0m
+[0;32mI (6725) prot: adc read[0m
+[0;32mI (6775) prot: adc read[0m
+[0;32mI (6825) prot: adc read[0m
+[0;32mI (6875) prot: adc read[0m
+[0;32mI (6875) prot: display out + 0[0m
+[0;32mI (6925) prot: adc read[0m
+[0;32mI (6975) prot: adc read[0m
+[0;32mI (7025) prot: adc read[0m
+[0;32mI (7075) prot: adc read[0m
+[0;32mI (7125) prot: adc read[0m
+[0;32mI (7175) prot: adc read[0m
+[0;32mI (7225) prot: adc read[0m
+[0;32mI (7225) prot: display out + 0[0m
+[0;32mI (7275) prot: adc read[0m
+[0;32mI (7325) prot: adc read[0m
+[0;32mI (7375) prot: adc read[0m
+[0;32mI (7425) prot: adc read[0m
+[0;32mI (7475) prot: adc read[0m
+[0;32mI (7525) prot: adc read[0m
+[0;32mI (7575) prot: adc read[0m
+[0;32mI (7575) prot: display out + 0[0m
+[0;32mI (7625) prot: adc read[0m
+[0;32mI (7675) prot: adc read[0m
+[0;32mI (7725) prot: adc read[0m
+[0;32mI (7775) prot: adc read[0m
+[0;32mI (7825) prot: adc read[0m
+[0;32mI (7875) prot: adc read[0m
+[0;32mI (7925) prot: adc read[0m
+[0;32mI (7925) prot: display out + 0[0m
+[0;32mI (7975) prot: adc read[0m
+[0;32mI (8025) prot: adc read[0m
+[0;32mI (8075) prot: adc read[0m
+[0;32mI (8125) prot: adc read[0m
+[0;32mI (8175) prot: adc read[0m
+[0;32mI (8225) prot: adc read[0m
+[0;32mI (8275) prot: adc read[0m
+[0;32mI (8275) prot: display out + 0[0m
+[0;32mI (8325) prot: adc read[0m
+[0;32mI (8375) prot: adc read[0m
+[0;32mI (8425) prot: adc read[0m
+[0;32mI (8475) prot: adc read[0m
+[0;32mI (8525) prot: adc read[0m
+[0;32mI (8575) prot: adc read[0m
+[0;32mI (8625) prot: adc read[0m
+[0;32mI (8625) prot: display out + 0[0m
+[0;32mI (8675) prot: adc read[0m
+[0;32mI (8725) prot: adc read[0m
+[0;32mI (8775) prot: adc read[0m
+[0;32mI (8825) prot: adc read[0m
+[0;32mI (8875) prot: adc read[0m
+[0;32mI (8925) prot: adc read[0m
+[0;32mI (8975) prot: adc read[0m
+[0;32mI (8975) prot: display out + 0[0m
+[0;32mI (9025) prot: adc read[0m
+[0;32mI (9075) prot: adc read[0m
+[0;32mI (9125) prot: adc read[0m
+[0;32mI (9175) prot: adc read[0m
+[0;32mI (9225) prot: adc read[0m
+[0;32mI (9275) prot: adc read[0m
+[0;32mI (9325) prot: adc read[0m
+[0;32mI (9325) prot: display out + 0[0m
+[0;32mI (9375) prot: adc read[0m
+[0;32mI (9425) prot: adc read[0m
+[0;32mI (9475) prot: adc read[0m
+[0;32mI (9525) prot: adc read[0m
+[0;32mI (9575) prot: adc read[0m
+[0;32mI (9625) prot: adc read[0m
+[0;32mI (9675) prot: adc read[0m
+[0;32mI (9675) prot: display out + 0[0m
+[0;32mI (9725) prot: adc read[0m
+[0;32mI (9775) prot: adc read[0m
+[0;32mI (9825) prot: adc read[0m
+[0;32mI (9875) prot: adc read[0m
+[0;32mI (9925) prot: adc read[0m
+[0;32mI (9975) prot: adc read[0m
+[0;32mI (10025) prot: adc read[0m
+[0;32mI (10025) prot: display out + 0[0m
+[0;32mI (10075) prot: adc read[0m
+[0;32mI (10125) prot: adc read[0m
+[0;32mI (10175) prot: adc read[0m
+[0;32mI (10225) prot: adc read[0m
+[0;32mI (10275) prot: adc read[0m
+[0;32mI (10325) prot: adc read[0m
+[0;32mI (10375) prot: adc read[0m
+[0;32mI (10375) prot: display out + 0[0m
+[0;32mI (10425) prot: adc read[0m
+[0;32mI (10475) prot: adc read[0m
+[0;32mI (10525) prot: adc read[0m
+[0;32mI (10575) prot: adc read[0m
+[0;32mI (10625) prot: adc read[0m
+[0;32mI (10675) prot: adc read[0m
+[0;32mI (10725) prot: adc read[0m
+[0;32mI (10725) prot: display out + 0[0m
+[0;32mI (10775) prot: adc read[0m
+[0;32mI (10825) prot: adc read[0m
+[0;32mI (10875) prot: adc read[0m
+[0;32mI (10925) prot: adc read[0m
+[0;32mI (10975) prot: adc read[0m
+[0;32mI (11025) prot: adc read[0m
+[0;32mI (11075) prot: adc read[0m
+[0;32mI (11075) prot: display out + 0[0m
+[0;32mI (11125) prot: adc read[0m
+[0;32mI (11175) prot: adc read[0m
+[0;32mI (11225) prot: adc read[0m
+[0;32mI (11275) prot: adc read[0m
+[0;32mI (11325) prot: adc read[0m
+[0;32mI (11375) prot: adc read[0m
+[0;32mI (11425) prot: adc read[0m
+[0;32mI (11425) prot: display out + 0[0m
+[0;32mI (11475) prot: adc read[0m
+[0;32mI (11525) prot: adc read[0m
+[0;32mI (11575) prot: adc read[0m
+[0;32mI (11625) prot: adc read[0m
+[0;32mI (11675) prot: adc read[0m
+[0;32mI (11725) prot: adc read[0m
+[0;32mI (11775) prot: adc read[0m
+[0;32mI (11775) prot: display out + 0[0m
+[0;32mI (11825) prot: adc read[0m
+[0;32mI (11875) prot: adc read[0m
+[0;32mI (11925) prot: adc read[0m
+[0;32mI (11975) prot: adc read[0m
+[0;32mI (12025) prot: adc read[0m
+[0;32mI (12075) prot: adc read[0m
+[0;32mI (12125) prot: adc read[0m
+[0;32mI (12125) prot: display out + 0[0m
+[0;32mI (12175) prot: adc read[0m
+[0;32mI (12225) prot: adc read[0m
+[0;32mI (12275) prot: adc read[0m
+[0;32mI (12325) prot: adc read[0m
+[0;32mI (12375) prot: adc read[0m
+[0;32mI (12425) prot: adc read[0m
+[0;32mI (12475) prot: adc read[0m
+[0;32mI (12475) prot: display out + 0[0m
+[0;32mI (12525) prot: adc read[0m
+[0;32mI (12575) prot: adc read[0m
+[0;32mI (12625) prot: adc read[0m
+[0;32mI (12675) prot: adc read[0m
+[0;32mI (12725) prot: adc read[0m
+[0;32mI (12775) prot: adc read[0m
+[0;32mI (12825) prot: adc read[0m
+[0;32mI (12825) prot: display out + 0[0m
+[0;32mI (12875) prot: adc read[0m
+[0;32mI (12925) prot: adc read[0m
+[0;32mI (12975) prot: adc read[0m
+[0;32mI (13025) prot: adc read[0m
+[0;32mI (13075) prot: adc read[0m
+[0;32mI (13125) prot: adc read[0m
+[0;32mI (13175) prot: adc read[0m
+[0;32mI (13175) prot: display out + 0[0m
+[0;32mI (13225) prot: adc read[0m
+[0;32mI (13275) prot: adc read[0m
+[0;32mI (13325) prot: adc read[0m
+[0;32mI (13375) prot: adc read[0m
+[0;32mI (13425) prot: adc read[0m
+[0;32mI (13475) prot: adc read[0m
+[0;32mI (13525) prot: adc read[0m
+[0;32mI (13525) prot: display out + 0[0m
+[0;32mI (13575) prot: adc read[0m
+[0;32mI (13625) prot: adc read[0m
+[0;32mI (13675) prot: adc read[0m
+[0;32mI (13725) prot: adc read[0m
+[0;32mI (13775) prot: adc read[0m
+[0;32mI (13825) prot: adc read[0m
+[0;32mI (13875) prot: adc read[0m
+[0;32mI (13875) prot: display out + 0[0m
+[0;32mI (13925) prot: adc read[0m
+[0;32mI (13975) prot: adc read[0m
+[0;32mI (14025) prot: adc read[0m
+[0;32mI (14075) prot: adc read[0m
+[0;32mI (14125) prot: adc read[0m
+[0;32mI (14175) prot: adc read[0m
+[0;32mI (14225) prot: adc read[0m
+[0;32mI (14225) prot: display out + 0[0m
+[0;32mI (14275) prot: adc read[0m
+[0;32mI (14325) prot: adc read[0m
+[0;32mI (14375) prot: adc read[0m
+[0;32mI (14425) prot: adc read[0m
+[0;32mI (14475) prot: adc read[0m
+[0;32mI (14525) prot: adc read[0m
+[0;32mI (14575) prot: adc read[0m
+[0;32mI (14575) prot: display out + 0[0m
+[0;32mI (14625) prot: adc read[0m
+[0;32mI (14675) prot: adc read[0m
+[0;32mI (14725) prot: adc read[0m
+[0;32mI (14775) prot: adc read[0m
+[0;32mI (14825) prot: adc read[0m
+[0;32mI (14875) prot: adc read[0m
+[0;32mI (14925) prot: adc read[0m
+[0;32mI (14925) prot: display out + 0[0m
+[0;32mI (14975) prot: adc read[0m
+[0;32mI (15025) prot: adc read[0m
+[0;32mI (15075) prot: adc read[0m
+[0;32mI (15125) prot: adc read[0m
+[0;32mI (15175) prot: adc read[0m
+[0;32mI (15225) prot: adc read[0m
+[0;32mI (15275) prot: adc read[0m
+[0;32mI (15275) prot: display out + 0[0m
+[0;32mI (15325) prot: adc read[0m
+[0;32mI (15375) prot: adc read[0m
+[0;32mI (15425) prot: adc read[0m
+[0;32mI (15475) prot: adc read[0m
+[0;32mI (15525) prot: adc read[0m
+[0;32mI (15575) prot: adc read[0m
+[0;32mI (15625) prot: adc read[0m
+[0;32mI (15625) prot: display out + 0[0m
+[0;32mI (15675) prot: adc read[0m
+[0;32mI (15725) prot: adc read[0m
+[0;32mI (15775) prot: adc read[0m
+[0;32mI (15825) prot: adc read[0m
+[0;32mI (15875) prot: adc read[0m
+[0;32mI (15925) prot: adc read[0m
+[0;32mI (15975) prot: adc read[0m
+[0;32mI (15975) prot: display out + 0[0m
+[0;32mI (16025) prot: adc read[0m
+[0;32mI (16075) prot: adc read[0m
+[0;32mI (16125) prot: adc read[0m
+[0;32mI (16175) prot: adc read[0m
+[0;32mI (16225) prot: adc read[0m
+[0;32mI (16275) prot: adc read[0m
+[0;32mI (16325) prot: adc read[0m
+[0;32mI (16325) prot: display out + 0[0m
+[0;32mI (16375) prot: adc read[0m
+[0;32mI (16425) prot: adc read[0m
+[0;32mI (16475) prot: adc read[0m
+[0;32mI (16525) prot: adc read[0m
+[0;32mI (16575) prot: adc read[0m
+[0;32mI (16625) prot: adc read[0m
+[0;32mI (16675) prot: adc read[0m
+[0;32mI (16675) prot: display out + 0[0m
+[0;32mI (16725) prot: adc read[0m
+[0;32mI (16775) prot: adc read[0m
+[0;32mI (16825) prot: adc read[0m
+[0;32mI (16875) prot: adc read[0m
+[0;32mI (16925) prot: adc read[0m
+[0;32mI (16975) prot: adc read[0m
+[0;32mI (17025) prot: adc read[0m
+[0;32mI (17025) prot: display out + 0[0m
+[0;32mI (17075) prot: adc read[0m
+[0;32mI (17125) prot: adc read[0m
+[0;32mI (17175) prot: adc read[0m
+[0;32mI (17225) prot: adc read[0m
+[0;32mI (17275) prot: adc read[0m
+[0;32mI (17325) prot: adc read[0m
+[0;32mI (17375) prot: adc read[0m
+[0;32mI (17375) prot: display out + 0[0m
+[0;32mI (17425) prot: adc read[0m
+[0;32mI (17475) prot: adc read[0m
+[0;32mI (17525) prot: adc read[0m
+[0;32mI (17575) prot: adc read[0m
+[0;32mI (17625) prot: adc read[0m
+[0;32mI (17675) prot: adc read[0m
+[0;32mI (17725) prot: adc read[0m
+[0;32mI (17725) prot: display out + 0[0m
+[0;32mI (17775) prot: adc read[0m
+[0;32mI (17825) prot: adc read[0m
+[0;32mI (17875) prot: adc read[0m
+[0;32mI (17925) prot: adc read[0m
+[0;32mI (17975) prot: adc read[0m
+[0;32mI (18025) prot: adc read[0m
+[0;32mI (18075) prot: adc read[0m
+[0;32mI (18075) prot: display out + 0[0m
+[0;32mI (18125) prot: adc read[0m
+[0;32mI (18175) prot: adc read[0m
+[0;32mI (18225) prot: adc read[0m
+[0;32mI (18275) prot: adc read[0m
+[0;32mI (18325) prot: adc read[0m
+[0;32mI (18375) prot: adc read[0m
+[0;32mI (18425) prot: adc read[0m
+[0;32mI (18425) prot: display out + 0[0m
+[0;32mI (18475) prot: adc read[0m
+[0;32mI (18525) prot: adc read[0m
+[0;32mI (18575) prot: adc read[0m
+[0;32mI (18625) prot: adc read[0m
+[0;32mI (18675) prot: adc read[0m
+[0;32mI (18725) prot: adc read[0m
+[0;32mI (18775) prot: adc read[0m
+[0;32mI (18775) prot: display out + 0[0m
+[0;32mI (18825) prot: adc read[0m
+[0;32mI (18875) prot: adc read[0m
+[0;32mI (18925) prot: adc read[0m
+[0;32mI (18975) prot: adc read[0m
+[0;32mI (19025) prot: adc read[0m
+[0;32mI (19075) prot: adc read[0m
+[0;32mI (19125) prot: adc read[0m
+[0;32mI (19125) prot: display out + 0[0m
+[0;32mI (19175) prot: adc read[0m
+[0;32mI (19225) prot: adc read[0m
+[0;32mI (19275) prot: adc read[0m
+[0;32mI (19325) prot: adc read[0m
+[0;32mI (19375) prot: adc read[0m
+[0;32mI (19425) prot: adc read[0m
+[0;32mI (19475) prot: adc read[0m
+[0;32mI (19475) prot: display out + 0[0m
+[0;32mI (19525) prot: adc read[0m
+[0;32mI (19575) prot: adc read[0m
+[0;32mI (19625) prot: adc read[0m
+[0;32mI (19675) prot: adc read[0m
+[0;32mI (19725) prot: adc read[0m
+[0;32mI (19775) prot: adc read[0m
+[0;32mI (19825) prot: adc read[0m
+[0;32mI (19825) prot: display out + 0[0m
+[0;32mI (19875) prot: adc read[0m
+[0;32mI (19925) prot: adc read[0m
+[0;32mI (19975) prot: adc read[0m
+[0;32mI (20025) prot: adc read[0m
+[0;32mI (20075) prot: adc read[0m
+[0;32mI (20125) prot: adc read[0m
+[0;32mI (20175) prot: adc read[0m
+[0;32mI (20175) prot: display out + 0[0m
+[0;32mI (20225) prot: adc read[0m
+[0;32mI (20275) prot: adc read[0m
+[0;32mI (20325) prot: adc read[0m
+[0;32mI (20375) prot: adc read[0m
+[0;32mI (20425) prot: adc read[0m
+[0;32mI (20475) prot: adc read[0m
+[0;32mI (20525) prot: adc read[0m
+[0;32mI (20525) prot: display out + 0[0m
+[0;32mI (20575) prot: adc read[0m
+[0;32mI (20625) prot: adc read[0m
+[0;32mI (20675) prot: adc read[0m
+[0;32mI (20725) prot: adc read[0m
+[0;32mI (20775) prot: adc read[0m
+[0;32mI (20825) prot: adc read[0m
+[0;32mI (20875) prot: adc read[0m
+[0;32mI (20875) prot: display out + 0[0m
+[0;32mI (20925) prot: adc read[0m
+[0;32mI (20975) prot: adc read[0m
+[0;32mI (21025) prot: adc read[0m
+[0;32mI (21075) prot: adc read[0m
+[0;32mI (21125) prot: adc read[0m
+[0;32mI (21175) prot: adc read[0m
+[0;32mI (21225) prot: adc read[0m
+[0;32mI (21225) prot: display out + 0[0m
+[0;32mI (21275) prot: adc read[0m
+[0;32mI (21325) prot: adc read[0m
+[0;32mI (21375) prot: adc read[0m
+[0;32mI (21425) prot: adc read[0m
+[0;32mI (21475) prot: adc read[0m
+[0;32mI (21525) prot: adc read[0m
+[0;32mI (21575) prot: adc read[0m
+[0;32mI (21575) prot: display out + 0[0m
+[0;32mI (21625) prot: adc read[0m
+[0;32mI (21675) prot: adc read[0m
+[0;32mI (21725) prot: adc read[0m
+[0;32mI (21775) prot: adc read[0m
+[0;32mI (21825) prot: adc read[0m
+[0;32mI (21875) prot: adc read[0m
+[0;32mI (21925) prot: adc read[0m
+[0;32mI (21925) prot: display out + 0[0m
+[0;32mI (21975) prot: adc read[0m
+[0;32mI (22025) prot: adc read[0m
+[0;32mI (22075) prot: adc read[0m
+[0;32mI (22125) prot: adc read[0m
+[0;32mI (22175) prot: adc read[0m
+[0;32mI (22225) prot: adc read[0m
+[0;32mI (22275) prot: adc read[0m
+[0;32mI (22275) prot: display out + 0[0m
+[0;32mI (22325) prot: adc read[0m
+[0;32mI (22375) prot: adc read[0m
+[0;32mI (22425) prot: adc read[0m
+[0;32mI (22475) prot: adc read[0m
+[0;32mI (22525) prot: adc read[0m
+[0;32mI (22575) prot: adc read[0m
+[0;32mI (22625) prot: adc read[0m
+[0;32mI (22625) prot: display out + 0[0m
+[0;32mI (22675) prot: adc read[0m
+[0;32mI (22725) prot: adc read[0m
+[0;32mI (22775) prot: adc read[0m
+[0;32mI (22825) prot: adc read[0m
+[0;32mI (22875) prot: adc read[0m
+[0;32mI (22925) prot: adc read[0m
+[0;32mI (22975) prot: adc read[0m
+[0;32mI (22975) prot: display out + 0[0m
+[0;32mI (23025) prot: adc read[0m
+[0;32mI (23075) prot: adc read[0m
+[0;32mI (23125) prot: adc read[0m
+[0;32mI (23175) prot: adc read[0m
+[0;32mI (23225) prot: adc read[0m
+[0;32mI (23275) prot: adc read[0m
+[0;32mI (23325) prot: adc read[0m
+[0;32mI (23325) prot: display out + 0[0m
+[0;32mI (23375) prot: adc read[0m
+[0;32mI (23425) prot: adc read[0m
+[0;32mI (23475) prot: adc read[0m
+[0;32mI (23525) prot: adc read[0m
+[0;32mI (23575) prot: adc read[0m
+[0;32mI (23625) prot: adc read[0m
+[0;32mI (23675) prot: adc read[0m
+[0;32mI (23675) prot: display out + 0[0m
+[0;32mI (23725) prot: adc read[0m
+[0;32mI (23775) prot: adc read[0m
+[0;32mI (23825) prot: adc read[0m
+[0;32mI (23875) prot: adc read[0m
+[0;32mI (23925) prot: adc read[0m
+[0;32mI (23975) prot: adc read[0m
+[0;32mI (24025) prot: adc read[0m
+[0;32mI (24025) prot: display out + 0[0m
+[0;32mI (24075) prot: adc read[0m
+[0;32mI (24125) prot: adc read[0m
+[0;32mI (24175) prot: adc read[0m
+[0;32mI (24225) prot: adc read[0m
+[0;32mI (24275) prot: adc read[0m
+[0;32mI (24325) prot: adc read[0m
+[0;32mI (24375) prot: adc read[0m
+[0;32mI (24375) prot: display out + 0[0m
+[0;32mI (24425) prot: adc read[0m
+[0;32mI (24475) prot: adc read[0m
+[0;32mI (24525) prot: adc read[0m
+[0;32mI (24575) prot: adc read[0m
+[0;32mI (24625) prot: adc read[0m
+[0;32mI (24675) prot: adc read[0m
+[0;32mI (24725) prot: adc read[0m
+[0;32mI (24725) prot: display out + 0[0m
+[0;32mI (24775) prot: adc read[0m
+[0;32mI (24825) prot: adc read[0m
+[0;32mI (24875) prot: adc read[0m
+[0;32mI (24925) prot: adc read[0m
+[0;32mI (24975) prot: adc read[0m
+[0;32mI (25025) prot: adc read[0m
+[0;32mI (25075) prot: adc read[0m
+[0;32mI (25075) prot: display out + 0[0m
+[0;32mI (25125) prot: adc read[0m
+[0;32mI (25175) prot: adc read[0m
+[0;32mI (25225) prot: adc read[0m
+[0;32mI (25275) prot: adc read[0m
+[0;32mI (25325) prot: adc read[0m
+[0;32mI (25375) prot: adc read[0m
+[0;32mI (25425) prot: adc read[0m
+[0;32mI (25425) prot: display out + 0[0m
+[0;32mI (25475) prot: adc read[0m
+[0;32mI (25525) prot: adc read[0m
+[0;32mI (25575) prot: adc read[0m
+[0;32mI (25625) prot: adc read[0m
+[0;32mI (25675) prot: adc read[0m
+[0;32mI (25725) prot: adc read[0m
+[0;32mI (25775) prot: adc read[0m
+[0;32mI (25775) prot: display out + 0[0m
+[0;32mI (25825) prot: adc read[0m
+[0;32mI (25875) prot: adc read[0m
+[0;32mI (25925) prot: adc read[0m
+[0;32mI (25975) prot: adc read[0m
+[0;32mI (26025) prot: adc read[0m
+[0;32mI (26075) prot: adc read[0m
+[0;32mI (26125) prot: adc read[0m
+[0;32mI (26125) prot: display out + 0[0m
+[0;32mI (26175) prot: adc read[0m
+[0;32mI (26225) prot: adc read[0m
+[0;32mI (26275) prot: adc read[0m
+[0;32mI (26325) prot: adc read[0m
+[0;32mI (26375) prot: adc read[0m
+[0;32mI (26425) prot: adc read[0m
+[0;32mI (26475) prot: adc read[0m
+[0;32mI (26475) prot: display out + 0[0m
+[0;32mI (26525) prot: adc read[0m
+[0;32mI (26575) prot: adc read[0m
+[0;32mI (26625) prot: adc read[0m
+[0;32mI (26675) prot: adc read[0m
+[0;32mI (26725) prot: adc read[0m
+[0;32mI (26775) prot: adc read[0m
+[0;32mI (26825) prot: adc read[0m
+[0;32mI (26825) prot: display out + 0[0m
+[0;32mI (26875) prot: adc read[0m
+[0;32mI (26925) prot: adc read[0m
+[0;32mI (26975) prot: adc read[0m
+[0;32mI (27025) prot: adc read[0m
+[0;32mI (27075) prot: adc read[0m
+[0;32mI (27125) prot: adc read[0m
+[0;32mI (27175) prot: adc read[0m
+[0;32mI (27175) prot: display out + 0[0m
+[0;32mI (27225) prot: adc read[0m
+[0;32mI (27275) prot: adc read[0m
+[0;32mI (27325) prot: adc read[0m
+[0;32mI (27375) prot: adc read[0m
+[0;32mI (27425) prot: adc read[0m
+[0;32mI (27475) prot: adc read[0m
+[0;32mI (27525) prot: adc read[0m
+[0;32mI (27525) prot: display out + 0[0m
+[0;32mI (27575) prot: adc read[0m
+[0;32mI (27625) prot: adc read[0m
+[0;32mI (27675) prot: adc read[0m
+[0;32mI (27725) prot: adc read[0m
+[0;32mI (27775) prot: adc read[0m
+[0;32mI (27825) prot: adc read[0m
+[0;32mI (27875) prot: adc read[0m
+[0;32mI (27875) prot: display out + 0[0m
+[0;32mI (27925) prot: adc read[0m
+[0;32mI (27975) prot: adc read[0m
+[0;32mI (28025) prot: adc read[0m
+[0;32mI (28075) prot: adc read[0m
+[0;32mI (28125) prot: adc read[0m
+[0;32mI (28175) prot: adc read[0m
+[0;32mI (28225) prot: adc read[0m
+[0;32mI (28225) prot: display out + 0[0m
+[0;32mI (28275) prot: adc read[0m
+[0;32mI (28325) prot: adc read[0m
+[0;32mI (28375) prot: adc read[0m
+[0;32mI (28425) prot: adc read[0m
+[0;32mI (28475) prot: adc read[0m
+[0;32mI (28525) prot: adc read[0m
+[0;32mI (28575) prot: adc read[0m
+[0;32mI (28575) prot: display out + 0[0m
+[0;32mI (28625) prot: adc read[0m
+[0;32mI (28675) prot: adc read[0m
+[0;32mI (28725) prot: adc read[0m
+[0;32mI (28775) prot: adc read[0m
+[0;32mI (28825) prot: adc read[0m
+[0;32mI (28875) prot: adc read[0m
+[0;32mI (28925) prot: adc read[0m
+[0;32mI (28925) prot: display out + 0[0m
+[0;32mI (28975) prot: adc read[0m
+[0;32mI (29025) prot: adc read[0m
+[0;32mI (29075) prot: adc read[0m
+[0;32mI (29125) prot: adc read[0m
+[0;32mI (29175) prot: adc read[0m
+[0;32mI (29225) prot: adc read[0m
+[0;32mI (29275) prot: adc read[0m
+[0;32mI (29275) prot: display out + 0[0m
+[0;32mI (29325) prot: adc read[0m
+[0;32mI (29375) prot: adc read[0m
+[0;32mI (29425) prot: adc read[0m
+[0;32mI (29475) prot: adc read[0m
+[0;32mI (29525) prot: adc read[0m
+[0;32mI (29575) prot: adc read[0m
+[0;32mI (29625) prot: adc read[0m
+[0;32mI (29625) prot: display out + 0[0m
+[0;32mI (29675) prot: adc read[0m
+[0;32mI (29725) prot: adc read[0m
+[0;32mI (29775) prot: adc read[0m
+[0;32mI (29825) prot: adc read[0m
+[0;32mI (29875) prot: adc read[0m
+[0;32mI (29925) prot: adc read[0m
+[0;32mI (29975) prot: adc read[0m
+[0;32mI (29975) prot: display out + 0[0m
+[0;32mI (30025) prot: adc read[0m
+[0;32mI (30075) prot: adc read[0m
+[0;32mI (30125) prot: adc read[0m
+[0;32mI (30175) prot: adc read[0m
+[0;32mI (30225) prot: adc read[0m
+[0;32mI (30275) prot: adc read[0m
+[0;32mI (30325) prot: adc read[0m
+[0;32mI (30325) prot: display out + 0[0m
+[0;32mI (30375) prot: adc read[0m
+[0;32mI (30425) prot: adc read[0m
+[0;32mI (30475) prot: adc read[0m
+[0;32mI (30525) prot: adc read[0m
+[0;32mI (30575) prot: adc read[0m
+[0;32mI (30625) prot: adc read[0m
+[0;32mI (30675) prot: adc read[0m
+[0;32mI (30675) prot: display out + 0[0m
+[0;32mI (30725) prot: adc read[0m
+[0;32mI (30775) prot: adc read[0m
+[0;32mI (30825) prot: adc read[0m
+[0;32mI (30875) prot: adc read[0m
+[0;32mI (30925) prot: adc read[0m
+[0;32mI (30975) prot: adc read[0m
+[0;32mI (31025) prot: adc read[0m
+[0;32mI (31025) prot: display out + 0[0m
+[0;32mI (31075) prot: adc read[0m
+[0;32mI (31125) prot: adc read[0m
+[0;32mI (31175) prot: adc read[0m
+[0;32mI (31225) prot: adc read[0m
+[0;32mI (31275) prot: adc read[0m
+[0;32mI (31325) prot: adc read[0m
+[0;32mI (31375) prot: adc read[0m
+[0;32mI (31375) prot: display out + 0[0m
+[0;32mI (31425) prot: adc read[0m
+[0;32mI (31475) prot: adc read[0m
+[0;32mI (31525) prot: adc read[0m
+[0;32mI (31575) prot: adc read[0m
+[0;32mI (31625) prot: adc read[0m
+[0;32mI (31675) prot: adc read[0m
+[0;32mI (31725) prot: adc read[0m
+[0;32mI (31725) prot: display out + 0[0m
+[0;32mI (31775) prot: adc read[0m
+[0;32mI (31825) prot: adc read[0m
+[0;32mI (31875) prot: adc read[0m
+[0;32mI (31925) prot: adc read[0m
+[0;32mI (31975) prot: adc read[0m
+[0;32mI (32025) prot: adc read[0m
+[0;32mI (32075) prot: adc read[0m
+[0;32mI (32075) prot: display out + 0[0m
+[0;32mI (32125) prot: adc read[0m
+[0;32mI (32175) prot: adc read[0m
+[0;32mI (32225) prot: adc read[0m
+[0;32mI (32275) prot: adc read[0m
+[0;32mI (32325) prot: adc read[0m
+[0;32mI (32375) prot: adc read[0m
+[0;32mI (32425) prot: adc read[0m
+[0;32mI (32425) prot: display out + 0[0m
+[0;32mI (32475) prot: adc read[0m
+[0;32mI (32525) prot: adc read[0m
+[0;32mI (32575) prot: adc read[0m
+[0;32mI (32625) prot: adc read[0m
+[0;32mI (32675) prot: adc read[0m
+[0;32mI (32725) prot: adc read[0m
+[0;32mI (32775) prot: adc read[0m
+[0;32mI (32775) prot: display out + 0[0m
+[0;32mI (32825) prot: adc read[0m
+[0;32mI (32875) prot: adc read[0m
+[0;32mI (32925) prot: adc read[0m
+[0;32mI (32975) prot: adc read[0m
+[0;32mI (33025) prot: adc read[0m
+[0;32mI (33075) prot: adc read[0m
+[0;32mI (33125) prot: adc read[0m
+[0;32mI (33125) prot: display out + 0[0m
+[0;32mI (33175) prot: adc read[0m
+[0;32mI (33225) prot: adc read[0m
+[0;32mI (33275) prot: adc read[0m
+[0;32mI (33325) prot: adc read[0m
+[0;32mI (33375) prot: adc read[0m
+[0;32mI (33425) prot: adc read[0m
+[0;32mI (33475) prot: adc read[0m
+[0;32mI (33475) prot: display out + 0[0m
+[0;32mI (33525) prot: adc read[0m
+[0;32mI (33575) prot: adc read[0m
+[0;32mI (33625) prot: adc read[0m
+[0;32mI (33675) prot: adc read[0m
+[0;32mI (33725) prot: adc read[0m
+[0;32mI (33775) prot: adc read[0m
+[0;32mI (33825) prot: adc read[0m
+[0;32mI (33825) prot: display out + 0[0m
+[0;32mI (33875) prot: adc read[0m
+[0;32mI (33925) prot: adc read[0m
+[0;32mI (33975) prot: adc read[0m
+[0;32mI (34025) prot: adc read[0m
+[0;32mI (34075) prot: adc read[0m
+[0;32mI (34125) prot: adc read[0m
+[0;32mI (34175) prot: adc read[0m
+[0;32mI (34175) prot: display out + 0[0m
+[0;32mI (34225) prot: adc read[0m
+[0;32mI (34275) prot: adc read[0m
+[0;32mI (34325) prot: adc read[0m
+[0;32mI (34375) prot: adc read[0m
+[0;32mI (34425) prot: adc read[0m
+[0;32mI (34475) prot: adc read[0m
+[0;32mI (34525) prot: adc read[0m
+[0;32mI (34525) prot: display out + 0[0m
+[0;32mI (34575) prot: adc read[0m
+[0;32mI (34625) prot: adc read[0m
+[0;32mI (34675) prot: adc read[0m
+[0;32mI (34725) prot: adc read[0m
+[0;32mI (34775) prot: adc read[0m
+[0;32mI (34825) prot: adc read[0m
+[0;32mI (34875) prot: adc read[0m
+[0;32mI (34875) prot: display out + 0[0m
+[0;32mI (34925) prot: adc read[0m
+[0;32mI (34975) prot: adc read[0m
+[0;32mI (35025) prot: adc read[0m
+[0;32mI (35075) prot: adc read[0m
+[0;32mI (35125) prot: adc read[0m
+[0;32mI (35175) prot: adc read[0m
+[0;32mI (35225) prot: adc read[0m
+[0;32mI (35225) prot: display out + 0[0m
+[0;32mI (35275) prot: adc read[0m
+[0;32mI (35325) prot: adc read[0m
+[0;32mI (35375) prot: adc read[0m
+[0;32mI (35425) prot: adc read[0m
+[0;32mI (35475) prot: adc read[0m
+[0;32mI (35525) prot: adc read[0m
+[0;32mI (35575) prot: adc read[0m
+[0;32mI (35575) prot: display out + 0[0m
+[0;32mI (35625) prot: adc read[0m
+[0;32mI (35675) prot: adc read[0m
+[0;32mI (35725) prot: adc read[0m
+[0;32mI (35775) prot: adc read[0m
+[0;32mI (35825) prot: adc read[0m
+[0;32mI (35875) prot: adc read[0m
+[0;32mI (35925) prot: adc read[0m
+[0;32mI (35925) prot: display out + 0[0m
+[0;32mI (35975) prot: adc read[0m
+[0;32mI (36025) prot: adc read[0m
+[0;32mI (36075) prot: adc read[0m
+[0;32mI (36125) prot: adc read[0m
+[0;32mI (36175) prot: adc read[0m
+[0;32mI (36225) prot: adc read[0m
+[0;32mI (36275) prot: adc read[0m
+[0;32mI (36275) prot: display out + 0[0m
+[0;32mI (36325) prot: adc read[0m
+[0;32mI (36375) prot: adc read[0m
+[0;32mI (36425) prot: adc read[0m
+[0;32mI (36475) prot: adc read[0m
+[0;32mI (36525) prot: adc read[0m
+[0;32mI (36575) prot: adc read[0m
+[0;32mI (36625) prot: adc read[0m
+[0;32mI (36625) prot: display out + 0[0m
+[0;32mI (36675) prot: adc read[0m
+[0;32mI (36725) prot: adc read[0m
+[0;32mI (36775) prot: adc read[0m
+[0;32mI (36825) prot: adc read[0m
+[0;32mI (36875) prot: adc read[0m
+[0;32mI (36925) prot: adc read[0m
+[0;32mI (36975) prot: adc read[0m
+[0;32mI (36975) prot: display out + 0[0m
+[0;32mI (37025) prot: adc read[0m
+[0;32mI (37075) prot: adc read[0m
+[0;32mI (37125) prot: adc read[0m
+[0;32mI (37175) prot: adc read[0m
+[0;32mI (37225) prot: adc read[0m
+[0;32mI (37275) prot: adc read[0m
+[0;32mI (37325) prot: adc read[0m
+[0;32mI (37325) prot: display out + 0[0m
+[0;32mI (37375) prot: adc read[0m
+[0;32mI (37425) prot: adc read[0m
+[0;32mI (37475) prot: adc read[0m
+[0;32mI (37525) prot: adc read[0m
+[0;32mI (37575) prot: adc read[0m
+[0;32mI (37625) prot: adc read[0m
+[0;32mI (37675) prot: adc read[0m
+[0;32mI (37675) prot: display out + 0[0m
+[0;32mI (37725) prot: adc read[0m
+[0;32mI (37775) prot: adc read[0m
+[0;32mI (37825) prot: adc read[0m
+[0;32mI (37875) prot: adc read[0m
+[0;32mI (37925) prot: adc read[0m
+[0;32mI (37975) prot: adc read[0m
+[0;32mI (38025) prot: adc read[0m
+[0;32mI (38025) prot: display out + 0[0m
+[0;32mI (38075) prot: adc read[0m
+[0;32mI (38125) prot: adc read[0m
+[0;32mI (38175) prot: adc read[0m
+[0;32mI (38225) prot: adc read[0m
+[0;32mI (38275) prot: adc read[0m
+[0;32mI (38325) prot: adc read[0m
+[0;32mI (38375) prot: adc read[0m
+[0;32mI (38375) prot: display out + 0[0m
+[0;32mI (38425) prot: adc read[0m
+[0;32mI (38475) prot: adc read[0m
+[0;32mI (38525) prot: adc read[0m
+[0;32mI (38575) prot: adc read[0m
+[0;32mI (38625) prot: adc read[0m
+[0;32mI (38675) prot: adc read[0m
+[0;32mI (38725) prot: adc read[0m
+[0;32mI (38725) prot: display out + 0[0m
+[0;32mI (38775) prot: adc read[0m
+[0;32mI (38825) prot: adc read[0m
+[0;32mI (38875) prot: adc read[0m
+[0;32mI (38925) prot: adc read[0m
+[0;32mI (38975) prot: adc read[0m
+[0;32mI (39025) prot: adc read[0m
+[0;32mI (39075) prot: adc read[0m
+[0;32mI (39075) prot: display out + 0[0m
+[0;32mI (39125) prot: adc read[0m
+[0;32mI (39175) prot: adc read[0m
+[0;32mI (39225) prot: adc read[0m
+[0;32mI (39275) prot: adc read[0m
+[0;32mI (39325) prot: adc read[0m
+[0;32mI (39375) prot: adc read[0m
+[0;32mI (39425) prot: adc read[0m
+[0;32mI (39425) prot: display out + 0[0m
+[0;32mI (39475) prot: adc read[0m
+[0;32mI (39525) prot: adc read[0m
+[0;32mI (39575) prot: adc read[0m
+[0;32mI (39625) prot: adc read[0m
+[0;32mI (39675) prot: adc read[0m
+[0;32mI (39725) prot: adc read[0m
+[0;32mI (39775) prot: adc read[0m
+[0;32mI (39775) prot: display out + 0[0m
+[0;32mI (39825) prot: adc read[0m
+[0;32mI (39875) prot: adc read[0m
+[0;32mI (39925) prot: adc read[0m
+[0;32mI (39975) prot: adc read[0m
+[0;32mI (40025) prot: adc read[0m
+[0;32mI (40075) prot: adc read[0m
+[0;32mI (40125) prot: adc read[0m
+[0;32mI (40125) prot: display out + 0[0m
+[0;32mI (40175) prot: adc read[0m
+[0;32mI (40225) prot: adc read[0m
+[0;32mI (40275) prot: adc read[0m
+[0;32mI (40325) prot: adc read[0m
+[0;32mI (40375) prot: adc read[0m
+[0;32mI (40425) prot: adc read[0m
+[0;32mI (40475) prot: adc read[0m
+[0;32mI (40475) prot: display out + 0[0m
+[0;32mI (40525) prot: adc read[0m
+[0;32mI (40575) prot: adc read[0m
+[0;32mI (40625) prot: adc read[0m
+[0;32mI (40675) prot: adc read[0m
+[0;32mI (40725) prot: adc read[0m
+[0;32mI (40775) prot: adc read[0m
+[0;32mI (40825) prot: adc read[0m
+[0;32mI (40825) prot: display out + 0[0m
+[0;32mI (40875) prot: adc read[0m
+[0;32mI (40925) prot: adc read[0m
+[0;32mI (40975) prot: adc read[0m
+[0;32mI (41025) prot: adc read[0m
+[0;32mI (41075) prot: adc read[0m
+[0;32mI (41125) prot: adc read[0m
+[0;32mI (41175) prot: adc read[0m
+[0;32mI (41175) prot: display out + 0[0m
+[0;32mI (41225) prot: adc read[0m
+[0;32mI (41275) prot: adc read[0m
+[0;32mI (41325) prot: adc read[0m
+[0;32mI (41375) prot: adc read[0m
+[0;32mI (41425) prot: adc read[0m
+[0;32mI (41475) prot: adc read[0m
+[0;32mI (41525) prot: adc read[0m
+[0;32mI (41525) prot: display out + 0[0m
+[0;32mI (41575) prot: adc read[0m
+[0;32mI (41625) prot: adc read[0m
+[0;32mI (41675) prot: adc read[0m
+[0;32mI (41725) prot: adc read[0m
+[0;32mI (41775) prot: adc read[0m
+[0;32mI (41825) prot: adc read[0m
+[0;32mI (41875) prot: adc read[0m
+[0;32mI (41875) prot: display out + 0[0m
+[0;32mI (41925) prot: adc read[0m
+[0;32mI (41975) prot: adc read[0m
+[0;32mI (42025) prot: adc read[0m
+[0;32mI (42075) prot: adc read[0m
+[0;32mI (42125) prot: adc read[0m
+[0;32mI (42175) prot: adc read[0m
+[0;32mI (42225) prot: adc read[0m
+[0;32mI (42225) prot: display out + 0[0m
+[0;32mI (42275) prot: adc read[0m
+[0;32mI (42325) prot: adc read[0m
+[0;32mI (42375) prot: adc read[0m
+[0;32mI (42425) prot: adc read[0m
+[0;32mI (42475) prot: adc read[0m
+[0;32mI (42525) prot: adc read[0m
+[0;32mI (42575) prot: adc read[0m
+[0;32mI (42575) prot: display out + 0[0m
+[0;32mI (42625) prot: adc read[0m
+[0;32mI (42675) prot: adc read[0m
+[0;32mI (42725) prot: adc read[0m
+[0;32mI (42775) prot: adc read[0m
+[0;32mI (42825) prot: adc read[0m
+[0;32mI (42875) prot: adc read[0m
+[0;32mI (42925) prot: adc read[0m
+[0;32mI (42925) prot: display out + 0[0m
+[0;32mI (42975) prot: adc read[0m
+[0;32mI (43025) prot: adc read[0m
+[0;32mI (43075) prot: adc read[0m
+[0;32mI (43125) prot: adc read[0m
+[0;32mI (43175) prot: adc read[0m
+[0;32mI (43225) prot: adc read[0m
+[0;32mI (43275) prot: adc read[0m
+[0;32mI (43275) prot: display out + 0[0m
+[0;32mI (43325) prot: adc read[0m
+[0;32mI (43375) prot: adc read[0m
+[0;32mI (43425) prot: adc read[0m
+[0;32mI (43475) prot: adc read[0m
+[0;32mI (43525) prot: adc read[0m
+[0;32mI (43575) prot: adc read[0m
+[0;32mI (43625) prot: adc read[0m
+[0;32mI (43625) prot: display out + 0[0m
+[0;32mI (43675) prot: adc read[0m
+[0;32mI (43725) prot: adc read[0m
+[0;32mI (43775) prot: adc read[0m
+[0;32mI (43825) prot: adc read[0m
+[0;32mI (43875) prot: adc read[0m
+[0;32mI (43925) prot: adc read[0m
+[0;32mI (43975) prot: adc read[0m
+[0;32mI (43975) prot: display out + 0[0m
+[0;32mI (44025) prot: adc read[0m
+[0;32mI (44075) prot: adc read[0m
+[0;32mI (44125) prot: adc read[0m
+[0;32mI (44175) prot: adc read[0m
+[0;32mI (44225) prot: adc read[0m
+[0;32mI (44275) prot: adc read[0m
+[0;32mI (44325) prot: adc read[0m
+[0;32mI (44325) prot: display out + 0[0m
+[0;32mI (44375) prot: adc read[0m
+[0;32mI (44425) prot: adc read[0m
+[0;32mI (44475) prot: adc read[0m
+[0;32mI (44525) prot: adc read[0m
+[0;32mI (44575) prot: adc read[0m
+[0;32mI (44625) prot: adc read[0m
+[0;32mI (44675) prot: adc read[0m
+[0;32mI (44675) prot: display out + 0[0m
+[0;32mI (44725) prot: adc read[0m
+[0;32mI (44775) prot: adc read[0m
+[0;32mI (44825) prot: adc read[0m
+[0;32mI (44875) prot: adc read[0m
+[0;32mI (44925) prot: adc read[0m
+[0;32mI (44975) prot: adc read[0m
+[0;32mI (45025) prot: adc read[0m
+[0;32mI (45025) prot: display out + 0[0m
+[0;32mI (45075) prot: adc read[0m
+[0;32mI (45125) prot: adc read[0m
+[0;32mI (45175) prot: adc read[0m
+[0;32mI (45225) prot: adc read[0m
+[0;32mI (45275) prot: adc read[0m
+[0;32mI (45325) prot: adc read[0m
+[0;32mI (45375) prot: adc read[0m
+[0;32mI (45375) prot: display out + 0[0m
+[0;32mI (45425) prot: adc read[0m
+[0;32mI (45475) prot: adc read[0m
+[0;32mI (45525) prot: adc read[0m
+[0;32mI (45575) prot: adc read[0m
+[0;32mI (45625) prot: adc read[0m
+[0;32mI (45675) prot: adc read[0m
+[0;32mI (45725) prot: adc read[0m
+[0;32mI (45725) prot: display out + 0[0m
+[0;32mI (45775) prot: adc read[0m
+[0;32mI (45825) prot: adc read[0m
+[0;32mI (45875) prot: adc read[0m
+[0;32mI (45925) prot: adc read[0m
+[0;32mI (45975) prot: adc read[0m
+[0;32mI (46025) prot: adc read[0m
+[0;32mI (46075) prot: adc read[0m
+[0;32mI (46075) prot: display out + 0[0m
+[0;32mI (46125) prot: adc read[0m
+[0;32mI (46175) prot: adc read[0m
+[0;32mI (46225) prot: adc read[0m
+[0;32mI (46275) prot: adc read[0m
+[0;32mI (46325) prot: adc read[0m
+[0;32mI (46375) prot: adc read[0m
+[0;32mI (46425) prot: adc read[0m
+[0;32mI (46425) prot: display out + 0[0m
+[0;32mI (46475) prot: adc read[0m
+[0;32mI (46525) prot: adc read[0m
+[0;32mI (46575) prot: adc read[0m
+[0;32mI (46625) prot: adc read[0m
+[0;32mI (46675) prot: adc read[0m
+[0;32mI (46725) prot: adc read[0m
+[0;32mI (46775) prot: adc read[0m
+[0;32mI (46775) prot: display out + 0[0m
+[0;32mI (46825) prot: adc read[0m
+[0;32mI (46875) prot: adc read[0m
+[0;32mI (46925) prot: adc read[0m
+[0;32mI (46975) prot: adc read[0m
+[0;32mI (47025) prot: adc read[0m
+[0;32mI (47075) prot: adc read[0m
+[0;32mI (47125) prot: adc read[0m
+[0;32mI (47125) prot: display out + 0[0m
+[0;32mI (47175) prot: adc read[0m
+[0;32mI (47225) prot: adc read[0m
+[0;32mI (47275) prot: adc read[0m
+[0;32mI (47325) prot: adc read[0m
+[0;32mI (47375) prot: adc read[0m
+[0;32mI (47425) prot: adc read[0m
+[0;32mI (47475) prot: adc read[0m
+[0;32mI (47475) prot: display out + 0[0m
+[0;32mI (47525) prot: adc read[0m
+[0;32mI (47575) prot: adc read[0m
+[0;32mI (47625) prot: adc read[0m
+[0;32mI (47675) prot: adc read[0m
+[0;32mI (47725) prot: adc read[0m
+[0;32mI (47775) prot: adc read[0m
+[0;32mI (47825) prot: adc read[0m
+[0;32mI (47825) prot: display out + 0[0m
+[0;32mI (47875) prot: adc read[0m
+[0;32mI (47925) prot: adc read[0m
+[0;32mI (47975) prot: adc read[0m
+[0;32mI (48025) prot: adc read[0m
+[0;32mI (48075) prot: adc read[0m
+[0;32mI (48125) prot: adc read[0m
+[0;32mI (48175) prot: adc read[0m
+[0;32mI (48175) prot: display out + 0[0m
+[0;32mI (48225) prot: adc read[0m
+[0;32mI (48275) prot: adc read[0m
+[0;32mI (48325) prot: adc read[0m
+[0;32mI (48375) prot: adc read[0m
+[0;32mI (48425) prot: adc read[0m
+[0;32mI (48475) prot: adc read[0m
+[0;32mI (48525) prot: adc read[0m
+[0;32mI (48525) prot: display out + 0[0m
+[0;32mI (48575) prot: adc read[0m
+[0;32mI (48625) prot: adc read[0m
+[0;32mI (48675) prot: adc read[0m
+[0;32mI (48725) prot: adc read[0m
+[0;32mI (48775) prot: adc read[0m
+[0;32mI (48825) prot: adc read[0m
+[0;32mI (48875) prot: adc read[0m
+[0;32mI (48875) prot: display out + 0[0m
+[0;32mI (48925) prot: adc read[0m
+[0;32mI (48975) prot: adc read[0m
+[0;32mI (49025) prot: adc read[0m
+[0;32mI (49075) prot: adc read[0m
+[0;32mI (49125) prot: adc read[0m
+[0;32mI (49175) prot: adc read[0m
+[0;32mI (49225) prot: adc read[0m
+[0;32mI (49225) prot: display out + 0[0m
+[0;32mI (49275) prot: adc read[0m
+[0;32mI (49325) prot: adc read[0m
+[0;32mI (49375) prot: adc read[0m
+[0;32mI (49425) prot: adc read[0m
+[0;32mI (49475) prot: adc read[0m
+[0;32mI (49525) prot: adc read[0m
+[0;32mI (49575) prot: adc read[0m
+[0;32mI (49575) prot: display out + 0[0m
+[0;32mI (49625) prot: adc read[0m
+[0;32mI (49675) prot: adc read[0m
+[0;32mI (49725) prot: adc read[0m
+[0;32mI (49775) prot: adc read[0m
+[0;32mI (49825) prot: adc read[0m
+[0;32mI (49875) prot: adc read[0m
+[0;32mI (49925) prot: adc read[0m
+[0;32mI (49925) prot: display out + 0[0m
+[0;32mI (49975) prot: adc read[0m
+[0;32mI (50025) prot: adc read[0m
+[0;32mI (50075) prot: adc read[0m
+[0;32mI (50125) prot: adc read[0m
+[0;32mI (50175) prot: adc read[0m
+[0;32mI (50225) prot: adc read[0m
+[0;32mI (50275) prot: adc read[0m
+[0;32mI (50275) prot: display out + 0[0m
+[0;32mI (50325) prot: adc read[0m
+[0;32mI (50375) prot: adc read[0m
+[0;32mI (50425) prot: adc read[0m
+[0;32mI (50475) prot: adc read[0m
+[0;32mI (50525) prot: adc read[0m
+[0;32mI (50575) prot: adc read[0m
+[0;32mI (50625) prot: adc read[0m
+[0;32mI (50625) prot: display out + 0[0m
+[0;32mI (50675) prot: adc read[0m
+[0;32mI (50725) prot: adc read[0m
+[0;32mI (50775) prot: adc read[0m
+[0;32mI (50825) prot: adc read[0m
+[0;32mI (50875) prot: adc read[0m
+[0;32mI (50925) prot: adc read[0m
+[0;32mI (50975) prot: adc read[0m
+[0;32mI (50975) prot: display out + 0[0m
+[0;32mI (51025) prot: adc read[0m
+[0;32mI (51075) prot: adc read[0m
+[0;32mI (51125) prot: adc read[0m
+[0;32mI (51175) prot: adc read[0m
+[0;32mI (51225) prot: adc read[0m
+[0;32mI (51275) prot: adc read[0m
+[0;32mI (51325) prot: adc read[0m
+[0;32mI (51325) prot: display out + 0[0m
+[0;32mI (51375) prot: adc read[0m
+[0;32mI (51425) prot: adc read[0m
+[0;32mI (51475) prot: adc read[0m
+[0;32mI (51525) prot: adc read[0m
+[0;32mI (51575) prot: adc read[0m
+[0;32mI (51625) prot: adc read[0m
+[0;32mI (51675) prot: adc read[0m
+[0;32mI (51675) prot: display out + 0[0m
+[0;32mI (51725) prot: adc read[0m
+[0;32mI (51775) prot: adc read[0m
+[0;32mI (51825) prot: adc read[0m
+[0;32mI (51875) prot: adc read[0m
+[0;32mI (51925) prot: adc read[0m
+[0;32mI (51975) prot: adc read[0m
+[0;32mI (52025) prot: adc read[0m
+[0;32mI (52025) prot: display out + 0[0m
+[0;32mI (52075) prot: adc read[0m
+[0;32mI (52125) prot: adc read[0m
+[0;32mI (52175) prot: adc read[0m
+[0;32mI (52225) prot: adc read[0m
+[0;32mI (52275) prot: adc read[0m
+[0;32mI (52325) prot: adc read[0m
+[0;32mI (52375) prot: adc read[0m
+[0;32mI (52375) prot: display out + 0[0m
+[0;32mI (52425) prot: adc read[0m
+[0;32mI (52475) prot: adc read[0m
+[0;32mI (52525) prot: adc read[0m
+[0;32mI (52575) prot: adc read[0m
+[0;32mI (52625) prot: adc read[0m
+[0;32mI (52675) prot: adc read[0m
+[0;32mI (52725) prot: adc read[0m
+[0;32mI (52725) prot: display out + 0[0m
+[0;32mI (52775) prot: adc read[0m
+[0;32mI (52825) prot: adc read[0m
+[0;32mI (52875) prot: adc read[0m
+[0;32mI (52925) prot: adc read[0m
+[0;32mI (52975) prot: adc read[0m
+[0;32mI (53025) prot: adc read[0m
+[0;32mI (53075) prot: adc read[0m
+[0;32mI (53075) prot: display out + 0[0m
+[0;32mI (53125) prot: adc read[0m
+[0;32mI (53175) prot: adc read[0m
+[0;32mI (53225) prot: adc read[0m
+[0;32mI (53275) prot: adc read[0m
+[0;32mI (53325) prot: adc read[0m
+[0;32mI (53375) prot: adc read[0m
+[0;32mI (53425) prot: adc read[0m
+[0;32mI (53425) prot: display out + 0[0m
+[0;32mI (53475) prot: adc read[0m
+[0;32mI (53525) prot: adc read[0m
+[0;32mI (53575) prot: adc read[0m
+[0;32mI (53625) prot: adc read[0m
+[0;32mI (53675) prot: adc read[0m
+[0;32mI (53725) prot: adc read[0m
+[0;32mI (53775) prot: adc read[0m
+[0;32mI (53775) prot: display out + 0[0m
+[0;32mI (53825) prot: adc read[0m
+[0;32mI (53875) prot: adc read[0m
+[0;32mI (53925) prot: adc read[0m
+[0;32mI (53975) prot: adc read[0m
+[0;32mI (54025) prot: adc read[0m
+[0;32mI (54075) prot: adc read[0m
+[0;32mI (54125) prot: adc read[0m
+[0;32mI (54125) prot: display out + 0[0m
+[0;32mI (54175) prot: adc read[0m
+[0;32mI (54225) prot: adc read[0m
+[0;32mI (54275) prot: adc read[0m
+[0;32mI (54325) prot: adc read[0m
+[0;32mI (54375) prot: adc read[0m
+[0;32mI (54425) prot: adc read[0m
+[0;32mI (54475) prot: adc read[0m
+[0;32mI (54475) prot: display out + 0[0m
+[0;32mI (54525) prot: adc read[0m
+[0;32mI (54575) prot: adc read[0m
+[0;32mI (54625) prot: adc read[0m
+[0;32mI (54675) prot: adc read[0m
+[0;32mI (54725) prot: adc read[0m
+[0;32mI (54775) prot: adc read[0m
+[0;32mI (54825) prot: adc read[0m
+[0;32mI (54825) prot: display out + 0[0m
+[0;32mI (54875) prot: adc read[0m
+[0;32mI (54925) prot: adc read[0m
+[0;32mI (54975) prot: adc read[0m
+[0;32mI (55025) prot: adc read[0m
+[0;32mI (55075) prot: adc read[0m
+[0;32mI (55125) prot: adc read[0m
+[0;32mI (55175) prot: adc read[0m
+[0;32mI (55175) prot: display out + 0[0m
+[0;32mI (55225) prot: adc read[0m
+[0;32mI (55275) prot: adc read[0m
+[0;32mI (55325) prot: adc read[0m
+[0;32mI (55375) prot: adc read[0m
+[0;32mI (55425) prot: adc read[0m
+[0;32mI (55475) prot: adc read[0m
+[0;32mI (55525) prot: adc read[0m
+[0;32mI (55525) prot: display out + 0[0m
+[0;32mI (55575) prot: adc read[0m
+[0;32mI (55625) prot: adc read[0m
+[0;32mI (55675) prot: adc read[0m
+[0;32mI (55725) prot: adc read[0m
+[0;32mI (55775) prot: adc read[0m
+[0;32mI (55825) prot: adc read[0m
+[0;32mI (55875) prot: adc read[0m
+[0;32mI (55875) prot: display out + 0[0m
+[0;32mI (55925) prot: adc read[0m
+[0;32mI (55975) prot: adc read[0m
+[0;32mI (56025) prot: adc read[0m
+[0;32mI (56075) prot: adc read[0m
+[0;32mI (56125) prot: adc read[0m
+[0;32mI (56175) prot: adc read[0m
+[0;32mI (56225) prot: adc read[0m
+[0;32mI (56225) prot: display out + 0[0m
+[0;32mI (56275) prot: adc read[0m
+[0;32mI (56325) prot: adc read[0m
+[0;32mI (56375) prot: adc read[0m
+[0;32mI (56425) prot: adc read[0m
+[0;32mI (56475) prot: adc read[0m
+[0;32mI (56525) prot: adc read[0m
+[0;32mI (56575) prot: adc read[0m
+[0;32mI (56575) prot: display out + 0[0m
+[0;32mI (56625) prot: adc read[0m
+[0;32mI (56675) prot: adc read[0m
+[0;32mI (56725) prot: adc read[0m
+[0;32mI (56775) prot: adc read[0m
+[0;32mI (56825) prot: adc read[0m
+[0;32mI (56875) prot: adc read[0m
+[0;32mI (56925) prot: adc read[0m
+[0;32mI (56925) prot: display out + 0[0m
+[0;32mI (56975) prot: adc read[0m
+[0;32mI (57025) prot: adc read[0m
+[0;32mI (57075) prot: adc read[0m
+[0;32mI (57125) prot: adc read[0m
+[0;32mI (57175) prot: adc read[0m
+[0;32mI (57225) prot: adc read[0m
+[0;32mI (57275) prot: adc read[0m
+[0;32mI (57275) prot: display out + 0[0m
+[0;32mI (57325) prot: adc read[0m
+[0;32mI (57375) prot: adc read[0m
+[0;32mI (57425) prot: adc read[0m
+[0;32mI (57475) prot: adc read[0m
+[0;32mI (57525) prot: adc read[0m
+[0;32mI (57575) prot: adc read[0m
+[0;32mI (57625) prot: adc read[0m
+[0;32mI (57625) prot: display out + 0[0m
+[0;32mI (57675) prot: adc read[0m
+[0;32mI (57725) prot: adc read[0m
+[0;32mI (57775) prot: adc read[0m
+[0;32mI (57825) prot: adc read[0m
+[0;32mI (57875) prot: adc read[0m
+[0;32mI (57925) prot: adc read[0m
+[0;32mI (57975) prot: adc read[0m
+[0;32mI (57975) prot: display out + 0[0m
+[0;32mI (58025) prot: adc read[0m
+[0;32mI (58075) prot: adc read[0m
+[0;32mI (58125) prot: adc read[0m
+[0;32mI (58175) prot: adc read[0m
+[0;32mI (58225) prot: adc read[0m
+[0;32mI (58275) prot: adc read[0m
+[0;32mI (58325) prot: adc read[0m
+[0;32mI (58325) prot: display out + 0[0m
+[0;32mI (58375) prot: adc read[0m
+[0;32mI (58425) prot: adc read[0m
+[0;32mI (58475) prot: adc read[0m
+[0;32mI (58525) prot: adc read[0m
+[0;32mI (58575) prot: adc read[0m
+[0;32mI (58625) prot: adc read[0m
+[0;32mI (58675) prot: adc read[0m
+[0;32mI (58675) prot: display out + 0[0m
+[0;32mI (58725) prot: adc read[0m
+[0;32mI (58775) prot: adc read[0m
+[0;32mI (58825) prot: adc read[0m
+[0;32mI (58875) prot: adc read[0m
+[0;32mI (58925) prot: adc read[0m
+[0;32mI (58975) prot: adc read[0m
+[0;32mI (59025) prot: adc read[0m
+[0;32mI (59025) prot: display out + 0[0m
+[0;32mI (59075) prot: adc read[0m
+[0;32mI (59125) prot: adc read[0m
+[0;32mI (59175) prot: adc read[0m
+[0;32mI (59225) prot: adc read[0m
+[0;32mI (59275) prot: adc read[0m
+[0;32mI (59325) prot: adc read[0m
+[0;32mI (59375) prot: adc read[0m
+[0;32mI (59375) prot: display out + 0[0m
+[0;32mI (59425) prot: adc read[0m
+[0;32mI (59475) prot: adc read[0m
+[0;32mI (59525) prot: adc read[0m
+[0;32mI (59575) prot: adc read[0m
+[0;32mI (59625) prot: adc read[0m
+[0;32mI (59675) prot: adc read[0m
+[0;32mI (59725) prot: adc read[0m
+[0;32mI (59725) prot: display out + 0[0m
+[0;32mI (59775) prot: adc read[0m
+[0;32mI (59825) prot: adc read[0m
+[0;32mI (59875) prot: adc read[0m
+[0;32mI (59925) prot: adc read[0m
+[0;32mI (59975) prot: adc read[0m
+[0;32mI (60025) prot: adc read[0m
+[0;32mI (60075) prot: adc read[0m
+[0;32mI (60075) prot: display out + 0[0m
+[0;32mI (60125) prot: adc read[0m
+[0;32mI (60175) prot: adc read[0m
+[0;32mI (60225) prot: adc read[0m
+[0;32mI (60275) prot: adc read[0m
+[0;32mI (60325) prot: adc read[0m
+[0;32mI (60375) prot: adc read[0m
+[0;32mI (60425) prot: adc read[0m
+[0;32mI (60425) prot: display out + 0[0m
+[0;32mI (60475) prot: adc read[0m
+[0;32mI (60525) prot: adc read[0m
+[0;32mI (60575) prot: adc read[0m
+[0;32mI (60625) prot: adc read[0m
+[0;32mI (60675) prot: adc read[0m
+[0;32mI (60725) prot: adc read[0m
+[0;32mI (60775) prot: adc read[0m
+[0;32mI (60775) prot: display out + 0[0m
+[0;32mI (60825) prot: adc read[0m
+[0;32mI (60875) prot: adc read[0m
+[0;32mI (60925) prot: adc read[0m
+[0;32mI (60975) prot: adc read[0m
+[0;32mI (61025) prot: adc read[0m
+[0;32mI (61075) prot: adc read[0m
+[0;32mI (61125) prot: adc read[0m
+[0;32mI (61125) prot: display out + 0[0m
+[0;32mI (61175) prot: adc read[0m
+[0;32mI (61225) prot: adc read[0m
+[0;32mI (61275) prot: adc read[0m
+[0;32mI (61325) prot: adc read[0m
+[0;32mI (61375) prot: adc read[0m
+[0;32mI (61425) prot: adc read[0m
+[0;32mI (61475) prot: adc read[0m
+[0;32mI (61475) prot: display out + 0[0m
+[0;32mI (61525) prot: adc read[0m
+[0;32mI (61575) prot: adc read[0m
+[0;32mI (61625) prot: adc read[0m
+[0;32mI (61675) prot: adc read[0m
+[0;32mI (61725) prot: adc read[0m
+[0;32mI (61775) prot: adc read[0m
+[0;32mI (61825) prot: adc read[0m
+[0;32mI (61825) prot: display out + 0[0m
+[0;32mI (61875) prot: adc read[0m
+[0;32mI (61925) prot: adc read[0m
+[0;32mI (61975) prot: adc read[0m
+[0;32mI (62025) prot: adc read[0m
+[0;32mI (62075) prot: adc read[0m
+[0;32mI (62125) prot: adc read[0m
+[0;32mI (62175) prot: adc read[0m
+[0;32mI (62175) prot: display out + 0[0m
+[0;32mI (62225) prot: adc read[0m
+[0;32mI (62275) prot: adc read[0m
+[0;32mI (62325) prot: adc read[0m
+[0;32mI (62375) prot: adc read[0m
+[0;32mI (62425) prot: adc read[0m
+[0;32mI (62475) prot: adc read[0m
+[0;32mI (62525) prot: adc read[0m
+[0;32mI (62525) prot: display out + 0[0m
+[0;32mI (62575) prot: adc read[0m
+[0;32mI (62625) prot: adc read[0m
+[0;32mI (62675) prot: adc read[0m
+[0;32mI (62725) prot: adc read[0m
+[0;32mI (62775) prot: adc read[0m
+[0;32mI (62825) prot: adc read[0m
+[0;32mI (62875) prot: adc read[0m
+[0;32mI (62875) prot: display out + 0[0m
+[0;32mI (62925) prot: adc read[0m
+[0;32mI (62975) prot: adc read[0m
+[0;32mI (63025) prot: adc read[0m
+[0;32mI (63075) prot: adc read[0m
+[0;32mI (63125) prot: adc read[0m
+[0;32mI (63175) prot: adc read[0m
+[0;32mI (63225) prot: adc read[0m
+[0;32mI (63225) prot: display out + 0[0m
+[0;32mI (63275) prot: adc read[0m
+[0;32mI (63325) prot: adc read[0m
+[0;32mI (63375) prot: adc read[0m
+[0;32mI (63425) prot: adc read[0m
+[0;32mI (63475) prot: adc read[0m
+[0;32mI (63525) prot: adc read[0m
+[0;32mI (63575) prot: adc read[0m
+[0;32mI (63575) prot: display out + 0[0m
+[0;32mI (63625) prot: adc read[0m
+[0;32mI (63675) prot: adc read[0m
+[0;32mI (63725) prot: adc read[0m
+[0;32mI (63775) prot: adc read[0m
+[0;32mI (63825) prot: adc read[0m
+[0;32mI (63875) prot: adc read[0m
+[0;32mI (63925) prot: adc read[0m
+[0;32mI (63925) prot: display out + 0[0m
+[0;32mI (63975) prot: adc read[0m
+[0;32mI (64025) prot: adc read[0m
+[0;32mI (64075) prot: adc read[0m
+[0;32mI (64125) prot: adc read[0m
+[0;32mI (64175) prot: adc read[0m
+[0;32mI (64225) prot: adc read[0m
+[0;32mI (64275) prot: adc read[0m
+[0;32mI (64275) prot: display out + 0[0m
+[0;32mI (64325) prot: adc read[0m
+[0;32mI (64375) prot: adc read[0m
+[0;32mI (64425) prot: adc read[0m
+[0;32mI (64475) prot: adc read[0m
+[0;32mI (64525) prot: adc read[0m
+[0;32mI (64575) prot: adc read[0m
+[0;32mI (64625) prot: adc read[0m
+[0;32mI (64625) prot: display out + 0[0m
+[0;32mI (64675) prot: adc read[0m
+[0;32mI (64725) prot: adc read[0m
+[0;32mI (64775) prot: adc read[0m
+[0;32mI (64825) prot: adc read[0m
+[0;32mI (64875) prot: adc read[0m
+[0;32mI (64925) prot: adc read[0m
+[0;32mI (64975) prot: adc read[0m
+[0;32mI (64975) prot: display out + 0[0m
+[0;32mI (65025) prot: adc read[0m
+[0;32mI (65075) prot: adc read[0m
+[0;32mI (65125) prot: adc read[0m
+[0;32mI (65175) prot: adc read[0m
+[0;32mI (65225) prot: adc read[0m
+[0;32mI (65275) prot: adc read[0m
+[0;32mI (65325) prot: adc read[0m
+[0;32mI (65325) prot: display out + 0[0m
+[0;32mI (65375) prot: adc read[0m
+[0;32mI (65425) prot: adc read[0m
+[0;32mI (65475) prot: adc read[0m
+[0;32mI (65525) prot: adc read[0m
+[0;32mI (65575) prot: adc read[0m
+[0;32mI (65625) prot: adc read[0m
+[0;32mI (65675) prot: adc read[0m
+[0;32mI (65675) prot: display out + 0[0m
+[0;32mI (65725) prot: adc read[0m
+[0;32mI (65775) prot: adc read[0m
+[0;32mI (65825) prot: adc read[0m
+[0;32mI (65875) prot: adc read[0m
+[0;32mI (65925) prot: adc read[0m
+[0;32mI (65975) prot: adc read[0m
+[0;32mI (66025) prot: adc read[0m
+[0;32mI (66025) prot: display out + 0[0m
+[0;32mI (66075) prot: adc read[0m
+[0;32mI (66125) prot: adc read[0m
+[0;32mI (66175) prot: adc read[0m
+[0;32mI (66225) prot: adc read[0m
+[0;32mI (66275) prot: adc read[0m
+[0;32mI (66325) prot: adc read[0m
+[0;32mI (66375) prot: adc read[0m
+[0;32mI (66375) prot: display out + 0[0m
+[0;32mI (66425) prot: adc read[0m
+[0;32mI (66475) prot: adc read[0m
+[0;32mI (66525) prot: adc read[0m
+[0;32mI (66575) prot: adc read[0m
+[0;32mI (66625) prot: adc read[0m
+[0;32mI (66675) prot: adc read[0m
+[0;32mI (66725) prot: adc read[0m
+[0;32mI (66725) prot: display out + 0[0m
+[0;32mI (66775) prot: adc read[0m
+[0;32mI (66825) prot: adc read[0m
+[0;32mI (66875) prot: adc read[0m
+[0;32mI (66925) prot: adc read[0m
+[0;32mI (66975) prot: adc read[0m
+[0;32mI (67025) prot: adc read[0m
+[0;32mI (67075) prot: adc read[0m
+[0;32mI (67075) prot: display out + 0[0m
+[0;32mI (67125) prot: adc read[0m
+[0;32mI (67175) prot: adc read[0m
+[0;32mI (67225) prot: adc read[0m
+[0;32mI (67275) prot: adc read[0m
+[0;32mI (67325) prot: adc read[0m
+[0;32mI (67375) prot: adc read[0m
+[0;32mI (67425) prot: adc read[0m
+[0;32mI (67425) prot: display out + 0[0m
+[0;32mI (67475) prot: adc read[0m
+[0;32mI (67525) prot: adc read[0m
+[0;32mI (67575) prot: adc read[0m
+[0;32mI (67625) prot: adc read[0m
+[0;32mI (67675) prot: adc read[0m
+[0;32mI (67725) prot: adc read[0m
+[0;32mI (67775) prot: adc read[0m
+[0;32mI (67775) prot: display out + 0[0m
+[0;32mI (67825) prot: adc read[0m
+[0;32mI (67875) prot: adc read[0m
+[0;32mI (67925) prot: adc read[0m
+[0;32mI (67975) prot: adc read[0m
+[0;32mI (68025) prot: adc read[0m
+[0;32mI (68075) prot: adc read[0m
+[0;32mI (68125) prot: adc read[0m
+[0;32mI (68125) prot: display out + 0[0m
+[0;32mI (68175) prot: adc read[0m
+[0;32mI (68225) prot: adc read[0m
+[0;32mI (68275) prot: adc read[0m
+[0;32mI (68325) prot: adc read[0m
+[0;32mI (68375) prot: adc read[0m
+[0;32mI (68425) prot: adc read[0m
+[0;32mI (68475) prot: adc read[0m
+[0;32mI (68475) prot: display out + 0[0m
+[0;32mI (68525) prot: adc read[0m
+[0;32mI (68575) prot: adc read[0m
+[0;32mI (68625) prot: adc read[0m
+[0;32mI (68675) prot: adc read[0m
+[0;32mI (68725) prot: adc read[0m
+[0;32mI (68775) prot: adc read[0m
+[0;32mI (68825) prot: adc read[0m
+[0;32mI (68825) prot: display out + 0[0m
+[0;32mI (68875) prot: adc read[0m
+[0;32mI (68925) prot: adc read[0m
+[0;32mI (68975) prot: adc read[0m
+[0;32mI (69025) prot: adc read[0m
+[0;32mI (69075) prot: adc read[0m
+[0;32mI (69125) prot: adc read[0m
+[0;32mI (69175) prot: adc read[0m
+[0;32mI (69175) prot: display out + 0[0m
+[0;32mI (69225) prot: adc read[0m
+[0;32mI (69275) prot: adc read[0m
+[0;32mI (69325) prot: adc read[0m
+[0;32mI (69375) prot: adc read[0m
+[0;32mI (69425) prot: adc read[0m
+[0;32mI (69475) prot: adc read[0m
+[0;32mI (69525) prot: adc read[0m
+[0;32mI (69525) prot: display out + 0[0m
+[0;32mI (69575) prot: adc read[0m
+[0;32mI (69625) prot: adc read[0m
+[0;32mI (69675) prot: adc read[0m
+[0;32mI (69725) prot: adc read[0m
+[0;32mI (69775) prot: adc read[0m
+[0;32mI (69825) prot: adc read[0m
+[0;32mI (69875) prot: adc read[0m
+[0;32mI (69875) prot: display out + 0[0m
+[0;32mI (69925) prot: adc read[0m
+[0;32mI (69975) prot: adc read[0m
+[0;32mI (70025) prot: adc read[0m
+[0;32mI (70075) prot: adc read[0m
+[0;32mI (70125) prot: adc read[0m
+[0;32mI (70175) prot: adc read[0m
+[0;32mI (70225) prot: adc read[0m
+[0;32mI (70225) prot: display out + 0[0m
+[0;32mI (70275) prot: adc read[0m
+[0;32mI (70325) prot: adc read[0m
+[0;32mI (70375) prot: adc read[0m
+[0;32mI (70425) prot: adc read[0m
+[0;32mI (70475) prot: adc read[0m
+[0;32mI (70525) prot: adc read[0m
+[0;32mI (70575) prot: adc read[0m
+[0;32mI (70575) prot: display out + 0[0m
+[0;32mI (70625) prot: adc read[0m
+[0;32mI (70675) prot: adc read[0m
+[0;32mI (70725) prot: adc read[0m
+[0;32mI (70775) prot: adc read[0m
+[0;32mI (70825) prot: adc read[0m
+[0;32mI (70875) prot: adc read[0m
+[0;32mI (70925) prot: adc read[0m
+[0;32mI (70925) prot: display out + 0[0m
+[0;32mI (70975) prot: adc read[0m
+[0;32mI (71025) prot: adc read[0m
+[0;32mI (71075) prot: adc read[0m
+[0;32mI (71125) prot: adc read[0m
+[0;32mI (71175) prot: adc read[0m
+[0;32mI (71225) prot: adc read[0m
+[0;32mI (71275) prot: adc read[0m
+[0;32mI (71275) prot: display out + 0[0m
+[0;32mI (71325) prot: adc read[0m
+[0;32mI (71375) prot: adc read[0m
+[0;32mI (71425) prot: adc read[0m
+[0;32mI (71475) prot: adc read[0m
+[0;32mI (71525) prot: adc read[0m
+[0;32mI (71575) prot: adc read[0m
+[0;32mI (71625) prot: adc read[0m
+[0;32mI (71625) prot: display out + 0[0m
+[0;32mI (71675) prot: adc read[0m
+[0;32mI (71725) prot: adc read[0m
+[0;32mI (71775) prot: adc read[0m
+[0;32mI (71825) prot: adc read[0m
+[0;32mI (71875) prot: adc read[0m
+[0;32mI (71925) prot: adc read[0m
+[0;32mI (71975) prot: adc read[0m
+[0;32mI (71975) prot: display out + 0[0m
+[0;32mI (72025) prot: adc read[0m
+[0;32mI (72075) prot: adc read[0m
+[0;32mI (72125) prot: adc read[0m
+[0;32mI (72175) prot: adc read[0m
+[0;32mI (72225) prot: adc read[0m
+[0;32mI (72275) prot: adc read[0m
+[0;32mI (72325) prot: adc read[0m
+[0;32mI (72325) prot: display out + 0[0m
+[0;32mI (72375) prot: adc read[0m
+[0;32mI (72425) prot: adc read[0m
+[0;32mI (72475) prot: adc read[0m
+[0;32mI (72525) prot: adc read[0m
+[0;32mI (72575) prot: adc read[0m
+[0;32mI (72625) prot: adc read[0m
+[0;32mI (72675) prot: adc read[0m
+[0;32mI (72675) prot: display out + 0[0m
+[0;32mI (72725) prot: adc read[0m
+[0;32mI (72775) prot: adc read[0m
+[0;32mI (72825) prot: adc read[0m
+[0;32mI (72875) prot: adc read[0m
+[0;32mI (72925) prot: adc read[0m
+[0;32mI (72975) prot: adc read[0m
+[0;32mI (73025) prot: adc read[0m
+[0;32mI (73025) prot: display out + 0[0m
+[0;32mI (73075) prot: adc read[0m
+[0;32mI (73125) prot: adc read[0m
+[0;32mI (73175) prot: adc read[0m
+[0;32mI (73225) prot: adc read[0m
+[0;32mI (73275) prot: adc read[0m
+[0;32mI (73325) prot: adc read[0m
+[0;32mI (73375) prot: adc read[0m
+[0;32mI (73375) prot: display out + 0[0m
+[0;32mI (73425) prot: adc read[0m
+[0;32mI (73475) prot: adc read[0m
+[0;32mI (73525) prot: adc read[0m
+[0;32mI (73575) prot: adc read[0m
+[0;32mI (73625) prot: adc read[0m
+[0;32mI (73675) prot: adc read[0m
+[0;32mI (73725) prot: adc read[0m
+[0;32mI (73725) prot: display out + 0[0m
+[0;32mI (73775) prot: adc read[0m
+[0;32mI (73825) prot: adc read[0m
+[0;32mI (73875) prot: adc read[0m
+[0;32mI (73925) prot: adc read[0m
+[0;32mI (73975) prot: adc read[0m
+[0;32mI (74025) prot: adc read[0m
+[0;32mI (74075) prot: adc read[0m
+[0;32mI (74075) prot: display out + 0[0m
+[0;32mI (74125) prot: adc read[0m
+[0;32mI (74175) prot: adc read[0m
+[0;32mI (74225) prot: adc read[0m
+[0;32mI (74275) prot: adc read[0m
+[0;32mI (74325) prot: adc read[0m
+[0;32mI (74375) prot: adc read[0m
+[0;32mI (74425) prot: adc read[0m
+[0;32mI (74425) prot: display out + 0[0m
+[0;32mI (74475) prot: adc read[0m
+[0;32mI (74525) prot: adc read[0m
+[0;32mI (74575) prot: adc read[0m
+[0;32mI (74625) prot: adc read[0m
+[0;32mI (74675) prot: adc read[0m
+[0;32mI (74725) prot: adc read[0m
+[0;32mI (74775) prot: adc read[0m
+[0;32mI (74775) prot: display out + 0[0m
+[0;32mI (74825) prot: adc read[0m
+[0;32mI (74875) prot: adc read[0m
+[0;32mI (74925) prot: adc read[0m
+[0;32mI (74975) prot: adc read[0m
+[0;32mI (75025) prot: adc read[0m
+[0;32mI (75075) prot: adc read[0m
+[0;32mI (75125) prot: adc read[0m
+[0;32mI (75125) prot: display out + 0[0m
+[0;32mI (75175) prot: adc read[0m
+[0;32mI (75225) prot: adc read[0m
+[0;32mI (75275) prot: adc read[0m
+[0;32mI (75325) prot: adc read[0m
+[0;32mI (75375) prot: adc read[0m
+[0;32mI (75425) prot: adc read[0m
+[0;32mI (75475) prot: adc read[0m
+[0;32mI (75475) prot: display out + 0[0m
+[0;32mI (75525) prot: adc read[0m
+[0;32mI (75575) prot: adc read[0m
+[0;32mI (75625) prot: adc read[0m
+[0;32mI (75675) prot: adc read[0m
+[0;32mI (75725) prot: adc read[0m
+[0;32mI (75775) prot: adc read[0m
+[0;32mI (75825) prot: adc read[0m
+[0;32mI (75825) prot: display out + 0[0m
+[0;32mI (75875) prot: adc read[0m
+[0;32mI (75925) prot: adc read[0m
+[0;32mI (75975) prot: adc read[0m
+[0;32mI (76025) prot: adc read[0m
+[0;32mI (76075) prot: adc read[0m
+[0;32mI (76125) prot: adc read[0m
+[0;32mI (76175) prot: adc read[0m
+[0;32mI (76175) prot: display out + 0[0m
+[0;32mI (76225) prot: adc read[0m
+[0;32mI (76275) prot: adc read[0m
+[0;32mI (76325) prot: adc read[0m
+[0;32mI (76375) prot: adc read[0m
+[0;32mI (76425) prot: adc read[0m
+[0;32mI (76475) prot: adc read[0m
+[0;32mI (76525) prot: adc read[0m
+[0;32mI (76525) prot: display out + 0[0m
+[0;32mI (76575) prot: adc read[0m
+[0;32mI (76625) prot: adc read[0m
+[0;32mI (76675) prot: adc read[0m
+[0;32mI (76725) prot: adc read[0m
+[0;32mI (76775) prot: adc read[0m
+[0;32mI (76825) prot: adc read[0m
+[0;32mI (76875) prot: adc read[0m
+[0;32mI (76875) prot: display out + 0[0m
+[0;32mI (76925) prot: adc read[0m
+[0;32mI (76975) prot: adc read[0m
+[0;32mI (77025) prot: adc read[0m
+[0;32mI (77075) prot: adc read[0m
+[0;32mI (77125) prot: adc read[0m
+[0;32mI (77175) prot: adc read[0m
+[0;32mI (77225) prot: adc read[0m
+[0;32mI (77225) prot: display out + 0[0m
+[0;32mI (77275) prot: adc read[0m
+[0;32mI (77325) prot: adc read[0m
+[0;32mI (77375) prot: adc read[0m
+[0;32mI (77425) prot: adc read[0m
+[0;32mI (77475) prot: adc read[0m
+[0;32mI (77525) prot: adc read[0m
+[0;32mI (77575) prot: adc read[0m
+[0;32mI (77575) prot: display out + 0[0m
+[0;32mI (77625) prot: adc read[0m
+[0;32mI (77675) prot: adc read[0m
+[0;32mI (77725) prot: adc read[0m
+[0;32mI (77775) prot: adc read[0m
+[0;32mI (77825) prot: adc read[0m
+[0;32mI (77875) prot: adc read[0m
+[0;32mI (77925) prot: adc read[0m
+[0;32mI (77925) prot: display out + 0[0m
+[0;32mI (77975) prot: adc read[0m
+[0;32mI (78025) prot: adc read[0m
+[0;32mI (78075) prot: adc read[0m
+[0;32mI (78125) prot: adc read[0m
+[0;32mI (78175) prot: adc read[0m
+[0;32mI (78225) prot: adc read[0m
+[0;32mI (78275) prot: adc read[0m
+[0;32mI (78275) prot: display out + 0[0m
+[0;32mI (78325) prot: adc read[0m
+[0;32mI (78375) prot: adc read[0m
+[0;32mI (78425) prot: adc read[0m
+[0;32mI (78475) prot: adc read[0m
+[0;32mI (78525) prot: adc read[0m
+[0;32mI (78575) prot: adc read[0m
+[0;32mI (78625) prot: adc read[0m
+[0;32mI (78625) prot: display out + 0[0m
+[0;32mI (78675) prot: adc read[0m
+[0;32mI (78725) prot: adc read[0m
+[0;32mI (78775) prot: adc read[0m
+[0;32mI (78825) prot: adc read[0m
+[0;32mI (78875) prot: adc read[0m
+[0;32mI (78925) prot: adc read[0m
+[0;32mI (78975) prot: adc read[0m
+[0;32mI (78975) prot: display out + 0[0m
+[0;32mI (79025) prot: adc read[0m
+[0;32mI (79075) prot: adc read[0m
+[0;32mI (79125) prot: adc read[0m
+[0;32mI (79175) prot: adc read[0m
+[0;32mI (79225) prot: adc read[0m
+[0;32mI (79275) prot: adc read[0m
+[0;32mI (79325) prot: adc read[0m
+[0;32mI (79325) prot: display out + 0[0m
+[0;32mI (79375) prot: adc read[0m
+[0;32mI (79425) prot: adc read[0m
+[0;32mI (79475) prot: adc read[0m
+[0;32mI (79525) prot: adc read[0m
+[0;32mI (79575) prot: adc read[0m
+[0;32mI (79625) prot: adc read[0m
+[0;32mI (79675) prot: adc read[0m
+[0;32mI (79675) prot: display out + 0[0m
+[0;32mI (79725) prot: adc read[0m
+[0;32mI (79775) prot: adc read[0m
+[0;32mI (79825) prot: adc read[0m
+[0;32mI (79875) prot: adc read[0m
+[0;32mI (79925) prot: adc read[0m
+[0;32mI (79975) prot: adc read[0m
+[0;32mI (80025) prot: adc read[0m
+[0;32mI (80025) prot: display out + 0[0m
+[0;32mI (80075) prot: adc read[0m
+[0;32mI (80125) prot: adc read[0m
+[0;32mI (80175) prot: adc read[0m
+[0;32mI (80225) prot: adc read[0m
+[0;32mI (80275) prot: adc read[0m
+[0;32mI (80325) prot: adc read[0m
+[0;32mI (80375) prot: adc read[0m
+[0;32mI (80375) prot: display out + 0[0m
+[0;32mI (80425) prot: adc read[0m
+[0;32mI (80475) prot: adc read[0m
+[0;32mI (80525) prot: adc read[0m
+[0;32mI (80575) prot: adc read[0m
+[0;32mI (80625) prot: adc read[0m
+[0;32mI (80675) prot: adc read[0m
+[0;32mI (80725) prot: adc read[0m
+[0;32mI (80725) prot: display out + 0[0m
+[0;32mI (80775) prot: adc read[0m
+[0;32mI (80825) prot: adc read[0m
+[0;32mI (80875) prot: adc read[0m
+[0;32mI (80925) prot: adc read[0m
+[0;32mI (80975) prot: adc read[0m
+[0;32mI (81025) prot: adc read[0m
+[0;32mI (81075) prot: adc read[0m
+[0;32mI (81075) prot: display out + 0[0m
+[0;32mI (81125) prot: adc read[0m
+[0;32mI (81175) prot: adc read[0m
+[0;32mI (81225) prot: adc read[0m
+[0;32mI (81275) prot: adc read[0m
+[0;32mI (81325) prot: adc read[0m
+[0;32mI (81375) prot: adc read[0m
+[0;32mI (81425) prot: adc read[0m
+[0;32mI (81425) prot: display out + 0[0m
+[0;32mI (81475) prot: adc read[0m
+[0;32mI (81525) prot: adc read[0m
+[0;32mI (81575) prot: adc read[0m
+[0;32mI (81625) prot: adc read[0m
+[0;32mI (81675) prot: adc read[0m
+[0;32mI (81725) prot: adc read[0m
+[0;32mI (81775) prot: adc read[0m
+[0;32mI (81775) prot: display out + 0[0m
+[0;32mI (81825) prot: adc read[0m
+[0;32mI (81875) prot: adc read[0m
+[0;32mI (81925) prot: adc read[0m
+[0;32mI (81975) prot: adc read[0m
+[0;32mI (82025) prot: adc read[0m
+[0;32mI (82075) prot: adc read[0m
+[0;32mI (82125) prot: adc read[0m
+[0;32mI (82125) prot: display out + 0[0m
+[0;32mI (82175) prot: adc read[0m
+[0;32mI (82225) prot: adc read[0m
+[0;32mI (82275) prot: adc read[0m
+[0;32mI (82325) prot: adc read[0m
+[0;32mI (82375) prot: adc read[0m
+[0;32mI (82425) prot: adc read[0m
+[0;32mI (82475) prot: adc read[0m
+[0;32mI (82475) prot: display out + 0[0m
+[0;32mI (82525) prot: adc read[0m
+[0;32mI (82575) prot: adc read[0m
+[0;32mI (82625) prot: adc read[0m
+[0;32mI (82675) prot: adc read[0m
+[0;32mI (82725) prot: adc read[0m
+[0;32mI (82775) prot: adc read[0m
+[0;32mI (82825) prot: adc read[0m
+[0;32mI (82825) prot: display out + 0[0m
+[0;32mI (82875) prot: adc read[0m
+[0;32mI (82925) prot: adc read[0m
+[0;32mI (82975) prot: adc read[0m
+[0;32mI (83025) prot: adc read[0m
+[0;32mI (83075) prot: adc read[0m
+[0;32mI (83125) prot: adc read[0m
+[0;32mI (83175) prot: adc read[0m
+[0;32mI (83175) prot: display out + 0[0m
+[0;32mI (83225) prot: adc read[0m
+[0;32mI (83275) prot: adc read[0m
+[0;32mI (83325) prot: adc read[0m
+[0;32mI (83375) prot: adc read[0m
+[0;32mI (83425) prot: adc read[0m
+[0;32mI (83475) prot: adc read[0m
+[0;32mI (83525) prot: adc read[0m
+[0;32mI (83525) prot: display out + 0[0m
+[0;32mI (83575) prot: adc read[0m
+[0;32mI (83625) prot: adc read[0m
+[0;32mI (83675) prot: adc read[0m
+[0;32mI (83725) prot: adc read[0m
+[0;32mI (83775) prot: adc read[0m
+[0;32mI (83825) prot: adc read[0m
+[0;32mI (83875) prot: adc read[0m
+[0;32mI (83875) prot: display out + 0[0m
+[0;32mI (83925) prot: adc read[0m
+[0;32mI (83975) prot: adc read[0m
+[0;32mI (84025) prot: adc read[0m
+[0;32mI (84075) prot: adc read[0m
+[0;32mI (84125) prot: adc read[0m
+[0;32mI (84175) prot: adc read[0m
+[0;32mI (84225) prot: adc read[0m
+[0;32mI (84225) prot: display out + 0[0m
+[0;32mI (84275) prot: adc read[0m
+[0;32mI (84325) prot: adc read[0m
+[0;32mI (84375) prot: adc read[0m
+[0;32mI (84425) prot: adc read[0m
+[0;32mI (84475) prot: adc read[0m
+[0;32mI (84525) prot: adc read[0m
+[0;32mI (84575) prot: adc read[0m
+[0;32mI (84575) prot: display out + 0[0m
+[0;32mI (84625) prot: adc read[0m
+[0;32mI (84675) prot: adc read[0m
+[0;32mI (84725) prot: adc read[0m
+[0;32mI (84775) prot: adc read[0m
+[0;32mI (84825) prot: adc read[0m
+[0;32mI (84875) prot: adc read[0m
+[0;32mI (84925) prot: adc read[0m
+[0;32mI (84925) prot: display out + 0[0m
+[0;32mI (84975) prot: adc read[0m
+[0;32mI (85025) prot: adc read[0m
+[0;32mI (85075) prot: adc read[0m
+[0;32mI (85125) prot: adc read[0m
+[0;32mI (85175) prot: adc read[0m
+[0;32mI (85225) prot: adc read[0m
+[0;32mI (85275) prot: adc read[0m
+[0;32mI (85275) prot: display out + 0[0m
+[0;32mI (85325) prot: adc read[0m
+[0;32mI (85375) prot: adc read[0m
+[0;32mI (85425) prot: adc read[0m
+[0;32mI (85475) prot: adc read[0m
+[0;32mI (85525) prot: adc read[0m
+[0;32mI (85575) prot: adc read[0m
+[0;32mI (85625) prot: adc read[0m
+[0;32mI (85625) prot: display out + 0[0m
+[0;32mI (85675) prot: adc read[0m
+[0;32mI (85725) prot: adc read[0m
+[0;32mI (85775) prot: adc read[0m
+[0;32mI (85825) prot: adc read[0m
+[0;32mI (85875) prot: adc read[0m
+[0;32mI (85925) prot: adc read[0m
+[0;32mI (85975) prot: adc read[0m
+[0;32mI (85975) prot: display out + 0[0m
+[0;32mI (86025) prot: adc read[0m
+[0;32mI (86075) prot: adc read[0m
+[0;32mI (86125) prot: adc read[0m
+[0;32mI (86175) prot: adc read[0m
+[0;32mI (86225) prot: adc read[0m
+[0;32mI (86275) prot: adc read[0m
+[0;32mI (86325) prot: adc read[0m
+[0;32mI (86325) prot: display out + 0[0m
+[0;32mI (86375) prot: adc read[0m
+[0;32mI (86425) prot: adc read[0m
+[0;32mI (86475) prot: adc read[0m
+[0;32mI (86525) prot: adc read[0m
+[0;32mI (86575) prot: adc read[0m
+[0;32mI (86625) prot: adc read[0m
+[0;32mI (86675) prot: adc read[0m
+[0;32mI (86675) prot: display out + 0[0m
+[0;32mI (86725) prot: adc read[0m
+[0;32mI (86775) prot: adc read[0m
+[0;32mI (86825) prot: adc read[0m
+[0;32mI (86875) prot: adc read[0m
+[0;32mI (86925) prot: adc read[0m
+[0;32mI (86975) prot: adc read[0m
+[0;32mI (87025) prot: adc read[0m
+[0;32mI (87025) prot: display out + 0[0m
+[0;32mI (87075) prot: adc read[0m
+[0;32mI (87125) prot: adc read[0m
+[0;32mI (87175) prot: adc read[0m
+[0;32mI (87225) prot: adc read[0m
+[0;32mI (87275) prot: adc read[0m
+[0;32mI (87325) prot: adc read[0m
+[0;32mI (87375) prot: adc read[0m
+[0;32mI (87375) prot: display out + 0[0m
+[0;32mI (87425) prot: adc read[0m
+[0;32mI (87475) prot: adc read[0m
+[0;32mI (87525) prot: adc read[0m
+[0;32mI (87575) prot: adc read[0m
+[0;32mI (87625) prot: adc read[0m
+[0;32mI (87675) prot: adc read[0m
+[0;32mI (87725) prot: adc read[0m
+[0;32mI (87725) prot: display out + 0[0m
+[0;32mI (87775) prot: adc read[0m
+[0;32mI (87825) prot: adc read[0m
+[0;32mI (87875) prot: adc read[0m
+[0;32mI (87925) prot: adc read[0m
+[0;32mI (87975) prot: adc read[0m
+[0;32mI (88025) prot: adc read[0m
+[0;32mI (88075) prot: adc read[0m
+[0;32mI (88075) prot: display out + 0[0m
+[0;32mI (88125) prot: adc read[0m
+[0;32mI (88175) prot: adc read[0m
+[0;32mI (88225) prot: adc read[0m
+[0;32mI (88275) prot: adc read[0m
+[0;32mI (88325) prot: adc read[0m
+[0;32mI (88375) prot: adc read[0m
+[0;32mI (88425) prot: adc read[0m
+[0;32mI (88425) prot: display out + 0[0m
+[0;32mI (88475) prot: adc read[0m
+[0;32mI (88525) prot: adc read[0m
+[0;32mI (88575) prot: adc read[0m
+[0;32mI (88625) prot: adc read[0m
+[0;32mI (88675) prot: adc read[0m
+[0;32mI (88725) prot: adc read[0m
+[0;32mI (88775) prot: adc read[0m
+[0;32mI (88775) prot: display out + 0[0m
+[0;32mI (88825) prot: adc read[0m
+[0;32mI (88875) prot: adc read[0m
+[0;32mI (88925) prot: adc read[0m
+[0;32mI (88975) prot: adc read[0m
+[0;32mI (89025) prot: adc read[0m
+[0;32mI (89075) prot: adc read[0m
+[0;32mI (89125) prot: adc read[0m
+[0;32mI (89125) prot: display out + 0[0m
+[0;32mI (89175) prot: adc read[0m
+[0;32mI (89225) prot: adc read[0m
+[0;32mI (89275) prot: adc read[0m
+[0;32mI (89325) prot: adc read[0m
+[0;32mI (89375) prot: adc read[0m
+[0;32mI (89425) prot: adc read[0m
+[0;32mI (89475) prot: adc read[0m
+[0;32mI (89475) prot: display out + 0[0m
+[0;32mI (89525) prot: adc read[0m
+[0;32mI (89575) prot: adc read[0m
+[0;32mI (89625) prot: adc read[0m
+[0;32mI (89675) prot: adc read[0m
+[0;32mI (89725) prot: adc read[0m
+[0;32mI (89775) prot: adc read[0m
+[0;32mI (89825) prot: adc read[0m
+[0;32mI (89825) prot: display out + 0[0m
+[0;32mI (89875) prot: adc read[0m
+[0;32mI (89925) prot: adc read[0m
+[0;32mI (89975) prot: adc read[0m
+[0;32mI (90025) prot: adc read[0m
+[0;32mI (90075) prot: adc read[0m
+[0;32mI (90125) prot: adc read[0m
+[0;32mI (90175) prot: adc read[0m
+[0;32mI (90175) prot: display out + 0[0m
+[0;32mI (90225) prot: adc read[0m
+[0;32mI (90275) prot: adc read[0m
+[0;32mI (90325) prot: adc read[0m
+[0;32mI (90375) prot: adc read[0m
+[0;32mI (90425) prot: adc read[0m
+[0;32mI (90475) prot: adc read[0m
+[0;32mI (90525) prot: adc read[0m
+[0;32mI (90525) prot: display out + 0[0m
+[0;32mI (90575) prot: adc read[0m
+[0;32mI (90625) prot: adc read[0m
+[0;32mI (90675) prot: adc read[0m
+[0;32mI (90725) prot: adc read[0m
+[0;32mI (90775) prot: adc read[0m
+[0;32mI (90825) prot: adc read[0m
+[0;32mI (90875) prot: adc read[0m
+[0;32mI (90875) prot: display out + 0[0m
+[0;32mI (90925) prot: adc read[0m
+[0;32mI (90975) prot: adc read[0m
+[0;32mI (91025) prot: adc read[0m
+[0;32mI (91075) prot: adc read[0m
+[0;32mI (91125) prot: adc read[0m
+[0;32mI (91175) prot: adc read[0m
+[0;32mI (91225) prot: adc read[0m
+[0;32mI (91225) prot: display out + 0[0m
+[0;32mI (91275) prot: adc read[0m
+[0;32mI (91325) prot: adc read[0m
+[0;32mI (91375) prot: adc read[0m
+[0;32mI (91425) prot: adc read[0m
+[0;32mI (91475) prot: adc read[0m
+[0;32mI (91525) prot: adc read[0m
+[0;32mI (91575) prot: adc read[0m
+[0;32mI (91575) prot: display out + 0[0m
+[0;32mI (91625) prot: adc read[0m
+[0;32mI (91675) prot: adc read[0m
+[0;32mI (91725) prot: adc read[0m
+[0;32mI (91775) prot: adc read[0m
+[0;32mI (91825) prot: adc read[0m
+[0;32mI (91875) prot: adc read[0m
+[0;32mI (91925) prot: adc read[0m
+[0;32mI (91925) prot: display out + 0[0m
+[0;32mI (91975) prot: adc read[0m
+[0;32mI (92025) prot: adc read[0m
+[0;32mI (92075) prot: adc read[0m
+[0;32mI (92125) prot: adc read[0m
+[0;32mI (92175) prot: adc read[0m
+[0;32mI (92225) prot: adc read[0m
+[0;32mI (92275) prot: adc read[0m
+[0;32mI (92275) prot: display out + 0[0m
+[0;32mI (92325) prot: adc read[0m
+[0;32mI (92375) prot: adc read[0m
+[0;32mI (92425) prot: adc read[0m
+[0;32mI (92475) prot: adc read[0m
+[0;32mI (92525) prot: adc read[0m
+[0;32mI (92575) prot: adc read[0m
+[0;32mI (92625) prot: adc read[0m
+[0;32mI (92625) prot: display out + 0[0m
+[0;32mI (92675) prot: adc read[0m
+[0;32mI (92725) prot: adc read[0m
+[0;32mI (92775) prot: adc read[0m
+[0;32mI (92825) prot: adc read[0m
+[0;32mI (92875) prot: adc read[0m
+[0;32mI (92925) prot: adc read[0m
+[0;32mI (92975) prot: adc read[0m
+[0;32mI (92975) prot: display out + 0[0m
+[0;32mI (93025) prot: adc read[0m
+[0;32mI (93075) prot: adc read[0m
+[0;32mI (93125) prot: adc read[0m
+[0;32mI (93175) prot: adc read[0m
+[0;32mI (93225) prot: adc read[0m
+[0;32mI (93275) prot: adc read[0m
+[0;32mI (93325) prot: adc read[0m
+[0;32mI (93325) prot: display out + 0[0m
+[0;32mI (93375) prot: adc read[0m
+[0;32mI (93425) prot: adc read[0m
+[0;32mI (93475) prot: adc read[0m
+[0;32mI (93525) prot: adc read[0m
+[0;32mI (93575) prot: adc read[0m
+[0;32mI (93625) prot: adc read[0m
+[0;32mI (93675) prot: adc read[0m
+[0;32mI (93675) prot: display out + 0[0m
+[0;32mI (93725) prot: adc read[0m
+[0;32mI (93775) prot: adc read[0m
+[0;32mI (93825) prot: adc read[0m
+[0;32mI (93875) prot: adc read[0m
+[0;32mI (93925) prot: adc read[0m
+[0;32mI (93975) prot: adc read[0m
+[0;32mI (94025) prot: adc read[0m
+[0;32mI (94025) prot: display out + 0[0m
+[0;32mI (94075) prot: adc read[0m
+[0;32mI (94125) prot: adc read[0m
+[0;32mI (94175) prot: adc read[0m
+[0;32mI (94225) prot: adc read[0m
+[0;32mI (94275) prot: adc read[0m
+[0;32mI (94325) prot: adc read[0m
+[0;32mI (94375) prot: adc read[0m
+[0;32mI (94375) prot: display out + 0[0m
+[0;32mI (94425) prot: adc read[0m
+[0;32mI (94475) prot: adc read[0m
+[0;32mI (94525) prot: adc read[0m
+[0;32mI (94575) prot: adc read[0m
+[0;32mI (94625) prot: adc read[0m
+[0;32mI (94675) prot: adc read[0m
+[0;32mI (94725) prot: adc read[0m
+[0;32mI (94725) prot: display out + 0[0m
+[0;32mI (94775) prot: adc read[0m
+[0;32mI (94825) prot: adc read[0m
+[0;32mI (94875) prot: adc read[0m
+[0;32mI (94925) prot: adc read[0m
+[0;32mI (94975) prot: adc read[0m
+[0;32mI (95025) prot: adc read[0m
+[0;32mI (95075) prot: adc read[0m
+[0;32mI (95075) prot: display out + 0[0m
+[0;32mI (95125) prot: adc read[0m
+[0;32mI (95175) prot: adc read[0m
+[0;32mI (95225) prot: adc read[0m
+[0;32mI (95275) prot: adc read[0m
+[0;32mI (95325) prot: adc read[0m
+[0;32mI (95375) prot: adc read[0m
+[0;32mI (95425) prot: adc read[0m
+[0;32mI (95425) prot: display out + 0[0m
+[0;32mI (95475) prot: adc read[0m
+[0;32mI (95525) prot: adc read[0m
+[0;32mI (95575) prot: adc read[0m
+[0;32mI (95625) prot: adc read[0m
+[0;32mI (95675) prot: adc read[0m
+[0;32mI (95725) prot: adc read[0m
+[0;32mI (95775) prot: adc read[0m
+[0;32mI (95775) prot: display out + 0[0m
+[0;32mI (95825) prot: adc read[0m
+[0;32mI (95875) prot: adc read[0m
+[0;32mI (95925) prot: adc read[0m
+[0;32mI (95975) prot: adc read[0m
+[0;32mI (96025) prot: adc read[0m
+[0;32mI (96075) prot: adc read[0m
+[0;32mI (96125) prot: adc read[0m
+[0;32mI (96125) prot: display out + 0[0m
+[0;32mI (96175) prot: adc read[0m
+[0;32mI (96225) prot: adc read[0m
+[0;32mI (96275) prot: adc read[0m
+[0;32mI (96325) prot: adc read[0m
+[0;32mI (96375) prot: adc read[0m
+[0;32mI (96425) prot: adc read[0m
+[0;32mI (96475) prot: adc read[0m
+[0;32mI (96475) prot: display out + 0[0m
+[0;32mI (96525) prot: adc read[0m
+[0;32mI (96575) prot: adc read[0m
+[0;32mI (96625) prot: adc read[0m
+[0;32mI (96675) prot: adc read[0m
+[0;32mI (96725) prot: adc read[0m
+[0;32mI (96775) prot: adc read[0m
+[0;32mI (96825) prot: adc read[0m
+[0;32mI (96825) prot: display out + 0[0m
+[0;32mI (96875) prot: adc read[0m
+[0;32mI (96925) prot: adc read[0m
+[0;32mI (96975) prot: adc read[0m
+[0;32mI (97025) prot: adc read[0m
+[0;32mI (97075) prot: adc read[0m
+[0;32mI (97125) prot: adc read[0m
+[0;32mI (97175) prot: adc read[0m
+[0;32mI (97175) prot: display out + 0[0m
+[0;32mI (97225) prot: adc read[0m
+[0;32mI (97275) prot: adc read[0m
+[0;32mI (97325) prot: adc read[0m
+[0;32mI (97375) prot: adc read[0m
+[0;32mI (97425) prot: adc read[0m
+[0;32mI (97475) prot: adc read[0m
+[0;32mI (97525) prot: adc read[0m
+[0;32mI (97525) prot: display out + 0[0m
+[0;32mI (97575) prot: adc read[0m
+[0;32mI (97625) prot: adc read[0m
+[0;32mI (97675) prot: adc read[0m
+[0;32mI (97725) prot: adc read[0m
+[0;32mI (97775) prot: adc read[0m
+[0;32mI (97825) prot: adc read[0m
+[0;32mI (97875) prot: adc read[0m
+[0;32mI (97875) prot: display out + 0[0m
+[0;32mI (97925) prot: adc read[0m
+[0;32mI (97975) prot: adc read[0m
+[0;32mI (98025) prot: adc read[0m
+[0;32mI (98075) prot: adc read[0m
+[0;32mI (98125) prot: adc read[0m
+[0;32mI (98175) prot: adc read[0m
+[0;32mI (98225) prot: adc read[0m
+[0;32mI (98225) prot: display out + 0[0m
+[0;32mI (98275) prot: adc read[0m
+[0;32mI (98325) prot: adc read[0m
+[0;32mI (98375) prot: adc read[0m
+[0;32mI (98425) prot: adc read[0m
+[0;32mI (98475) prot: adc read[0m
+[0;32mI (98525) prot: adc read[0m
+[0;32mI (98575) prot: adc read[0m
+[0;32mI (98575) prot: display out + 0[0m
+[0;32mI (98625) prot: adc read[0m
+[0;32mI (98675) prot: adc read[0m
+[0;32mI (98725) prot: adc read[0m
+[0;32mI (98775) prot: adc read[0m
+[0;32mI (98825) prot: adc read[0m
+[0;32mI (98875) prot: adc read[0m
+[0;32mI (98925) prot: adc read[0m
+[0;32mI (98925) prot: display out + 0[0m
+[0;32mI (98975) prot: adc read[0m
+[0;32mI (99025) prot: adc read[0m
+[0;32mI (99075) prot: adc read[0m
+[0;32mI (99125) prot: adc read[0m
+[0;32mI (99175) prot: adc read[0m
+[0;32mI (99225) prot: adc read[0m
+[0;32mI (99275) prot: adc read[0m
+[0;32mI (99275) prot: display out + 0[0m
+[0;32mI (99325) prot: adc read[0m
+[0;32mI (99375) prot: adc read[0m
+[0;32mI (99425) prot: adc read[0m
+[0;32mI (99475) prot: adc read[0m
+[0;32mI (99525) prot: adc read[0m
+[0;32mI (99575) prot: adc read[0m
+[0;32mI (99625) prot: adc read[0m
+[0;32mI (99625) prot: display out + 0[0m
+[0;32mI (99675) prot: adc read[0m
+[0;32mI (99725) prot: adc read[0m
+[0;32mI (99775) prot: adc read[0m
+[0;32mI (99825) prot: adc read[0m
+[0;32mI (99875) prot: adc read[0m
+[0;32mI (99925) prot: adc read[0m
+[0;32mI (99975) prot: adc read[0m
+[0;32mI (99975) prot: display out + 0[0m
+[0;32mI (100025) prot: adc read[0m
+[0;32mI (100075) prot: adc read[0m
+[0;32mI (100125) prot: adc read[0m
+[0;32mI (100175) prot: adc read[0m
+[0;32mI (100225) prot: adc read[0m
+[0;32mI (100275) prot: adc read[0m
+[0;32mI (100325) prot: adc read[0m
+[0;32mI (100325) prot: display out + 0[0m
+[0;32mI (100375) prot: adc read[0m
+[0;32mI (100425) prot: adc read[0m
+[0;32mI (100475) prot: adc read[0m
+[0;32mI (100525) prot: adc read[0m
+[0;32mI (100575) prot: adc read[0m
+[0;32mI (100625) prot: adc read[0m
+[0;32mI (100675) prot: adc read[0m
+[0;32mI (100675) prot: display out + 0[0m
+[0;32mI (100725) prot: adc read[0m
+[0;32mI (100775) prot: adc read[0m
+[0;32mI (100825) prot: adc read[0m
+[0;32mI (100875) prot: adc read[0m
+[0;32mI (100925) prot: adc read[0m
+[0;32mI (100975) prot: adc read[0m
+[0;32mI (101025) prot: adc read[0m
+[0;32mI (101025) prot: display out + 0[0m
+[0;32mI (101075) prot: adc read[0m
+[0;32mI (101125) prot: adc read[0m
+[0;32mI (101175) prot: adc read[0m
+[0;32mI (101225) prot: adc read[0m
+[0;32mI (101275) prot: adc read[0m
+[0;32mI (101325) prot: adc read[0m
+[0;32mI (101375) prot: adc read[0m
+[0;32mI (101375) prot: display out + 0[0m
+[0;32mI (101425) prot: adc read[0m
+[0;32mI (101475) prot: adc read[0m
+[0;32mI (101525) prot: adc read[0m
+[0;32mI (101575) prot: adc read[0m
+[0;32mI (101625) prot: adc read[0m
+[0;32mI (101675) prot: adc read[0m
+[0;32mI (101725) prot: adc read[0m
+[0;32mI (101725) prot: display out + 0[0m
+[0;32mI (101775) prot: adc read[0m
+[0;32mI (101825) prot: adc read[0m
+[0;32mI (101875) prot: adc read[0m
+[0;32mI (101925) prot: adc read[0m
+[0;32mI (101975) prot: adc read[0m
+[0;32mI (102025) prot: adc read[0m
+[0;32mI (102075) prot: adc read[0m
+[0;32mI (102075) prot: display out + 0[0m
+[0;32mI (102125) prot: adc read[0m
+[0;32mI (102175) prot: adc read[0m
+[0;32mI (102225) prot: adc read[0m
+[0;32mI (102275) prot: adc read[0m
+[0;32mI (102325) prot: adc read[0m
+[0;32mI (102375) prot: adc read[0m
+[0;32mI (102425) prot: adc read[0m
+[0;32mI (102425) prot: display out + 0[0m
+[0;32mI (102475) prot: adc read[0m
+[0;32mI (102525) prot: adc read[0m
+[0;32mI (102575) prot: adc read[0m
+[0;32mI (102625) prot: adc read[0m
+[0;32mI (102675) prot: adc read[0m
+[0;32mI (102725) prot: adc read[0m
+[0;32mI (102775) prot: adc read[0m
+[0;32mI (102775) prot: display out + 0[0m
+[0;32mI (102825) prot: adc read[0m
+[0;32mI (102875) prot: adc read[0m
+[0;32mI (102925) prot: adc read[0m
+[0;32mI (102975) prot: adc read[0m
+[0;32mI (103025) prot: adc read[0m
+[0;32mI (103075) prot: adc read[0m
+[0;32mI (103125) prot: adc read[0m
+[0;32mI (103125) prot: display out + 0[0m
+[0;32mI (103175) prot: adc read[0m

@@ -10,18 +10,18 @@ if(NOT EXISTS "/home/suco/esp/esp-idf/components/bootloader/subproject")
   file(MAKE_DIRECTORY "/home/suco/esp/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/home/suco/esp/web-hearth-rate/build/bootloader"
-  "/home/suco/esp/web-hearth-rate/build/bootloader-prefix"
-  "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/tmp"
-  "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp"
-  "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src"
-  "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/suco/sis-embarcados/build/bootloader"
+  "/home/suco/sis-embarcados/build/bootloader-prefix"
+  "/home/suco/sis-embarcados/build/bootloader-prefix/tmp"
+  "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/suco/sis-embarcados/build/bootloader-prefix/src"
+  "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

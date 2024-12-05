@@ -39,10 +39,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/suco/esp/web-hearth-rate/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
-  include("/home/suco/esp/web-hearth-rate/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
-  include("/home/suco/esp/web-hearth-rate/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
-  include("/home/suco/esp/web-hearth-rate/build/esp-idf/mbedtls/mbedtls/pkgconfig/cmake_install.cmake")
+  include("/home/suco/sis-embarcados/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("/home/suco/sis-embarcados/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
+  include("/home/suco/sis-embarcados/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
+  include("/home/suco/sis-embarcados/build/esp-idf/mbedtls/mbedtls/pkgconfig/cmake_install.cmake")
 
 endif()
 

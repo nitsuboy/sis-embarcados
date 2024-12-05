@@ -1,0 +1,420 @@
+[0;32mI (184) esp_image: segment 5: paddr=0003c5b0 vaddr=4008149c size=0cfets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec  4 2024 19:05:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c76ch ( 51052) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001c794 vaddr=3ff80000 size=00004h (     4) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0001c7a0 vaddr=3ffb0000 size=023d4h (  9172) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=0001eb7c vaddr=40080000 size=0149ch (  5276) load[0m
+[0;32mI (138) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1c588h (116104) map[0m
+[0;32mI (184) esp_image: segment 5: paddr=0003c5b0 vaddr=4008149c size=0cf98h ( 53144) load[0m
+[0;32mI (213) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (213) boot: Disabling RNG early entropy source...[0m
+[0;32mI (225) cpu_start: Multicore app[0m
+[0;32mI (233) cpu_start: Pro cpu start user code[0m
+[0;32mI (233) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (233) app_init: Application information:[0m
+[0;32mI (236) app_init: Project name:     web-hearth-rate[0m
+[0;32mI (241) app_init: App version:      4b19fef-dirty[0m
+[0;32mI (247) app_init: Compile time:     Dec  4 2024 19:05:38[0m
+[0;32mI (253) app_init: ELF file SHA256:  85252d1c9...[0m
+[0;32mI (258) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (263) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (268) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (273) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (278) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (285) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (291) heap_init: At 3FFB31D0 len 0002CE30 (179 KiB): DRAM[0m
+[0;32mI (297) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (310) heap_init: At 4008E434 len 00011BCC (70 KiB): IRAM[0m
+[0;32mI (318) spi_flash: detected chip: generic[0m
+[0;32mI (321) spi_flash: flash io: dio[0m
+[0;33mW (325) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;33mW (335) timer_group: legacy driver is deprecated, please migrate to `driver/gptimer.h`[0m
+[0;32mI (345) main_task: Started on CPU0[0m
+[0;32mI (355) main_task: Calling app_main()[0m
+[0;32mI (355) prot: u8g2_InitDisplay[0m
+[0;32mI (355) u8g2_hal: sda_io_num 21[0m
+[0;32mI (355) u8g2_hal: scl_io_num 22[0m
+[0;32mI (355) u8g2_hal: clk_speed 50000[0m
+[0;32mI (365) u8g2_hal: i2c_param_config 1[0m
+[0;32mI (365) u8g2_hal: i2c_driver_install 1[0m
+[0;32mI (685) prot: u8g2_SetPowerSave[0m
+[0;32mI (685) prot: u8g2_ClearBuffer[0m
+[0;32mI (925) prot: All done![0m
+[0;32mI (925) prot: display out + 0[0m
+[0;31mE (925) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (935) prot: timer : 0.000000[0m
+[0;32mI (925) prot: adc read[0m
+[0;32mI (925) main_task: Returned from app_main()[0m
+[0;32mI (985) prot: adc read[0m
+[0;31mE (1035) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1035) prot: timer : 0.000000[0m
+[0;32mI (1035) prot: adc read[0m
+[0;32mI (1085) prot: adc read[0m
+[0;31mE (1135) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1135) prot: timer : 0.000000[0m
+[0;32mI (1135) prot: adc read[0m
+[0;32mI (1185) prot: adc read[0m
+[0;31mE (1235) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1235) prot: timer : 0.000000[0m
+[0;32mI (1235) prot: adc read[0m
+[0;32mI (1285) prot: adc read[0m
+[0;32mI (1285) prot: display out + 0[0m
+[0;31mE (1335) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1335) prot: timer : 0.000000[0m
+[0;32mI (1335) prot: adc read[0m
+[0;32mI (1385) prot: adc read[0m
+[0;31mE (1435) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1435) prot: timer : 0.000000[0m
+[0;32mI (1435) prot: adc read[0m
+[0;32mI (1485) prot: adc read[0m
+[0;31mE (1535) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1535) prot: timer : 0.000000[0m
+[0;32mI (1535) prot: adc read[0m
+[0;32mI (1585) prot: adc read[0m
+[0;31mE (1635) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1635) prot: timer : 0.000000[0m
+[0;32mI (1635) prot: adc read[0m
+[0;32mI (1635) prot: display out + 0[0m
+[0;32mI (1685) prot: adc read[0m
+[0;31mE (1735) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1735) prot: timer : 0.000000[0m
+[0;32mI (1735) prot: adc read[0m
+[0;32mI (1785) prot: adc read[0m
+[0;31mE (1835) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1835) prot: timer : 0.000000[0m
+[0;32mI (1835) prot: adc read[0m
+[0;32mI (1885) prot: adc read[0m
+[0;31mE (1935) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (1935) prot: timer : 0.000000[0m
+[0;32mI (1935) prot: adc read[0m
+[0;32mI (1985) prot: adc read[0m
+[0;32mI (1995) prot: display out + 0[0m
+[0;31mE (2035) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2035) prot: timer : 0.000000[0m
+[0;32mI (2035) prot: adc read[0m
+[0;32mI (2085) prot: adc read[0m
+[0;31mE (2135) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2135) prot: timer : 0.000000[0m
+[0;32mI (2135) prot: adc read[0m
+[0;32mI (2185) prot: adc read[0m
+[0;31mE (2235) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2235) prot: timer : 0.000000[0m
+[0;32mI (2235) prot: adc read[0m
+[0;32mI (2285) prot: adc read[0m
+[0;31mE (2335) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2335) prot: timer : 0.000000[0m
+[0;32mI (2335) prot: adc read[0m
+[0;32mI (2345) prot: display out + 0[0m
+[0;32mI (2385) prot: adc read[0m
+[0;31mE (2435) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2435) prot: timer : 0.000000[0m
+[0;32mI (2435) prot: adc read[0m
+[0;32mI (2485) prot: adc read[0m
+[0;31mE (2535) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2535) prot: timer : 0.000000[0m
+[0;32mI (2535) prot: adc read[0m
+[0;32mI (2585) prot: adc read[0m
+[0;31mE (2635) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2635) prot: timer : 0.000000[0m
+[0;32mI (2635) prot: adc read[0m
+[0;32mI (2685) prot: adc read[0m
+[0;32mI (2695) prot: display out + 0[0m
+[0;31mE (2735) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2735) prot: timer : 0.000000[0m
+[0;32mI (2735) prot: adc read[0m
+[0;32mI (2785) prot: adc read[0m
+[0;31mE (2835) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2835) prot: timer : 0.000000[0m
+[0;32mI (2835) prot: adc read[0m
+[0;32mI (2885) prot: adc read[0m
+[0;31mE (2935) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (2935) prot: timer : 0.000000[0m
+[0;32mI (2935) prot: adc read[0m
+[0;32mI (2985) prot: adc read[0m
+[0;31mE (3035) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3035) prot: timer : 0.000000[0m
+[0;32mI (3035) prot: adc read[0m
+[0;32mI (3045) prot: display out + 0[0m
+[0;32mI (3085) prot: adc read[0m
+[0;31mE (3135) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3135) prot: timer : 0.000000[0m
+[0;32mI (3135) prot: adc read[0m
+[0;32mI (3185) prot: adc read[0m
+[0;31mE (3235) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3235) prot: timer : 0.000000[0m
+[0;32mI (3235) prot: adc read[0m
+[0;32mI (3285) prot: adc read[0m
+[0;31mE (3335) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3335) prot: timer : 0.000000[0m
+[0;32mI (3335) prot: adc read[0m
+[0;32mI (3385) prot: adc read[0m
+[0;32mI (3395) prot: display out + 0[0m
+[0;31mE (3435) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3435) prot: timer : 0.000000[0m
+[0;32mI (3435) prot: adc read[0m
+[0;32mI (3485) prot: adc read[0m
+[0;31mE (3535) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3535) prot: timer : 0.000000[0m
+[0;32mI (3535) prot: adc read[0m
+[0;32mI (3585) prot: adc read[0m
+[0;31mE (3635) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3635) prot: timer : 0.000000[0m
+[0;32mI (3635) prot: adc read[0m
+[0;32mI (3685) prot: adc read[0m
+[0;31mE (3735) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3735) prot: timer : 0.000000[0m
+[0;32mI (3735) prot: adc read[0m
+[0;32mI (3745) prot: display out + 0[0m
+[0;32mI (3785) prot: adc read[0m
+[0;31mE (3835) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3835) prot: timer : 0.000000[0m
+[0;32mI (3835) prot: adc read[0m
+[0;32mI (3885) prot: adc read[0m
+[0;31mE (3935) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (3935) prot: timer : 0.000000[0m
+[0;32mI (3935) prot: adc read[0m
+[0;32mI (3985) prot: adc read[0m
+[0;31mE (4035) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4035) prot: timer : 0.000000[0m
+[0;32mI (4035) prot: adc read[0m
+[0;32mI (4085) prot: adc read[0m
+[0;32mI (4095) prot: display out + 0[0m
+[0;31mE (4135) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4135) prot: timer : 0.000000[0m
+[0;32mI (4135) prot: adc read[0m
+[0;32mI (4185) prot: adc read[0m
+[0;31mE (4235) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4235) prot: timer : 0.000000[0m
+[0;32mI (4235) prot: adc read[0m
+[0;32mI (4285) prot: adc read[0m
+[0;31mE (4335) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4335) prot: timer : 0.000000[0m
+[0;32mI (4335) prot: adc read[0m
+[0;32mI (4385) prot: adc read[0m
+[0;31mE (4435) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4435) prot: timer : 0.000000[0m
+[0;32mI (4435) prot: adc read[0m
+[0;32mI (4445) prot: display out + 0[0m
+[0;32mI (4485) prot: adc read[0m
+[0;31mE (4535) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4535) prot: timer : 0.000000[0m
+[0;32mI (4535) prot: adc read[0m
+[0;32mI (4585) prot: adc read[0m
+[0;31mE (4635) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4635) prot: timer : 0.000000[0m
+[0;32mI (4635) prot: adc read[0m
+[0;32mI (4685) prot: adc read[0m
+[0;31mE (4735) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4735) prot: timer : 0.000000[0m
+[0;32mI (4735) prot: adc read[0m
+[0;32mI (4785) prot: adc read[0m
+[0;32mI (4795) prot: display out + 0[0m
+[0;31mE (4835) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4835) prot: timer : 0.000000[0m
+[0;32mI (4835) prot: adc read[0m
+[0;32mI (4885) prot: adc read[0m
+[0;31mE (4935) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (4935) prot: timer : 0.000000[0m
+[0;32mI (4935) prot: adc read[0m
+[0;32mI (4985) prot: adc read[0m
+[0;31mE (5035) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5035) prot: timer : 0.000000[0m
+[0;32mI (5035) prot: adc read[0m
+[0;32mI (5085) prot: adc read[0m
+[0;31mE (5135) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5135) prot: timer : 0.000000[0m
+[0;32mI (5135) prot: adc read[0m
+[0;32mI (5145) prot: display out + 0[0m
+[0;32mI (5185) prot: adc read[0m
+[0;31mE (5235) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5235) prot: timer : 0.000000[0m
+[0;32mI (5235) prot: adc read[0m
+[0;32mI (5285) prot: adc read[0m
+[0;31mE (5335) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5335) prot: timer : 0.000000[0m
+[0;32mI (5335) prot: adc read[0m
+[0;32mI (5385) prot: adc read[0m
+[0;31mE (5435) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5435) prot: timer : 0.000000[0m
+[0;32mI (5435) prot: adc read[0m
+[0;32mI (5485) prot: adc read[0m
+[0;32mI (5495) prot: display out + 0[0m
+[0;31mE (5535) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5535) prot: timer : 0.000000[0m
+[0;32mI (5535) prot: adc read[0m
+[0;32mI (5585) prot: adc read[0m
+[0;31mE (5635) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5635) prot: timer : 0.000000[0m
+[0;32mI (5635) prot: adc read[0m
+[0;32mI (5685) prot: adc read[0m
+[0;31mE (5735) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5735) prot: timer : 0.000000[0m
+[0;32mI (5735) prot: adc read[0m
+[0;32mI (5785) prot: adc read[0m
+[0;31mE (5835) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5835) prot: timer : 0.000000[0m
+[0;32mI (5835) prot: adc read[0m
+[0;32mI (5845) prot: display out + 0[0m
+[0;32mI (5885) prot: adc read[0m
+[0;31mE (5935) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (5935) prot: timer : 0.000000[0m
+[0;32mI (5935) prot: adc read[0m
+[0;32mI (5985) prot: adc read[0m
+[0;31mE (6035) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6035) prot: timer : 0.000000[0m
+[0;32mI (6035) prot: adc read[0m
+[0;32mI (6085) prot: adc read[0m
+[0;31mE (6135) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6135) prot: timer : 0.000000[0m
+[0;32mI (6135) prot: adc read[0m
+[0;32mI (6185) prot: adc read[0m
+[0;32mI (6195) prot: display out + 0[0m
+[0;31mE (6235) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6235) prot: timer : 0.000000[0m
+[0;32mI (6235) prot: adc read[0m
+[0;32mI (6285) prot: adc read[0m
+[0;31mE (6335) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6335) prot: timer : 0.000000[0m
+[0;32mI (6335) prot: adc read[0m
+[0;32mI (6385) prot: adc read[0m
+[0;31mE (6435) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6435) prot: timer : 0.000000[0m
+[0;32mI (6435) prot: adc read[0m
+[0;32mI (6485) prot: adc read[0m
+[0;31mE (6535) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6535) prot: timer : 0.000000[0m
+[0;32mI (6535) prot: adc read[0m
+[0;32mI (6545) prot: display out + 0[0m
+[0;32mI (6585) prot: adc read[0m
+[0;31mE (6635) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6635) prot: timer : 0.000000[0m
+[0;32mI (6635) prot: adc read[0m
+[0;32mI (6685) prot: adc read[0m
+[0;31mE (6735) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6735) prot: timer : 0.000000[0m
+[0;32mI (6735) prot: adc read[0m
+[0;32mI (6785) prot: adc read[0m
+[0;31mE (6835) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6835) prot: timer : 0.000000[0m
+[0;32mI (6835) prot: adc read[0m
+[0;32mI (6885) prot: adc read[0m
+[0;32mI (6895) prot: display out + 0[0m
+[0;31mE (6935) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (6935) prot: timer : 0.000000[0m
+[0;32mI (6935) prot: adc read[0m
+[0;32mI (6985) prot: adc read[0m
+[0;31mE (7035) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7035) prot: timer : 0.000000[0m
+[0;32mI (7035) prot: adc read[0m
+[0;32mI (7085) prot: adc read[0m
+[0;31mE (7135) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7135) prot: timer : 0.000000[0m
+[0;32mI (7135) prot: adc read[0m
+[0;32mI (7185) prot: adc read[0m
+[0;31mE (7235) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7235) prot: timer : 0.000000[0m
+[0;32mI (7235) prot: adc read[0m
+[0;32mI (7245) prot: display out + 0[0m
+[0;32mI (7285) prot: adc read[0m
+[0;31mE (7335) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7335) prot: timer : 0.000000[0m
+[0;32mI (7335) prot: adc read[0m
+[0;32mI (7385) prot: adc read[0m
+[0;31mE (7435) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7435) prot: timer : 0.000000[0m
+[0;32mI (7435) prot: adc read[0m
+[0;32mI (7485) prot: adc read[0m
+[0;31mE (7535) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7535) prot: timer : 0.000000[0m
+[0;32mI (7535) prot: adc read[0m
+[0;32mI (7585) prot: adc read[0m
+[0;32mI (7595) prot: display out + 0[0m
+[0;31mE (7635) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7635) prot: timer : 0.000000[0m
+[0;32mI (7635) prot: adc read[0m
+[0;32mI (7685) prot: adc read[0m
+[0;31mE (7735) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7735) prot: timer : 0.000000[0m
+[0;32mI (7735) prot: adc read[0m
+[0;32mI (7785) prot: adc read[0m
+[0;31mE (7835) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7835) prot: timer : 0.000000[0m
+[0;32mI (7835) prot: adc read[0m
+[0;32mI (7885) prot: adc read[0m
+[0;31mE (7935) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (7935) prot: timer : 0.000000[0m
+[0;32mI (7935) prot: adc read[0m
+[0;32mI (7945) prot: display out + 0[0m
+[0;32mI (7985) prot: adc read[0m
+[0;31mE (8035) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8035) prot: timer : 0.000000[0m
+[0;32mI (8035) prot: adc read[0m
+[0;32mI (8085) prot: adc read[0m
+[0;31mE (8135) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8135) prot: timer : 0.000000[0m
+[0;32mI (8135) prot: adc read[0m
+[0;32mI (8185) prot: adc read[0m
+[0;31mE (8235) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8235) prot: timer : 0.000000[0m
+[0;32mI (8235) prot: adc read[0m
+[0;32mI (8285) prot: adc read[0m
+[0;32mI (8295) prot: display out + 0[0m
+[0;31mE (8335) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8335) prot: timer : 0.000000[0m
+[0;32mI (8335) prot: adc read[0m
+[0;32mI (8385) prot: adc read[0m
+[0;31mE (8435) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8435) prot: timer : 0.000000[0m
+[0;32mI (8435) prot: adc read[0m
+[0;32mI (8485) prot: adc read[0m
+[0;31mE (8535) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8535) prot: timer : 0.000000[0m
+[0;32mI (8535) prot: adc read[0m
+[0;32mI (8585) prot: adc read[0m
+[0;31mE (8635) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8635) prot: timer : 0.000000[0m
+[0;32mI (8635) prot: adc read[0m
+[0;32mI (8645) prot: display out + 0[0m
+[0;32mI (8685) prot: adc read[0m
+[0;31mE (8735) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8735) prot: timer : 0.000000[0m
+[0;32mI (8735) prot: adc read[0m
+[0;32mI (8785) prot: adc read[0m
+[0;31mE (8835) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8835) prot: timer : 0.000000[0m
+[0;32mI (8835) prot: adc read[0m
+[0;32mI (8885) prot: adc read[0m
+[0;31mE (8935) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (8935) prot: timer : 0.000000[0m
+[0;32mI (8935) prot: adc read[0m
+[0;32mI (8985) prot: adc read[0m
+[0;32mI (8995) prot: display out + 0[0m
+[0;31mE (9035) timer_group: timer_get_counter_time_sec(82): HW TIMER NEVER INIT ERROR[0m
+[0;32mI (9035) prot: timer : 0.000000[0m
+[0;32mI (9035) prot: adc read[0m
+[0;32mI (9085) prot: adc read[0m

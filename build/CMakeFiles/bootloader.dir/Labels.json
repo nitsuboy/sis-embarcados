@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/CMakeFiles/bootloader"
+			"file" : "/home/suco/sis-embarcados/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/CMakeFiles/bootloader.rule"
+			"file" : "/home/suco/sis-embarcados/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "/home/suco/sis-embarcados/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		},
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "/home/suco/esp/web-hearth-rate/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "/home/suco/sis-embarcados/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		}
 	],
 	"target" : 

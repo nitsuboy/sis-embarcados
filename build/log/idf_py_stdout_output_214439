@@ -1,0 +1,2738 @@
+[0;32mI (186) esp_image: segment 5: paddr=0003cefc vaddr=40081060 size=0d3fch ( 54�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec  4 2024 19:05:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cbb8h ( 52152) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cbe0 vaddr=3ff80000 size=00004h (     4) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0001cbec vaddr=3ffb0000 size=023c4h (  9156) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=0001efb8 vaddr=40080000 size=01060h (  4192) load[0m
+[0;32mI (138) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1ced4h (118484) map[0m
+[0;32mI (186) esp_image: segment 5: paddr=0003cefc vaddr=40081060 size=0d3fch ( 54268) load[0m
+[0;32mI (214) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (214) boot: Disabling RNG early entropy source...[0m
+[0;32mI (226) cpu_start: Multicore app[0m
+[0;32mI (235) cpu_start: Pro cpu start user code[0m
+[0;32mI (235) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (235) app_init: Application information:[0m
+[0;32mI (238) app_init: Project name:     web-hearth-rate[0m
+[0;32mI (243) app_init: App version:      4b19fef-dirty[0m
+[0;32mI (248) app_init: Compile time:     Dec  4 2024 19:05:38[0m
+[0;32mI (254) app_init: ELF file SHA256:  c51746907...[0m
+[0;32mI (260) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (265) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (269) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (274) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (279) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (286) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (292) heap_init: At 3FFB31C8 len 0002CE38 (179 KiB): DRAM[0m
+[0;32mI (299) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (305) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (311) heap_init: At 4008E45C len 00011BA4 (70 KiB): IRAM[0m
+[0;32mI (319) spi_flash: detected chip: generic[0m
+[0;32mI (322) spi_flash: flash io: dio[0m
+[0;33mW (326) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (338) main_task: Started on CPU0[0m
+[0;32mI (348) main_task: Calling app_main()[0m
+[0;32mI (348) prot: u8g2_InitDisplay[0m
+[0;32mI (348) u8g2_hal: sda_io_num 21[0m
+[0;32mI (348) u8g2_hal: scl_io_num 22[0m
+[0;32mI (348) u8g2_hal: clk_speed 50000[0m
+[0;32mI (358) u8g2_hal: i2c_param_config 1[0m
+[0;32mI (358) u8g2_hal: i2c_driver_install 1[0m
+[0;32mI (678) prot: u8g2_SetPowerSave[0m
+[0;32mI (678) prot: u8g2_ClearBuffer[0m
+[0;32mI (918) prot: All done![0m
+[0;32mI (918) prot: display out + 0[0m
+[0;32mI (918) prot: timer : 811[0m
+[0;32mI (918) prot: adc read[0m
+[0;32mI (918) main_task: Returned from app_main()[0m
+[0;32mI (978) prot: adc read[0m
+[0;32mI (1028) prot: timer : 100944[0m
+[0;32mI (1028) prot: adc read[0m
+[0;32mI (1078) prot: adc read[0m
+[0;32mI (1128) prot: timer : 200944[0m
+[0;32mI (1128) prot: adc read[0m
+[0;32mI (1178) prot: adc read[0m
+[0;32mI (1228) prot: timer : 300944[0m
+[0;32mI (1228) prot: adc read[0m
+[0;32mI (1278) prot: adc read[0m
+[0;32mI (1288) prot: display out + 0[0m
+[0;32mI (1328) prot: timer : 400949[0m
+[0;32mI (1328) prot: adc read[0m
+[0;32mI (1378) prot: adc read[0m
+[0;32mI (1428) prot: timer : 500944[0m
+[0;32mI (1428) prot: adc read[0m
+[0;32mI (1478) prot: adc read[0m
+[0;32mI (1528) prot: timer : 600944[0m
+[0;32mI (1528) prot: adc read[0m
+[0;32mI (1578) prot: adc read[0m
+[0;32mI (1628) prot: timer : 700944[0m
+[0;32mI (1628) prot: adc read[0m
+[0;32mI (1638) prot: display out + 0[0m
+[0;32mI (1678) prot: adc read[0m
+[0;32mI (1728) prot: timer : 800944[0m
+[0;32mI (1728) prot: adc read[0m
+[0;32mI (1778) prot: adc read[0m
+[0;32mI (1828) prot: timer : 900944[0m
+[0;32mI (1828) prot: adc read[0m
+[0;32mI (1878) prot: adc read[0m
+[0;32mI (1928) prot: timer : 1000944[0m
+[0;32mI (1928) prot: adc read[0m
+[0;32mI (1978) prot: adc read[0m
+[0;32mI (1988) prot: display out + 0[0m
+[0;32mI (2028) prot: timer : 1100944[0m
+[0;32mI (2028) prot: adc read[0m
+[0;32mI (2078) prot: adc read[0m
+[0;32mI (2128) prot: timer : 1200947[0m
+[0;32mI (2128) prot: adc read[0m
+[0;32mI (2178) prot: adc read[0m
+[0;32mI (2228) prot: timer : 1300944[0m
+[0;32mI (2228) prot: adc read[0m
+[0;32mI (2278) prot: adc read[0m
+[0;32mI (2328) prot: timer : 1400944[0m
+[0;32mI (2328) prot: adc read[0m
+[0;32mI (2338) prot: display out + 0[0m
+[0;32mI (2378) prot: adc read[0m
+[0;32mI (2428) prot: timer : 1500944[0m
+[0;32mI (2428) prot: adc read[0m
+[0;32mI (2478) prot: adc read[0m
+[0;32mI (2528) prot: timer : 1600944[0m
+[0;32mI (2528) prot: adc read[0m
+[0;32mI (2578) prot: adc read[0m
+[0;32mI (2628) prot: timer : 1700944[0m
+[0;32mI (2628) prot: adc read[0m
+[0;32mI (2678) prot: adc read[0m
+[0;32mI (2688) prot: display out + 0[0m
+[0;32mI (2728) prot: timer : 1800946[0m
+[0;32mI (2728) prot: adc read[0m
+[0;32mI (2778) prot: adc read[0m
+[0;32mI (2828) prot: timer : 1900950[0m
+[0;32mI (2828) prot: adc read[0m
+[0;32mI (2878) prot: adc read[0m
+[0;32mI (2928) prot: timer : 2000944[0m
+[0;32mI (2928) prot: adc read[0m
+[0;32mI (2978) prot: adc read[0m
+[0;32mI (3028) prot: timer : 2100944[0m
+[0;32mI (3028) prot: adc read[0m
+[0;32mI (3038) prot: display out + 0[0m
+[0;32mI (3078) prot: adc read[0m
+[0;32mI (3128) prot: timer : 2200944[0m
+[0;32mI (3128) prot: adc read[0m
+[0;32mI (3178) prot: adc read[0m
+[0;32mI (3228) prot: timer : 2300944[0m
+[0;32mI (3228) prot: adc read[0m
+[0;32mI (3278) prot: adc read[0m
+[0;32mI (3328) prot: timer : 2400944[0m
+[0;32mI (3328) prot: adc read[0m
+[0;32mI (3378) prot: adc read[0m
+[0;32mI (3388) prot: display out + 0[0m
+[0;32mI (3428) prot: timer : 2500944[0m
+[0;32mI (3428) prot: adc read[0m
+[0;32mI (3478) prot: adc read[0m
+[0;32mI (3528) prot: timer : 2600947[0m
+[0;32mI (3528) prot: adc read[0m
+[0;32mI (3578) prot: adc read[0m
+[0;32mI (3628) prot: timer : 2700944[0m
+[0;32mI (3628) prot: adc read[0m
+[0;32mI (3678) prot: adc read[0m
+[0;32mI (3728) prot: timer : 2800944[0m
+[0;32mI (3728) prot: adc read[0m
+[0;32mI (3738) prot: display out + 0[0m
+[0;32mI (3778) prot: adc read[0m
+[0;32mI (3828) prot: timer : 2900944[0m
+[0;32mI (3828) prot: adc read[0m
+[0;32mI (3878) prot: adc read[0m
+[0;32mI (3928) prot: timer : 3000944[0m
+[0;32mI (3928) prot: adc read[0m
+[0;32mI (3978) prot: adc read[0m
+[0;32mI (4028) prot: timer : 3100944[0m
+[0;32mI (4028) prot: adc read[0m
+[0;32mI (4078) prot: adc read[0m
+[0;32mI (4088) prot: display out + 0[0m
+[0;32mI (4128) prot: timer : 3200946[0m
+[0;32mI (4128) prot: adc read[0m
+[0;32mI (4178) prot: adc read[0m
+[0;32mI (4228) prot: timer : 3300950[0m
+[0;32mI (4228) prot: adc read[0m
+[0;32mI (4278) prot: adc read[0m
+[0;32mI (4328) prot: timer : 3400944[0m
+[0;32mI (4328) prot: adc read[0m
+[0;32mI (4378) prot: adc read[0m
+[0;32mI (4428) prot: timer : 3500944[0m
+[0;32mI (4428) prot: adc read[0m
+[0;32mI (4438) prot: display out + 0[0m
+[0;32mI (4478) prot: adc read[0m
+[0;32mI (4528) prot: timer : 3600944[0m
+[0;32mI (4528) prot: adc read[0m
+[0;32mI (4578) prot: adc read[0m
+[0;32mI (4628) prot: timer : 3700944[0m
+[0;32mI (4628) prot: adc read[0m
+[0;32mI (4678) prot: adc read[0m
+[0;32mI (4728) prot: timer : 3800944[0m
+[0;32mI (4728) prot: adc read[0m
+[0;32mI (4778) prot: adc read[0m
+[0;32mI (4788) prot: display out + 0[0m
+[0;32mI (4828) prot: timer : 3900946[0m
+[0;32mI (4828) prot: adc read[0m
+[0;32mI (4878) prot: adc read[0m
+[0;32mI (4928) prot: timer : 4000950[0m
+[0;32mI (4928) prot: adc read[0m
+[0;32mI (4978) prot: adc read[0m
+[0;32mI (5028) prot: timer : 4100944[0m
+[0;32mI (5028) prot: adc read[0m
+[0;32mI (5078) prot: adc read[0m
+[0;32mI (5128) prot: timer : 4200944[0m
+[0;32mI (5128) prot: adc read[0m
+[0;32mI (5138) prot: display out + 0[0m
+[0;32mI (5178) prot: adc read[0m
+[0;32mI (5228) prot: timer : 4300944[0m
+[0;32mI (5228) prot: adc read[0m
+[0;32mI (5278) prot: adc read[0m
+[0;32mI (5328) prot: timer : 4400944[0m
+[0;32mI (5328) prot: adc read[0m
+[0;32mI (5378) prot: adc read[0m
+[0;32mI (5428) prot: timer : 4500944[0m
+[0;32mI (5428) prot: adc read[0m
+[0;32mI (5478) prot: adc read[0m
+[0;32mI (5488) prot: display out + 0[0m
+[0;32mI (5528) prot: timer : 4600946[0m
+[0;32mI (5528) prot: adc read[0m
+[0;32mI (5578) prot: adc read[0m
+[0;32mI (5628) prot: timer : 4700950[0m
+[0;32mI (5628) prot: adc read[0m
+[0;32mI (5678) prot: adc read[0m
+[0;32mI (5728) prot: timer : 4800944[0m
+[0;32mI (5728) prot: adc read[0m
+[0;32mI (5778) prot: adc read[0m
+[0;32mI (5828) prot: timer : 4900944[0m
+[0;32mI (5828) prot: adc read[0m
+[0;32mI (5838) prot: display out + 0[0m
+[0;32mI (5878) prot: adc read[0m
+[0;32mI (5928) prot: timer : 5000944[0m
+[0;32mI (5928) prot: adc read[0m
+[0;32mI (5978) prot: adc read[0m
+[0;32mI (6028) prot: timer : 5100944[0m
+[0;32mI (6028) prot: adc read[0m
+[0;32mI (6078) prot: adc read[0m
+[0;32mI (6128) prot: timer : 5200944[0m
+[0;32mI (6128) prot: adc read[0m
+[0;32mI (6178) prot: adc read[0m
+[0;32mI (6188) prot: display out + 0[0m
+[0;32mI (6228) prot: timer : 5300946[0m
+[0;32mI (6228) prot: adc read[0m
+[0;32mI (6278) prot: adc read[0m
+[0;32mI (6328) prot: timer : 5400950[0m
+[0;32mI (6328) prot: adc read[0m
+[0;32mI (6378) prot: adc read[0m
+[0;32mI (6428) prot: timer : 5500944[0m
+[0;32mI (6428) prot: adc read[0m
+[0;32mI (6478) prot: adc read[0m
+[0;32mI (6528) prot: timer : 5600944[0m
+[0;32mI (6528) prot: adc read[0m
+[0;32mI (6538) prot: display out + 0[0m
+[0;32mI (6578) prot: adc read[0m
+[0;32mI (6628) prot: timer : 5700944[0m
+[0;32mI (6628) prot: adc read[0m
+[0;32mI (6678) prot: adc read[0m
+[0;32mI (6728) prot: timer : 5800944[0m
+[0;32mI (6728) prot: adc read[0m
+[0;32mI (6778) prot: adc read[0m
+[0;32mI (6828) prot: timer : 5900944[0m
+[0;32mI (6828) prot: adc read[0m
+[0;32mI (6878) prot: adc read[0m
+[0;32mI (6888) prot: display out + 0[0m
+[0;32mI (6928) prot: timer : 6000946[0m
+[0;32mI (6928) prot: adc read[0m
+[0;32mI (6978) prot: adc read[0m
+[0;32mI (7028) prot: timer : 6100950[0m
+[0;32mI (7028) prot: adc read[0m
+[0;32mI (7078) prot: adc read[0m
+[0;32mI (7128) prot: timer : 6200944[0m
+[0;32mI (7128) prot: adc read[0m
+[0;32mI (7178) prot: adc read[0m
+[0;32mI (7228) prot: timer : 6300944[0m
+[0;32mI (7228) prot: adc read[0m
+[0;32mI (7238) prot: display out + 0[0m
+[0;32mI (7278) prot: adc read[0m
+[0;32mI (7328) prot: timer : 6400944[0m
+[0;32mI (7328) prot: adc read[0m
+[0;32mI (7378) prot: adc read[0m
+[0;32mI (7428) prot: timer : 6500944[0m
+[0;32mI (7428) prot: adc read[0m
+[0;32mI (7478) prot: adc read[0m
+[0;32mI (7528) prot: timer : 6600944[0m
+[0;32mI (7528) prot: adc read[0m
+[0;32mI (7578) prot: adc read[0m
+[0;32mI (7588) prot: display out + 0[0m
+[0;32mI (7628) prot: timer : 6700946[0m
+[0;32mI (7628) prot: adc read[0m
+[0;32mI (7678) prot: adc read[0m
+[0;32mI (7728) prot: timer : 6800951[0m
+[0;32mI (7728) prot: adc read[0m
+[0;32mI (7778) prot: adc read[0m
+[0;32mI (7828) prot: timer : 6900944[0m
+[0;32mI (7828) prot: adc read[0m
+[0;32mI (7878) prot: adc read[0m
+[0;32mI (7928) prot: timer : 7000944[0m
+[0;32mI (7928) prot: adc read[0m
+[0;32mI (7938) prot: display out + 0[0m
+[0;32mI (7978) prot: adc read[0m
+[0;32mI (8028) prot: timer : 7100944[0m
+[0;32mI (8028) prot: adc read[0m
+[0;32mI (8078) prot: adc read[0m
+[0;32mI (8128) prot: timer : 7200944[0m
+[0;32mI (8128) prot: adc read[0m
+[0;32mI (8178) prot: adc read[0m
+[0;32mI (8228) prot: timer : 7300944[0m
+[0;32mI (8228) prot: adc read[0m
+[0;32mI (8278) prot: adc read[0m
+[0;32mI (8288) prot: display out + 0[0m
+[0;32mI (8328) prot: timer : 7400946[0m
+[0;32mI (8328) prot: adc read[0m
+[0;32mI (8378) prot: adc read[0m
+[0;32mI (8428) prot: timer : 7500951[0m
+[0;32mI (8428) prot: adc read[0m
+[0;32mI (8478) prot: adc read[0m
+[0;32mI (8528) prot: timer : 7600944[0m
+[0;32mI (8528) prot: adc read[0m
+[0;32mI (8578) prot: adc read[0m
+[0;32mI (8628) prot: timer : 7700944[0m
+[0;32mI (8628) prot: adc read[0m
+[0;32mI (8638) prot: display out + 0[0m
+[0;32mI (8678) prot: adc read[0m
+[0;32mI (8728) prot: timer : 7800944[0m
+[0;32mI (8728) prot: adc read[0m
+[0;32mI (8778) prot: adc read[0m
+[0;32mI (8828) prot: timer : 7900944[0m
+[0;32mI (8828) prot: adc read[0m
+[0;32mI (8878) prot: adc read[0m
+[0;32mI (8928) prot: timer : 8000944[0m
+[0;32mI (8928) prot: adc read[0m
+[0;32mI (8978) prot: adc read[0m
+[0;32mI (8988) prot: display out + 0[0m
+[0;32mI (9028) prot: timer : 8100946[0m
+[0;32mI (9028) prot: adc read[0m
+[0;32mI (9078) prot: adc read[0m
+[0;32mI (9128) prot: timer : 8200951[0m
+[0;32mI (9128) prot: adc read[0m
+[0;32mI (9178) prot: adc read[0m
+[0;32mI (9228) prot: timer : 8300944[0m
+[0;32mI (9228) prot: adc read[0m
+[0;32mI (9278) prot: adc read[0m
+[0;32mI (9328) prot: timer : 8400944[0m
+[0;32mI (9328) prot: adc read[0m
+[0;32mI (9338) prot: display out + 0[0m
+[0;32mI (9378) prot: adc read[0m
+[0;32mI (9428) prot: timer : 8500944[0m
+[0;32mI (9428) prot: adc read[0m
+[0;32mI (9478) prot: adc read[0m
+[0;32mI (9528) prot: timer : 8600944[0m
+[0;32mI (9528) prot: adc read[0m
+[0;32mI (9578) prot: adc read[0m
+[0;32mI (9628) prot: timer : 8700944[0m
+[0;32mI (9628) prot: adc read[0m
+[0;32mI (9678) prot: adc read[0m
+[0;32mI (9688) prot: display out + 0[0m
+[0;32mI (9728) prot: timer : 8800946[0m
+[0;32mI (9728) prot: adc read[0m
+[0;32mI (9778) prot: adc read[0m
+[0;32mI (9828) prot: timer : 8900950[0m
+[0;32mI (9828) prot: adc read[0m
+[0;32mI (9878) prot: adc read[0m
+[0;32mI (9928) prot: timer : 9000944[0m
+[0;32mI (9928) prot: adc read[0m
+[0;32mI (9978) prot: adc read[0m
+[0;32mI (10028) prot: timer : 9100944[0m
+[0;32mI (10028) prot: adc read[0m
+[0;32mI (10038) prot: display out + 0[0m
+[0;32mI (10078) prot: adc read[0m
+[0;32mI (10128) prot: timer : 9200944[0m
+[0;32mI (10128) prot: adc read[0m
+[0;32mI (10178) prot: adc read[0m
+[0;32mI (10228) prot: timer : 9300944[0m
+[0;32mI (10228) prot: adc read[0m
+[0;32mI (10278) prot: adc read[0m
+[0;32mI (10328) prot: timer : 9400944[0m
+[0;32mI (10328) prot: adc read[0m
+[0;32mI (10378) prot: adc read[0m
+[0;32mI (10388) prot: display out + 0[0m
+[0;32mI (10428) prot: timer : 9500946[0m
+[0;32mI (10428) prot: adc read[0m
+[0;32mI (10478) prot: adc read[0m
+[0;32mI (10528) prot: timer : 9600955[0m
+[0;32mI (10528) prot: adc read[0m
+[0;32mI (10578) prot: adc read[0m
+[0;32mI (10628) prot: timer : 9700944[0m
+[0;32mI (10628) prot: adc read[0m
+[0;32mI (10678) prot: adc read[0m
+[0;32mI (10728) prot: timer : 9800944[0m
+[0;32mI (10728) prot: adc read[0m
+[0;32mI (10738) prot: display out + 0[0m
+[0;32mI (10778) prot: adc read[0m
+[0;32mI (10828) prot: timer : 9900944[0m
+[0;32mI (10828) prot: adc read[0m
+[0;32mI (10878) prot: adc read[0m
+[0;32mI (10928) prot: timer : 10000944[0m
+[0;32mI (10928) prot: adc read[0m
+[0;32mI (10978) prot: adc read[0m
+[0;32mI (11028) prot: timer : 10100944[0m
+[0;32mI (11028) prot: adc read[0m
+[0;32mI (11078) prot: adc read[0m
+[0;32mI (11088) prot: display out + 0[0m
+[0;32mI (11128) prot: timer : 10200946[0m
+[0;32mI (11128) prot: adc read[0m
+[0;32mI (11178) prot: adc read[0m
+[0;32mI (11228) prot: timer : 10300949[0m
+[0;32mI (11228) prot: adc read[0m
+[0;32mI (11278) prot: adc read[0m
+[0;32mI (11328) prot: timer : 10400944[0m
+[0;32mI (11328) prot: adc read[0m
+[0;32mI (11378) prot: adc read[0m
+[0;32mI (11428) prot: timer : 10500944[0m
+[0;32mI (11428) prot: adc read[0m
+[0;32mI (11438) prot: display out + 0[0m
+[0;32mI (11478) prot: adc read[0m
+[0;32mI (11528) prot: timer : 10600944[0m
+[0;32mI (11528) prot: adc read[0m
+[0;32mI (11578) prot: adc read[0m
+[0;32mI (11628) prot: timer : 10700944[0m
+[0;32mI (11628) prot: adc read[0m
+[0;32mI (11678) prot: adc read[0m
+[0;32mI (11728) prot: timer : 10800944[0m
+[0;32mI (11728) prot: adc read[0m
+[0;32mI (11778) prot: adc read[0m
+[0;32mI (11788) prot: display out + 0[0m
+[0;32mI (11828) prot: timer : 10900946[0m
+[0;32mI (11828) prot: adc read[0m
+[0;32mI (11878) prot: adc read[0m
+[0;32mI (11928) prot: timer : 11000949[0m
+[0;32mI (11928) prot: adc read[0m
+[0;32mI (11978) prot: adc read[0m
+[0;32mI (12028) prot: timer : 11100944[0m
+[0;32mI (12028) prot: adc read[0m
+[0;32mI (12078) prot: adc read[0m
+[0;32mI (12128) prot: timer : 11200944[0m
+[0;32mI (12128) prot: adc read[0m
+[0;32mI (12138) prot: display out + 0[0m
+[0;32mI (12178) prot: adc read[0m
+[0;32mI (12228) prot: timer : 11300944[0m
+[0;32mI (12228) prot: adc read[0m
+[0;32mI (12278) prot: adc read[0m
+[0;32mI (12328) prot: timer : 11400944[0m
+[0;32mI (12328) prot: adc read[0m
+[0;32mI (12378) prot: adc read[0m
+[0;32mI (12428) prot: timer : 11500944[0m
+[0;32mI (12428) prot: adc read[0m
+[0;32mI (12478) prot: adc read[0m
+[0;32mI (12488) prot: display out + 0[0m
+[0;32mI (12528) prot: timer : 11600946[0m
+[0;32mI (12528) prot: adc read[0m
+[0;32mI (12578) prot: adc read[0m
+[0;32mI (12628) prot: timer : 11700949[0m
+[0;32mI (12628) prot: adc read[0m
+[0;32mI (12678) prot: adc read[0m
+[0;32mI (12728) prot: timer : 11800944[0m
+[0;32mI (12728) prot: adc read[0m
+[0;32mI (12778) prot: adc read[0m
+[0;32mI (12828) prot: timer : 11900944[0m
+[0;32mI (12828) prot: adc read[0m
+[0;32mI (12838) prot: display out + 0[0m
+[0;32mI (12878) prot: adc read[0m
+[0;32mI (12928) prot: timer : 12000944[0m
+[0;32mI (12928) prot: adc read[0m
+[0;32mI (12978) prot: adc read[0m
+[0;32mI (13028) prot: timer : 12100944[0m
+[0;32mI (13028) prot: adc read[0m
+[0;32mI (13078) prot: adc read[0m
+[0;32mI (13128) prot: timer : 12200944[0m
+[0;32mI (13128) prot: adc read[0m
+[0;32mI (13178) prot: adc read[0m
+[0;32mI (13188) prot: display out + 0[0m
+[0;32mI (13228) prot: timer : 12300946[0m
+[0;32mI (13228) prot: adc read[0m
+[0;32mI (13278) prot: adc read[0m
+[0;32mI (13328) prot: timer : 12400949[0m
+[0;32mI (13328) prot: adc read[0m
+[0;32mI (13378) prot: adc read[0m
+[0;32mI (13428) prot: timer : 12500944[0m
+[0;32mI (13428) prot: adc read[0m
+[0;32mI (13478) prot: adc read[0m
+[0;32mI (13528) prot: timer : 12600944[0m
+[0;32mI (13528) prot: adc read[0m
+[0;32mI (13538) prot: display out + 0[0m
+[0;32mI (13578) prot: adc read[0m
+[0;32mI (13628) prot: timer : 12700944[0m
+[0;32mI (13628) prot: adc read[0m
+[0;32mI (13678) prot: adc read[0m
+[0;32mI (13728) prot: timer : 12800944[0m
+[0;32mI (13728) prot: adc read[0m
+[0;32mI (13778) prot: adc read[0m
+[0;32mI (13828) prot: timer : 12900944[0m
+[0;32mI (13828) prot: adc read[0m
+[0;32mI (13878) prot: adc read[0m
+[0;32mI (13888) prot: display out + 0[0m
+[0;32mI (13928) prot: timer : 13000946[0m
+[0;32mI (13928) prot: adc read[0m
+[0;32mI (13978) prot: adc read[0m
+[0;32mI (14028) prot: timer : 13100949[0m
+[0;32mI (14028) prot: adc read[0m
+[0;32mI (14078) prot: adc read[0m
+[0;32mI (14128) prot: timer : 13200944[0m
+[0;32mI (14128) prot: adc read[0m
+[0;32mI (14178) prot: adc read[0m
+[0;32mI (14228) prot: timer : 13300944[0m
+[0;32mI (14228) prot: adc read[0m
+[0;32mI (14238) prot: display out + 0[0m
+[0;32mI (14278) prot: adc read[0m
+[0;32mI (14328) prot: timer : 13400944[0m
+[0;32mI (14328) prot: adc read[0m
+[0;32mI (14378) prot: adc read[0m
+[0;32mI (14428) prot: timer : 13500944[0m
+[0;32mI (14428) prot: adc read[0m
+[0;32mI (14478) prot: adc read[0m
+[0;32mI (14528) prot: timer : 13600944[0m
+[0;32mI (14528) prot: adc read[0m
+[0;32mI (14578) prot: adc read[0m
+[0;32mI (14588) prot: display out + 0[0m
+[0;32mI (14628) prot: timer : 13700946[0m
+[0;32mI (14628) prot: adc read[0m
+[0;32mI (14678) prot: adc read[0m
+[0;32mI (14728) prot: timer : 13800949[0m
+[0;32mI (14728) prot: adc read[0m
+[0;32mI (14778) prot: adc read[0m
+[0;32mI (14828) prot: timer : 13900944[0m
+[0;32mI (14828) prot: adc read[0m
+[0;32mI (14878) prot: adc read[0m
+[0;32mI (14928) prot: timer : 14000944[0m
+[0;32mI (14928) prot: adc read[0m
+[0;32mI (14938) prot: display out + 0[0m
+[0;32mI (14978) prot: adc read[0m
+[0;32mI (15028) prot: timer : 14100944[0m
+[0;32mI (15028) prot: adc read[0m
+[0;32mI (15078) prot: adc read[0m
+[0;32mI (15128) prot: timer : 14200944[0m
+[0;32mI (15128) prot: adc read[0m
+[0;32mI (15178) prot: adc read[0m
+[0;32mI (15228) prot: timer : 14300944[0m
+[0;32mI (15228) prot: adc read[0m
+[0;32mI (15278) prot: adc read[0m
+[0;32mI (15288) prot: display out + 0[0m
+[0;32mI (15328) prot: timer : 14400946[0m
+[0;32mI (15328) prot: adc read[0m
+[0;32mI (15378) prot: adc read[0m
+[0;32mI (15428) prot: timer : 14500949[0m
+[0;32mI (15428) prot: adc read[0m
+[0;32mI (15478) prot: adc read[0m
+[0;32mI (15528) prot: timer : 14600944[0m
+[0;32mI (15528) prot: adc read[0m
+[0;32mI (15578) prot: adc read[0m
+[0;32mI (15628) prot: timer : 14700944[0m
+[0;32mI (15628) prot: adc read[0m
+[0;32mI (15638) prot: display out + 0[0m
+[0;32mI (15678) prot: adc read[0m
+[0;32mI (15728) prot: timer : 14800944[0m
+[0;32mI (15728) prot: adc read[0m
+[0;32mI (15778) prot: adc read[0m
+[0;32mI (15828) prot: timer : 14900944[0m
+[0;32mI (15828) prot: adc read[0m
+[0;32mI (15878) prot: adc read[0m
+[0;32mI (15928) prot: timer : 15000944[0m
+[0;32mI (15928) prot: adc read[0m
+[0;32mI (15978) prot: adc read[0m
+[0;32mI (15988) prot: display out + 0[0m
+[0;32mI (16028) prot: timer : 15100946[0m
+[0;32mI (16028) prot: adc read[0m
+[0;32mI (16078) prot: adc read[0m
+[0;32mI (16128) prot: timer : 15200949[0m
+[0;32mI (16128) prot: adc read[0m
+[0;32mI (16178) prot: adc read[0m
+[0;32mI (16228) prot: timer : 15300944[0m
+[0;32mI (16228) prot: adc read[0m
+[0;32mI (16278) prot: adc read[0m
+[0;32mI (16328) prot: timer : 15400944[0m
+[0;32mI (16328) prot: adc read[0m
+[0;32mI (16338) prot: display out + 0[0m
+[0;32mI (16378) prot: adc read[0m
+[0;32mI (16428) prot: timer : 15500944[0m
+[0;32mI (16428) prot: adc read[0m
+[0;32mI (16478) prot: adc read[0m
+[0;32mI (16528) prot: timer : 15600944[0m
+[0;32mI (16528) prot: adc read[0m
+[0;32mI (16578) prot: adc read[0m
+[0;32mI (16628) prot: timer : 15700944[0m
+[0;32mI (16628) prot: adc read[0m
+[0;32mI (16678) prot: adc read[0m
+[0;32mI (16688) prot: display out + 0[0m
+[0;32mI (16728) prot: timer : 15800946[0m
+[0;32mI (16728) prot: adc read[0m
+[0;32mI (16778) prot: adc read[0m
+[0;32mI (16828) prot: timer : 15900949[0m
+[0;32mI (16828) prot: adc read[0m
+[0;32mI (16878) prot: adc read[0m
+[0;32mI (16928) prot: timer : 16000944[0m
+[0;32mI (16928) prot: adc read[0m
+[0;32mI (16978) prot: adc read[0m
+[0;32mI (17028) prot: timer : 16100944[0m
+[0;32mI (17028) prot: adc read[0m
+[0;32mI (17038) prot: display out + 0[0m
+[0;32mI (17078) prot: adc read[0m
+[0;32mI (17128) prot: timer : 16200944[0m
+[0;32mI (17128) prot: adc read[0m
+[0;32mI (17178) prot: adc read[0m
+[0;32mI (17228) prot: timer : 16300944[0m
+[0;32mI (17228) prot: adc read[0m
+[0;32mI (17278) prot: adc read[0m
+[0;32mI (17328) prot: timer : 16400944[0m
+[0;32mI (17328) prot: adc read[0m
+[0;32mI (17378) prot: adc read[0m
+[0;32mI (17388) prot: display out + 0[0m
+[0;32mI (17428) prot: timer : 16500946[0m
+[0;32mI (17428) prot: adc read[0m
+[0;32mI (17478) prot: adc read[0m
+[0;32mI (17528) prot: timer : 16600949[0m
+[0;32mI (17528) prot: adc read[0m
+[0;32mI (17578) prot: adc read[0m
+[0;32mI (17628) prot: timer : 16700944[0m
+[0;32mI (17628) prot: adc read[0m
+[0;32mI (17678) prot: adc read[0m
+[0;32mI (17728) prot: timer : 16800944[0m
+[0;32mI (17728) prot: adc read[0m
+[0;32mI (17738) prot: display out + 0[0m
+[0;32mI (17778) prot: adc read[0m
+[0;32mI (17828) prot: timer : 16900944[0m
+[0;32mI (17828) prot: adc read[0m
+[0;32mI (17878) prot: adc read[0m
+[0;32mI (17928) prot: timer : 17000944[0m
+[0;32mI (17928) prot: adc read[0m
+[0;32mI (17978) prot: adc read[0m
+[0;32mI (18028) prot: timer : 17100944[0m
+[0;32mI (18028) prot: adc read[0m
+[0;32mI (18078) prot: adc read[0m
+[0;32mI (18088) prot: display out + 0[0m
+[0;32mI (18128) prot: timer : 17200946[0m
+[0;32mI (18128) prot: adc read[0m
+[0;32mI (18178) prot: adc read[0m
+[0;32mI (18228) prot: timer : 17300949[0m
+[0;32mI (18228) prot: adc read[0m
+[0;32mI (18278) prot: adc read[0m
+[0;32mI (18328) prot: timer : 17400944[0m
+[0;32mI (18328) prot: adc read[0m
+[0;32mI (18378) prot: adc read[0m
+[0;32mI (18428) prot: timer : 17500944[0m
+[0;32mI (18428) prot: adc read[0m
+[0;32mI (18438) prot: display out + 0[0m
+[0;32mI (18478) prot: adc read[0m
+[0;32mI (18528) prot: timer : 17600944[0m
+[0;32mI (18528) prot: adc read[0m
+[0;32mI (18578) prot: adc read[0m
+[0;32mI (18628) prot: timer : 17700944[0m
+[0;32mI (18628) prot: adc read[0m
+[0;32mI (18678) prot: adc read[0m
+[0;32mI (18728) prot: timer : 17800944[0m
+[0;32mI (18728) prot: adc read[0m
+[0;32mI (18778) prot: adc read[0m
+[0;32mI (18788) prot: display out + 0[0m
+[0;32mI (18828) prot: timer : 17900946[0m
+[0;32mI (18828) prot: adc read[0m
+[0;32mI (18878) prot: adc read[0m
+[0;32mI (18928) prot: timer : 18000949[0m
+[0;32mI (18928) prot: adc read[0m
+[0;32mI (18978) prot: adc read[0m
+[0;32mI (19028) prot: timer : 18100944[0m
+[0;32mI (19028) prot: adc read[0m
+[0;32mI (19078) prot: adc read[0m
+[0;32mI (19128) prot: timer : 18200944[0m
+[0;32mI (19128) prot: adc read[0m
+[0;32mI (19138) prot: display out + 0[0m
+[0;32mI (19178) prot: adc read[0m
+[0;32mI (19228) prot: timer : 18300944[0m
+[0;32mI (19228) prot: adc read[0m
+[0;32mI (19278) prot: adc read[0m
+[0;32mI (19328) prot: timer : 18400944[0m
+[0;32mI (19328) prot: adc read[0m
+[0;32mI (19378) prot: adc read[0m
+[0;32mI (19428) prot: timer : 18500944[0m
+[0;32mI (19428) prot: adc read[0m
+[0;32mI (19478) prot: adc read[0m
+[0;32mI (19488) prot: display out + 0[0m
+[0;32mI (19528) prot: timer : 18600946[0m
+[0;32mI (19528) prot: adc read[0m
+[0;32mI (19578) prot: adc read[0m
+[0;32mI (19628) prot: timer : 18700949[0m
+[0;32mI (19628) prot: adc read[0m
+[0;32mI (19678) prot: adc read[0m
+[0;32mI (19728) prot: timer : 18800944[0m
+[0;32mI (19728) prot: adc read[0m
+[0;32mI (19778) prot: adc read[0m
+[0;32mI (19828) prot: timer : 18900944[0m
+[0;32mI (19828) prot: adc read[0m
+[0;32mI (19838) prot: display out + 0[0m
+[0;32mI (19878) prot: adc read[0m
+[0;32mI (19928) prot: timer : 19000944[0m
+[0;32mI (19928) prot: adc read[0m
+[0;32mI (19978) prot: adc read[0m
+[0;32mI (20028) prot: timer : 19100944[0m
+[0;32mI (20028) prot: adc read[0m
+[0;32mI (20078) prot: adc read[0m
+[0;32mI (20128) prot: timer : 19200944[0m
+[0;32mI (20128) prot: adc read[0m
+[0;32mI (20178) prot: adc read[0m
+[0;32mI (20188) prot: display out + 0[0m
+[0;32mI (20228) prot: timer : 19300946[0m
+[0;32mI (20228) prot: adc read[0m
+[0;32mI (20278) prot: adc read[0m
+[0;32mI (20328) prot: timer : 19400949[0m
+[0;32mI (20328) prot: adc read[0m
+[0;32mI (20378) prot: adc read[0m
+[0;32mI (20428) prot: timer : 19500944[0m
+[0;32mI (20428) prot: adc read[0m
+[0;32mI (20478) prot: adc read[0m
+[0;32mI (20528) prot: timer : 19600944[0m
+[0;32mI (20528) prot: adc read[0m
+[0;32mI (20538) prot: display out + 0[0m
+[0;32mI (20578) prot: adc read[0m
+[0;32mI (20628) prot: timer : 19700944[0m
+[0;32mI (20628) prot: adc read[0m
+[0;32mI (20678) prot: adc read[0m
+[0;32mI (20728) prot: timer : 19800944[0m
+[0;32mI (20728) prot: adc read[0m
+[0;32mI (20778) prot: adc read[0m
+[0;32mI (20828) prot: timer : 19900944[0m
+[0;32mI (20828) prot: adc read[0m
+[0;32mI (20878) prot: adc read[0m
+[0;32mI (20888) prot: display out + 0[0m
+[0;32mI (20928) prot: timer : 20000946[0m
+[0;32mI (20928) prot: adc read[0m
+[0;32mI (20978) prot: adc read[0m
+[0;32mI (21028) prot: timer : 20100949[0m
+[0;32mI (21028) prot: adc read[0m
+[0;32mI (21078) prot: adc read[0m
+[0;32mI (21128) prot: timer : 20200944[0m
+[0;32mI (21128) prot: adc read[0m
+[0;32mI (21178) prot: adc read[0m
+[0;32mI (21228) prot: timer : 20300944[0m
+[0;32mI (21228) prot: adc read[0m
+[0;32mI (21238) prot: display out + 0[0m
+[0;32mI (21278) prot: adc read[0m
+[0;32mI (21328) prot: timer : 20400944[0m
+[0;32mI (21328) prot: adc read[0m
+[0;32mI (21378) prot: adc read[0m
+[0;32mI (21428) prot: timer : 20500944[0m
+[0;32mI (21428) prot: adc read[0m
+[0;32mI (21478) prot: adc read[0m
+[0;32mI (21528) prot: timer : 20600944[0m
+[0;32mI (21528) prot: adc read[0m
+[0;32mI (21578) prot: adc read[0m
+[0;32mI (21588) prot: display out + 0[0m
+[0;32mI (21628) prot: timer : 20700946[0m
+[0;32mI (21628) prot: adc read[0m
+[0;32mI (21678) prot: adc read[0m
+[0;32mI (21728) prot: timer : 20800949[0m
+[0;32mI (21728) prot: adc read[0m
+[0;32mI (21778) prot: adc read[0m
+[0;32mI (21828) prot: timer : 20900944[0m
+[0;32mI (21828) prot: adc read[0m
+[0;32mI (21878) prot: adc read[0m
+[0;32mI (21928) prot: timer : 21000944[0m
+[0;32mI (21928) prot: adc read[0m
+[0;32mI (21938) prot: display out + 0[0m
+[0;32mI (21978) prot: adc read[0m
+[0;32mI (22028) prot: timer : 21100944[0m
+[0;32mI (22028) prot: adc read[0m
+[0;32mI (22078) prot: adc read[0m
+[0;32mI (22128) prot: timer : 21200944[0m
+[0;32mI (22128) prot: adc read[0m
+[0;32mI (22178) prot: adc read[0m
+[0;32mI (22228) prot: timer : 21300944[0m
+[0;32mI (22228) prot: adc read[0m
+[0;32mI (22278) prot: adc read[0m
+[0;32mI (22288) prot: display out + 0[0m
+[0;32mI (22328) prot: timer : 21400946[0m
+[0;32mI (22328) prot: adc read[0m
+[0;32mI (22378) prot: adc read[0m
+[0;32mI (22428) prot: timer : 21500949[0m
+[0;32mI (22428) prot: adc read[0m
+[0;32mI (22478) prot: adc read[0m
+[0;32mI (22528) prot: timer : 21600944[0m
+[0;32mI (22528) prot: adc read[0m
+[0;32mI (22578) prot: adc read[0m
+[0;32mI (22628) prot: timer : 21700944[0m
+[0;32mI (22628) prot: adc read[0m
+[0;32mI (22638) prot: display out + 0[0m
+[0;32mI (22678) prot: adc read[0m
+[0;32mI (22728) prot: timer : 21800944[0m
+[0;32mI (22728) prot: adc read[0m
+[0;32mI (22778) prot: adc read[0m
+[0;32mI (22828) prot: timer : 21900944[0m
+[0;32mI (22828) prot: adc read[0m
+[0;32mI (22878) prot: adc read[0m
+[0;32mI (22928) prot: timer : 22000944[0m
+[0;32mI (22928) prot: adc read[0m
+[0;32mI (22978) prot: adc read[0m
+[0;32mI (22988) prot: display out + 0[0m
+[0;32mI (23028) prot: timer : 22100946[0m
+[0;32mI (23028) prot: adc read[0m
+[0;32mI (23078) prot: adc read[0m
+[0;32mI (23128) prot: timer : 22200949[0m
+[0;32mI (23128) prot: adc read[0m
+[0;32mI (23178) prot: adc read[0m
+[0;32mI (23228) prot: timer : 22300944[0m
+[0;32mI (23228) prot: adc read[0m
+[0;32mI (23278) prot: adc read[0m
+[0;32mI (23328) prot: timer : 22400944[0m
+[0;32mI (23328) prot: adc read[0m
+[0;32mI (23338) prot: display out + 0[0m
+[0;32mI (23378) prot: adc read[0m
+[0;32mI (23428) prot: timer : 22500944[0m
+[0;32mI (23428) prot: adc read[0m
+[0;32mI (23478) prot: adc read[0m
+[0;32mI (23528) prot: timer : 22600944[0m
+[0;32mI (23528) prot: adc read[0m
+[0;32mI (23578) prot: adc read[0m
+[0;32mI (23628) prot: timer : 22700944[0m
+[0;32mI (23628) prot: adc read[0m
+[0;32mI (23678) prot: adc read[0m
+[0;32mI (23688) prot: display out + 0[0m
+[0;32mI (23728) prot: timer : 22800946[0m
+[0;32mI (23728) prot: adc read[0m
+[0;32mI (23778) prot: adc read[0m
+[0;32mI (23828) prot: timer : 22900949[0m
+[0;32mI (23828) prot: adc read[0m
+[0;32mI (23878) prot: adc read[0m
+[0;32mI (23928) prot: timer : 23000944[0m
+[0;32mI (23928) prot: adc read[0m
+[0;32mI (23978) prot: adc read[0m
+[0;32mI (24028) prot: timer : 23100944[0m
+[0;32mI (24028) prot: adc read[0m
+[0;32mI (24038) prot: display out + 0[0m
+[0;32mI (24078) prot: adc read[0m
+[0;32mI (24128) prot: timer : 23200944[0m
+[0;32mI (24128) prot: adc read[0m
+[0;32mI (24178) prot: adc read[0m
+[0;32mI (24228) prot: timer : 23300944[0m
+[0;32mI (24228) prot: adc read[0m
+[0;32mI (24278) prot: adc read[0m
+[0;32mI (24328) prot: timer : 23400944[0m
+[0;32mI (24328) prot: adc read[0m
+[0;32mI (24378) prot: adc read[0m
+[0;32mI (24388) prot: display out + 0[0m
+[0;32mI (24428) prot: timer : 23500946[0m
+[0;32mI (24428) prot: adc read[0m
+[0;32mI (24478) prot: adc read[0m
+[0;32mI (24528) prot: timer : 23600949[0m
+[0;32mI (24528) prot: adc read[0m
+[0;32mI (24578) prot: adc read[0m
+[0;32mI (24628) prot: timer : 23700944[0m
+[0;32mI (24628) prot: adc read[0m
+[0;32mI (24678) prot: adc read[0m
+[0;32mI (24728) prot: timer : 23800944[0m
+[0;32mI (24728) prot: adc read[0m
+[0;32mI (24738) prot: display out + 0[0m
+[0;32mI (24778) prot: adc read[0m
+[0;32mI (24828) prot: timer : 23900944[0m
+[0;32mI (24828) prot: adc read[0m
+[0;32mI (24878) prot: adc read[0m
+[0;32mI (24928) prot: timer : 24000944[0m
+[0;32mI (24928) prot: adc read[0m
+[0;32mI (24978) prot: adc read[0m
+[0;32mI (25028) prot: timer : 24100944[0m
+[0;32mI (25028) prot: adc read[0m
+[0;32mI (25078) prot: adc read[0m
+[0;32mI (25088) prot: display out + 0[0m
+[0;32mI (25128) prot: timer : 24200946[0m
+[0;32mI (25128) prot: adc read[0m
+[0;32mI (25178) prot: adc read[0m
+[0;32mI (25228) prot: timer : 24300949[0m
+[0;32mI (25228) prot: adc read[0m
+[0;32mI (25278) prot: adc read[0m
+[0;32mI (25328) prot: timer : 24400944[0m
+[0;32mI (25328) prot: adc read[0m
+[0;32mI (25378) prot: adc read[0m
+[0;32mI (25428) prot: timer : 24500944[0m
+[0;32mI (25428) prot: adc read[0m
+[0;32mI (25438) prot: display out + 0[0m
+[0;32mI (25478) prot: adc read[0m
+[0;32mI (25528) prot: timer : 24600944[0m
+[0;32mI (25528) prot: adc read[0m
+[0;32mI (25578) prot: adc read[0m
+[0;32mI (25628) prot: timer : 24700944[0m
+[0;32mI (25628) prot: adc read[0m
+[0;32mI (25678) prot: adc read[0m
+[0;32mI (25728) prot: timer : 24800944[0m
+[0;32mI (25728) prot: adc read[0m
+[0;32mI (25778) prot: adc read[0m
+[0;32mI (25788) prot: display out + 0[0m
+[0;32mI (25828) prot: timer : 24900946[0m
+[0;32mI (25828) prot: adc read[0m
+[0;32mI (25878) prot: adc read[0m
+[0;32mI (25928) prot: timer : 25000949[0m
+[0;32mI (25928) prot: adc read[0m
+[0;32mI (25978) prot: adc read[0m
+[0;32mI (26028) prot: timer : 25100944[0m
+[0;32mI (26028) prot: adc read[0m
+[0;32mI (26078) prot: adc read[0m
+[0;32mI (26128) prot: timer : 25200944[0m
+[0;32mI (26128) prot: adc read[0m
+[0;32mI (26138) prot: display out + 0[0m
+[0;32mI (26178) prot: adc read[0m
+[0;32mI (26228) prot: timer : 25300944[0m
+[0;32mI (26228) prot: adc read[0m
+[0;32mI (26278) prot: adc read[0m
+[0;32mI (26328) prot: timer : 25400944[0m
+[0;32mI (26328) prot: adc read[0m
+[0;32mI (26378) prot: adc read[0m
+[0;32mI (26428) prot: timer : 25500944[0m
+[0;32mI (26428) prot: adc read[0m
+[0;32mI (26478) prot: adc read[0m
+[0;32mI (26488) prot: display out + 0[0m
+[0;32mI (26528) prot: timer : 25600946[0m
+[0;32mI (26528) prot: adc read[0m
+[0;32mI (26578) prot: adc read[0m
+[0;32mI (26628) prot: timer : 25700949[0m
+[0;32mI (26628) prot: adc read[0m
+[0;32mI (26678) prot: adc read[0m
+[0;32mI (26728) prot: timer : 25800944[0m
+[0;32mI (26728) prot: adc read[0m
+[0;32mI (26778) prot: adc read[0m
+[0;32mI (26828) prot: timer : 25900944[0m
+[0;32mI (26828) prot: adc read[0m
+[0;32mI (26838) prot: display out + 0[0m
+[0;32mI (26878) prot: adc read[0m
+[0;32mI (26928) prot: timer : 26000944[0m
+[0;32mI (26928) prot: adc read[0m
+[0;32mI (26978) prot: adc read[0m
+[0;32mI (27028) prot: timer : 26100944[0m
+[0;32mI (27028) prot: adc read[0m
+[0;32mI (27078) prot: adc read[0m
+[0;32mI (27128) prot: timer : 26200944[0m
+[0;32mI (27128) prot: adc read[0m
+[0;32mI (27178) prot: adc read[0m
+[0;32mI (27188) prot: display out + 0[0m
+[0;32mI (27228) prot: timer : 26300946[0m
+[0;32mI (27228) prot: adc read[0m
+[0;32mI (27278) prot: adc read[0m
+[0;32mI (27328) prot: timer : 26400949[0m
+[0;32mI (27328) prot: adc read[0m
+[0;32mI (27378) prot: adc read[0m
+[0;32mI (27428) prot: timer : 26500944[0m
+[0;32mI (27428) prot: adc read[0m
+[0;32mI (27478) prot: adc read[0m
+[0;32mI (27528) prot: timer : 26600944[0m
+[0;32mI (27528) prot: adc read[0m
+[0;32mI (27538) prot: display out + 0[0m
+[0;32mI (27578) prot: adc read[0m
+[0;32mI (27628) prot: timer : 26700944[0m
+[0;32mI (27628) prot: adc read[0m
+[0;32mI (27678) prot: adc read[0m
+[0;32mI (27728) prot: timer : 26800944[0m
+[0;32mI (27728) prot: adc read[0m
+[0;32mI (27778) prot: adc read[0m
+[0;32mI (27828) prot: timer : 26900944[0m
+[0;32mI (27828) prot: adc read[0m
+[0;32mI (27878) prot: adc read[0m
+[0;32mI (27888) prot: display out + 0[0m
+[0;32mI (27928) prot: timer : 27000946[0m
+[0;32mI (27928) prot: adc read[0m
+[0;32mI (27978) prot: adc read[0m
+[0;32mI (28028) prot: timer : 27100949[0m
+[0;32mI (28028) prot: adc read[0m
+[0;32mI (28078) prot: adc read[0m
+[0;32mI (28128) prot: timer : 27200944[0m
+[0;32mI (28128) prot: adc read[0m
+[0;32mI (28178) prot: adc read[0m
+[0;32mI (28228) prot: timer : 27300944[0m
+[0;32mI (28228) prot: adc read[0m
+[0;32mI (28238) prot: display out + 0[0m
+[0;32mI (28278) prot: adc read[0m
+[0;32mI (28328) prot: timer : 27400944[0m
+[0;32mI (28328) prot: adc read[0m
+[0;32mI (28378) prot: adc read[0m
+[0;32mI (28428) prot: timer : 27500944[0m
+[0;32mI (28428) prot: adc read[0m
+[0;32mI (28478) prot: adc read[0m
+[0;32mI (28528) prot: timer : 27600944[0m
+[0;32mI (28528) prot: adc read[0m
+[0;32mI (28578) prot: adc read[0m
+[0;32mI (28588) prot: display out + 0[0m
+[0;32mI (28628) prot: timer : 27700946[0m
+[0;32mI (28628) prot: adc read[0m
+[0;32mI (28678) prot: adc read[0m
+[0;32mI (28728) prot: timer : 27800949[0m
+[0;32mI (28728) prot: adc read[0m
+[0;32mI (28778) prot: adc read[0m
+[0;32mI (28828) prot: timer : 27900944[0m
+[0;32mI (28828) prot: adc read[0m
+[0;32mI (28878) prot: adc read[0m
+[0;32mI (28928) prot: timer : 28000944[0m
+[0;32mI (28928) prot: adc read[0m
+[0;32mI (28938) prot: display out + 0[0m
+[0;32mI (28978) prot: adc read[0m
+[0;32mI (29028) prot: timer : 28100944[0m
+[0;32mI (29028) prot: adc read[0m
+[0;32mI (29078) prot: adc read[0m
+[0;32mI (29128) prot: timer : 28200944[0m
+[0;32mI (29128) prot: adc read[0m
+[0;32mI (29178) prot: adc read[0m
+[0;32mI (29228) prot: timer : 28300944[0m
+[0;32mI (29228) prot: adc read[0m
+[0;32mI (29278) prot: adc read[0m
+[0;32mI (29288) prot: display out + 0[0m
+[0;32mI (29328) prot: timer : 28400946[0m
+[0;32mI (29328) prot: adc read[0m
+[0;32mI (29378) prot: adc read[0m
+[0;32mI (29428) prot: timer : 28500949[0m
+[0;32mI (29428) prot: adc read[0m
+[0;32mI (29478) prot: adc read[0m
+[0;32mI (29528) prot: timer : 28600944[0m
+[0;32mI (29528) prot: adc read[0m
+[0;32mI (29578) prot: adc read[0m
+[0;32mI (29628) prot: timer : 28700944[0m
+[0;32mI (29628) prot: adc read[0m
+[0;32mI (29638) prot: display out + 0[0m
+[0;32mI (29678) prot: adc read[0m
+[0;32mI (29728) prot: timer : 28800944[0m
+[0;32mI (29728) prot: adc read[0m
+[0;32mI (29778) prot: adc read[0m
+[0;32mI (29828) prot: timer : 28900944[0m
+[0;32mI (29828) prot: adc read[0m
+[0;32mI (29878) prot: adc read[0m
+[0;32mI (29928) prot: timer : 29000944[0m
+[0;32mI (29928) prot: adc read[0m
+[0;32mI (29978) prot: adc read[0m
+[0;32mI (29988) prot: display out + 0[0m
+[0;32mI (30028) prot: timer : 29100946[0m
+[0;32mI (30028) prot: adc read[0m
+[0;32mI (30078) prot: adc read[0m
+[0;32mI (30128) prot: timer : 29200949[0m
+[0;32mI (30128) prot: adc read[0m
+[0;32mI (30178) prot: adc read[0m
+[0;32mI (30228) prot: timer : 29300944[0m
+[0;32mI (30228) prot: adc read[0m
+[0;32mI (30278) prot: adc read[0m
+[0;32mI (30328) prot: timer : 29400944[0m
+[0;32mI (30328) prot: adc read[0m
+[0;32mI (30338) prot: display out + 0[0m
+[0;32mI (30378) prot: adc read[0m
+[0;32mI (30428) prot: timer : 29500944[0m
+[0;32mI (30428) prot: adc read[0m
+[0;32mI (30478) prot: adc read[0m
+[0;32mI (30528) prot: timer : 29600944[0m
+[0;32mI (30528) prot: adc read[0m
+[0;32mI (30578) prot: adc read[0m
+[0;32mI (30628) prot: timer : 29700944[0m
+[0;32mI (30628) prot: adc read[0m
+[0;32mI (30678) prot: adc read[0m
+[0;32mI (30688) prot: display out + 0[0m
+[0;32mI (30728) prot: timer : 29800946[0m
+[0;32mI (30728) prot: adc read[0m
+[0;32mI (30778) prot: adc read[0m
+[0;32mI (30828) prot: timer : 29900949[0m
+[0;32mI (30828) prot: adc read[0m
+[0;32mI (30878) prot: adc read[0m
+[0;32mI (30928) prot: timer : 30000944[0m
+[0;32mI (30928) prot: adc read[0m
+[0;32mI (30978) prot: adc read[0m
+[0;32mI (31028) prot: timer : 30100944[0m
+[0;32mI (31028) prot: adc read[0m
+[0;32mI (31038) prot: display out + 0[0m
+[0;32mI (31078) prot: adc read[0m
+[0;32mI (31128) prot: timer : 30200944[0m
+[0;32mI (31128) prot: adc read[0m
+[0;32mI (31178) prot: adc read[0m
+[0;32mI (31228) prot: timer : 30300944[0m
+[0;32mI (31228) prot: adc read[0m
+[0;32mI (31278) prot: adc read[0m
+[0;32mI (31328) prot: timer : 30400944[0m
+[0;32mI (31328) prot: adc read[0m
+[0;32mI (31378) prot: adc read[0m
+[0;32mI (31388) prot: display out + 0[0m
+[0;32mI (31428) prot: timer : 30500946[0m
+[0;32mI (31428) prot: adc read[0m
+[0;32mI (31478) prot: adc read[0m
+[0;32mI (31528) prot: timer : 30600949[0m
+[0;32mI (31528) prot: adc read[0m
+[0;32mI (31578) prot: adc read[0m
+[0;32mI (31628) prot: timer : 30700944[0m
+[0;32mI (31628) prot: adc read[0m
+[0;32mI (31678) prot: adc read[0m
+[0;32mI (31728) prot: timer : 30800944[0m
+[0;32mI (31728) prot: adc read[0m
+[0;32mI (31738) prot: display out + 0[0m
+[0;32mI (31778) prot: adc read[0m
+[0;32mI (31828) prot: timer : 30900944[0m
+[0;32mI (31828) prot: adc read[0m
+[0;32mI (31878) prot: adc read[0m
+[0;32mI (31928) prot: timer : 31000944[0m
+[0;32mI (31928) prot: adc read[0m
+[0;32mI (31978) prot: adc read[0m
+[0;32mI (32028) prot: timer : 31100944[0m
+[0;32mI (32028) prot: adc read[0m
+[0;32mI (32078) prot: adc read[0m
+[0;32mI (32088) prot: display out + 0[0m
+[0;32mI (32128) prot: timer : 31200946[0m
+[0;32mI (32128) prot: adc read[0m
+[0;32mI (32178) prot: adc read[0m
+[0;32mI (32228) prot: timer : 31300949[0m
+[0;32mI (32228) prot: adc read[0m
+[0;32mI (32278) prot: adc read[0m
+[0;32mI (32328) prot: timer : 31400944[0m
+[0;32mI (32328) prot: adc read[0m
+[0;32mI (32378) prot: adc read[0m
+[0;32mI (32428) prot: timer : 31500944[0m
+[0;32mI (32428) prot: adc read[0m
+[0;32mI (32438) prot: display out + 0[0m
+[0;32mI (32478) prot: adc read[0m
+[0;32mI (32528) prot: timer : 31600944[0m
+[0;32mI (32528) prot: adc read[0m
+[0;32mI (32578) prot: adc read[0m
+[0;32mI (32628) prot: timer : 31700944[0m
+[0;32mI (32628) prot: adc read[0m
+[0;32mI (32678) prot: adc read[0m
+[0;32mI (32728) prot: timer : 31800944[0m
+[0;32mI (32728) prot: adc read[0m
+[0;32mI (32778) prot: adc read[0m
+[0;32mI (32788) prot: display out + 0[0m
+[0;32mI (32828) prot: timer : 31900946[0m
+[0;32mI (32828) prot: adc read[0m
+[0;32mI (32878) prot: adc read[0m
+[0;32mI (32928) prot: timer : 32000949[0m
+[0;32mI (32928) prot: adc read[0m
+[0;32mI (32978) prot: adc read[0m
+[0;32mI (33028) prot: timer : 32100944[0m
+[0;32mI (33028) prot: adc read[0m
+[0;32mI (33078) prot: adc read[0m
+[0;32mI (33128) prot: timer : 32200944[0m
+[0;32mI (33128) prot: adc read[0m
+[0;32mI (33138) prot: display out + 0[0m
+[0;32mI (33178) prot: adc read[0m
+[0;32mI (33228) prot: timer : 32300944[0m
+[0;32mI (33228) prot: adc read[0m
+[0;32mI (33278) prot: adc read[0m
+[0;32mI (33328) prot: timer : 32400944[0m
+[0;32mI (33328) prot: adc read[0m
+[0;32mI (33378) prot: adc read[0m
+[0;32mI (33428) prot: timer : 32500944[0m
+[0;32mI (33428) prot: adc read[0m
+[0;32mI (33478) prot: adc read[0m
+[0;32mI (33488) prot: display out + 0[0m
+[0;32mI (33528) prot: timer : 32600946[0m
+[0;32mI (33528) prot: adc read[0m
+[0;32mI (33578) prot: adc read[0m
+[0;32mI (33628) prot: timer : 32700949[0m
+[0;32mI (33628) prot: adc read[0m
+[0;32mI (33678) prot: adc read[0m
+[0;32mI (33728) prot: timer : 32800944[0m
+[0;32mI (33728) prot: adc read[0m
+[0;32mI (33778) prot: adc read[0m
+[0;32mI (33828) prot: timer : 32900944[0m
+[0;32mI (33828) prot: adc read[0m
+[0;32mI (33838) prot: display out + 0[0m
+[0;32mI (33878) prot: adc read[0m
+[0;32mI (33928) prot: timer : 33000944[0m
+[0;32mI (33928) prot: adc read[0m
+[0;32mI (33978) prot: adc read[0m
+[0;32mI (34028) prot: timer : 33100944[0m
+[0;32mI (34028) prot: adc read[0m
+[0;32mI (34078) prot: adc read[0m
+[0;32mI (34128) prot: timer : 33200944[0m
+[0;32mI (34128) prot: adc read[0m
+[0;32mI (34178) prot: adc read[0m
+[0;32mI (34188) prot: display out + 0[0m
+[0;32mI (34228) prot: timer : 33300946[0m
+[0;32mI (34228) prot: adc read[0m
+[0;32mI (34278) prot: adc read[0m
+[0;32mI (34328) prot: timer : 33400949[0m
+[0;32mI (34328) prot: adc read[0m
+[0;32mI (34378) prot: adc read[0m
+[0;32mI (34428) prot: timer : 33500944[0m
+[0;32mI (34428) prot: adc read[0m
+[0;32mI (34478) prot: adc read[0m
+[0;32mI (34528) prot: timer : 33600944[0m
+[0;32mI (34528) prot: adc read[0m
+[0;32mI (34538) prot: display out + 0[0m
+[0;32mI (34578) prot: adc read[0m
+[0;32mI (34628) prot: timer : 33700944[0m
+[0;32mI (34628) prot: adc read[0m
+[0;32mI (34678) prot: adc read[0m
+[0;32mI (34728) prot: timer : 33800944[0m
+[0;32mI (34728) prot: adc read[0m
+[0;32mI (34778) prot: adc read[0m
+[0;32mI (34828) prot: timer : 33900944[0m
+[0;32mI (34828) prot: adc read[0m
+[0;32mI (34878) prot: adc read[0m
+[0;32mI (34888) prot: display out + 0[0m
+[0;32mI (34928) prot: timer : 34000946[0m
+[0;32mI (34928) prot: adc read[0m
+[0;32mI (34978) prot: adc read[0m
+[0;32mI (35028) prot: timer : 34100949[0m
+[0;32mI (35028) prot: adc read[0m
+[0;32mI (35078) prot: adc read[0m
+[0;32mI (35128) prot: timer : 34200944[0m
+[0;32mI (35128) prot: adc read[0m
+[0;32mI (35178) prot: adc read[0m
+[0;32mI (35228) prot: timer : 34300944[0m
+[0;32mI (35228) prot: adc read[0m
+[0;32mI (35238) prot: display out + 0[0m
+[0;32mI (35278) prot: adc read[0m
+[0;32mI (35328) prot: timer : 34400944[0m
+[0;32mI (35328) prot: adc read[0m
+[0;32mI (35378) prot: adc read[0m
+[0;32mI (35428) prot: timer : 34500944[0m
+[0;32mI (35428) prot: adc read[0m
+[0;32mI (35478) prot: adc read[0m
+[0;32mI (35528) prot: timer : 34600944[0m
+[0;32mI (35528) prot: adc read[0m
+[0;32mI (35578) prot: adc read[0m
+[0;32mI (35588) prot: display out + 0[0m
+[0;32mI (35628) prot: timer : 34700946[0m
+[0;32mI (35628) prot: adc read[0m
+[0;32mI (35678) prot: adc read[0m
+[0;32mI (35728) prot: timer : 34800949[0m
+[0;32mI (35728) prot: adc read[0m
+[0;32mI (35778) prot: adc read[0m
+[0;32mI (35828) prot: timer : 34900944[0m
+[0;32mI (35828) prot: adc read[0m
+[0;32mI (35878) prot: adc read[0m
+[0;32mI (35928) prot: timer : 35000944[0m
+[0;32mI (35928) prot: adc read[0m
+[0;32mI (35938) prot: display out + 0[0m
+[0;32mI (35978) prot: adc read[0m
+[0;32mI (36028) prot: timer : 35100944[0m
+[0;32mI (36028) prot: adc read[0m
+[0;32mI (36078) prot: adc read[0m
+[0;32mI (36128) prot: timer : 35200944[0m
+[0;32mI (36128) prot: adc read[0m
+[0;32mI (36178) prot: adc read[0m
+[0;32mI (36228) prot: timer : 35300944[0m
+[0;32mI (36228) prot: adc read[0m
+[0;32mI (36278) prot: adc read[0m
+[0;32mI (36288) prot: display out + 0[0m
+[0;32mI (36328) prot: timer : 35400946[0m
+[0;32mI (36328) prot: adc read[0m
+[0;32mI (36378) prot: adc read[0m
+[0;32mI (36428) prot: timer : 35500949[0m
+[0;32mI (36428) prot: adc read[0m
+[0;32mI (36478) prot: adc read[0m
+[0;32mI (36528) prot: timer : 35600944[0m
+[0;32mI (36528) prot: adc read[0m
+[0;32mI (36578) prot: adc read[0m
+[0;32mI (36628) prot: timer : 35700944[0m
+[0;32mI (36628) prot: adc read[0m
+[0;32mI (36638) prot: display out + 0[0m
+[0;32mI (36678) prot: adc read[0m
+[0;32mI (36728) prot: timer : 35800944[0m
+[0;32mI (36728) prot: adc read[0m
+[0;32mI (36778) prot: adc read[0m
+[0;32mI (36828) prot: timer : 35900944[0m
+[0;32mI (36828) prot: adc read[0m
+[0;32mI (36878) prot: adc read[0m
+[0;32mI (36928) prot: timer : 36000944[0m
+[0;32mI (36928) prot: adc read[0m
+[0;32mI (36978) prot: adc read[0m
+[0;32mI (36988) prot: display out + 0[0m
+[0;32mI (37028) prot: timer : 36100946[0m
+[0;32mI (37028) prot: adc read[0m
+[0;32mI (37078) prot: adc read[0m
+[0;32mI (37128) prot: timer : 36200949[0m
+[0;32mI (37128) prot: adc read[0m
+[0;32mI (37178) prot: adc read[0m
+[0;32mI (37228) prot: timer : 36300944[0m
+[0;32mI (37228) prot: adc read[0m
+[0;32mI (37278) prot: adc read[0m
+[0;32mI (37328) prot: timer : 36400944[0m
+[0;32mI (37328) prot: adc read[0m
+[0;32mI (37338) prot: display out + 0[0m
+[0;32mI (37378) prot: adc read[0m
+[0;32mI (37428) prot: timer : 36500944[0m
+[0;32mI (37428) prot: adc read[0m
+[0;32mI (37478) prot: adc read[0m
+[0;32mI (37528) prot: timer : 36600944[0m
+[0;32mI (37528) prot: adc read[0m
+[0;32mI (37578) prot: adc read[0m
+[0;32mI (37628) prot: timer : 36700944[0m
+[0;32mI (37628) prot: adc read[0m
+[0;32mI (37678) prot: adc read[0m
+[0;32mI (37688) prot: display out + 0[0m
+[0;32mI (37728) prot: timer : 36800946[0m
+[0;32mI (37728) prot: adc read[0m
+[0;32mI (37778) prot: adc read[0m
+[0;32mI (37828) prot: timer : 36900949[0m
+[0;32mI (37828) prot: adc read[0m
+[0;32mI (37878) prot: adc read[0m
+[0;32mI (37928) prot: timer : 37000944[0m
+[0;32mI (37928) prot: adc read[0m
+[0;32mI (37978) prot: adc read[0m
+[0;32mI (38028) prot: timer : 37100944[0m
+[0;32mI (38028) prot: adc read[0m
+[0;32mI (38038) prot: display out + 0[0m
+[0;32mI (38078) prot: adc read[0m
+[0;32mI (38128) prot: timer : 37200944[0m
+[0;32mI (38128) prot: adc read[0m
+[0;32mI (38178) prot: adc read[0m
+[0;32mI (38228) prot: timer : 37300944[0m
+[0;32mI (38228) prot: adc read[0m
+[0;32mI (38278) prot: adc read[0m
+[0;32mI (38328) prot: timer : 37400944[0m
+[0;32mI (38328) prot: adc read[0m
+[0;32mI (38378) prot: adc read[0m
+[0;32mI (38388) prot: display out + 0[0m
+[0;32mI (38428) prot: timer : 37500946[0m
+[0;32mI (38428) prot: adc read[0m
+[0;32mI (38478) prot: adc read[0m
+[0;32mI (38528) prot: timer : 37600949[0m
+[0;32mI (38528) prot: adc read[0m
+[0;32mI (38578) prot: adc read[0m
+[0;32mI (38628) prot: timer : 37700944[0m
+[0;32mI (38628) prot: adc read[0m
+[0;32mI (38678) prot: adc read[0m
+[0;32mI (38728) prot: timer : 37800944[0m
+[0;32mI (38728) prot: adc read[0m
+[0;32mI (38738) prot: display out + 0[0m
+[0;32mI (38778) prot: adc read[0m
+[0;32mI (38828) prot: timer : 37900944[0m
+[0;32mI (38828) prot: adc read[0m
+[0;32mI (38878) prot: adc read[0m
+[0;32mI (38928) prot: timer : 38000944[0m
+[0;32mI (38928) prot: adc read[0m
+[0;32mI (38978) prot: adc read[0m
+[0;32mI (39028) prot: timer : 38100944[0m
+[0;32mI (39028) prot: adc read[0m
+[0;32mI (39078) prot: adc read[0m
+[0;32mI (39088) prot: display out + 0[0m
+[0;32mI (39128) prot: timer : 38200946[0m
+[0;32mI (39128) prot: adc read[0m
+[0;32mI (39178) prot: adc read[0m
+[0;32mI (39228) prot: timer : 38300949[0m
+[0;32mI (39228) prot: adc read[0m
+[0;32mI (39278) prot: adc read[0m
+[0;32mI (39328) prot: timer : 38400944[0m
+[0;32mI (39328) prot: adc read[0m
+[0;32mI (39378) prot: adc read[0m
+[0;32mI (39428) prot: timer : 38500944[0m
+[0;32mI (39428) prot: adc read[0m
+[0;32mI (39438) prot: display out + 0[0m
+[0;32mI (39478) prot: adc read[0m
+[0;32mI (39528) prot: timer : 38600944[0m
+[0;32mI (39528) prot: adc read[0m
+[0;32mI (39578) prot: adc read[0m
+[0;32mI (39628) prot: timer : 38700944[0m
+[0;32mI (39628) prot: adc read[0m
+[0;32mI (39678) prot: adc read[0m
+[0;32mI (39728) prot: timer : 38800944[0m
+[0;32mI (39728) prot: adc read[0m
+[0;32mI (39778) prot: adc read[0m
+[0;32mI (39788) prot: display out + 0[0m
+[0;32mI (39828) prot: timer : 38900946[0m
+[0;32mI (39828) prot: adc read[0m
+[0;32mI (39878) prot: adc read[0m
+[0;32mI (39928) prot: timer : 39000949[0m
+[0;32mI (39928) prot: adc read[0m
+[0;32mI (39978) prot: adc read[0m
+[0;32mI (40028) prot: timer : 39100944[0m
+[0;32mI (40028) prot: adc read[0m
+[0;32mI (40078) prot: adc read[0m
+[0;32mI (40128) prot: timer : 39200944[0m
+[0;32mI (40128) prot: adc read[0m
+[0;32mI (40138) prot: display out + 0[0m
+[0;32mI (40178) prot: adc read[0m
+[0;32mI (40228) prot: timer : 39300944[0m
+[0;32mI (40228) prot: adc read[0m
+[0;32mI (40278) prot: adc read[0m
+[0;32mI (40328) prot: timer : 39400944[0m
+[0;32mI (40328) prot: adc read[0m
+[0;32mI (40378) prot: adc read[0m
+[0;32mI (40428) prot: timer : 39500944[0m
+[0;32mI (40428) prot: adc read[0m
+[0;32mI (40478) prot: adc read[0m
+[0;32mI (40488) prot: display out + 0[0m
+[0;32mI (40528) prot: timer : 39600946[0m
+[0;32mI (40528) prot: adc read[0m
+[0;32mI (40578) prot: adc read[0m
+[0;32mI (40628) prot: timer : 39700949[0m
+[0;32mI (40628) prot: adc read[0m
+[0;32mI (40678) prot: adc read[0m
+[0;32mI (40728) prot: timer : 39800944[0m
+[0;32mI (40728) prot: adc read[0m
+[0;32mI (40778) prot: adc read[0m
+[0;32mI (40828) prot: timer : 39900944[0m
+[0;32mI (40828) prot: adc read[0m
+[0;32mI (40838) prot: display out + 0[0m
+[0;32mI (40878) prot: adc read[0m
+[0;32mI (40928) prot: timer : 40000944[0m
+[0;32mI (40928) prot: adc read[0m
+[0;32mI (40978) prot: adc read[0m
+[0;32mI (41028) prot: timer : 40100944[0m
+[0;32mI (41028) prot: adc read[0m
+[0;32mI (41078) prot: adc read[0m
+[0;32mI (41128) prot: timer : 40200944[0m
+[0;32mI (41128) prot: adc read[0m
+[0;32mI (41178) prot: adc read[0m
+[0;32mI (41188) prot: display out + 0[0m
+[0;32mI (41228) prot: timer : 40300946[0m
+[0;32mI (41228) prot: adc read[0m
+[0;32mI (41278) prot: adc read[0m
+[0;32mI (41328) prot: timer : 40400949[0m
+[0;32mI (41328) prot: adc read[0m
+[0;32mI (41378) prot: adc read[0m
+[0;32mI (41428) prot: timer : 40500944[0m
+[0;32mI (41428) prot: adc read[0m
+[0;32mI (41478) prot: adc read[0m
+[0;32mI (41528) prot: timer : 40600944[0m
+[0;32mI (41528) prot: adc read[0m
+[0;32mI (41538) prot: display out + 0[0m
+[0;32mI (41578) prot: adc read[0m
+[0;32mI (41628) prot: timer : 40700944[0m
+[0;32mI (41628) prot: adc read[0m
+[0;32mI (41678) prot: adc read[0m
+[0;32mI (41728) prot: timer : 40800944[0m
+[0;32mI (41728) prot: adc read[0m
+[0;32mI (41778) prot: adc read[0m
+[0;32mI (41828) prot: timer : 40900944[0m
+[0;32mI (41828) prot: adc read[0m
+[0;32mI (41878) prot: adc read[0m
+[0;32mI (41888) prot: display out + 0[0m
+[0;32mI (41928) prot: timer : 41000946[0m
+[0;32mI (41928) prot: adc read[0m
+[0;32mI (41978) prot: adc read[0m
+[0;32mI (42028) prot: timer : 41100949[0m
+[0;32mI (42028) prot: adc read[0m
+[0;32mI (42078) prot: adc read[0m
+[0;32mI (42128) prot: timer : 41200944[0m
+[0;32mI (42128) prot: adc read[0m
+[0;32mI (42178) prot: adc read[0m
+[0;32mI (42228) prot: timer : 41300944[0m
+[0;32mI (42228) prot: adc read[0m
+[0;32mI (42238) prot: display out + 0[0m
+[0;32mI (42278) prot: adc read[0m
+[0;32mI (42328) prot: timer : 41400944[0m
+[0;32mI (42328) prot: adc read[0m
+[0;32mI (42378) prot: adc read[0m
+[0;32mI (42428) prot: timer : 41500944[0m
+[0;32mI (42428) prot: adc read[0m
+[0;32mI (42478) prot: adc read[0m
+[0;32mI (42528) prot: timer : 41600944[0m
+[0;32mI (42528) prot: adc read[0m
+[0;32mI (42578) prot: adc read[0m
+[0;32mI (42588) prot: display out + 0[0m
+[0;32mI (42628) prot: timer : 41700946[0m
+[0;32mI (42628) prot: adc read[0m
+[0;32mI (42678) prot: adc read[0m
+[0;32mI (42728) prot: timer : 41800949[0m
+[0;32mI (42728) prot: adc read[0m
+[0;32mI (42778) prot: adc read[0m
+[0;32mI (42828) prot: timer : 41900944[0m
+[0;32mI (42828) prot: adc read[0m
+[0;32mI (42878) prot: adc read[0m
+[0;32mI (42928) prot: timer : 42000944[0m
+[0;32mI (42928) prot: adc read[0m
+[0;32mI (42938) prot: display out + 0[0m
+[0;32mI (42978) prot: adc read[0m
+[0;32mI (43028) prot: timer : 42100944[0m
+[0;32mI (43028) prot: adc read[0m
+[0;32mI (43078) prot: adc read[0m
+[0;32mI (43128) prot: timer : 42200944[0m
+[0;32mI (43128) prot: adc read[0m
+[0;32mI (43178) prot: adc read[0m
+[0;32mI (43228) prot: timer : 42300944[0m
+[0;32mI (43228) prot: adc read[0m
+[0;32mI (43278) prot: adc read[0m
+[0;32mI (43288) prot: display out + 0[0m
+[0;32mI (43328) prot: timer : 42400944[0m
+[0;32mI (43328) prot: adc read[0m
+[0;32mI (43378) prot: adc read[0m
+[0;32mI (43428) prot: timer : 42500948[0m
+[0;32mI (43428) prot: adc read[0m
+[0;32mI (43478) prot: adc read[0m
+[0;32mI (43528) prot: timer : 42600944[0m
+[0;32mI (43528) prot: adc read[0m
+[0;32mI (43578) prot: adc read[0m
+[0;32mI (43628) prot: timer : 42700944[0m
+[0;32mI (43628) prot: adc read[0m
+[0;32mI (43638) prot: display out + 0[0m
+[0;32mI (43678) prot: adc read[0m
+[0;32mI (43728) prot: timer : 42800944[0m
+[0;32mI (43728) prot: adc read[0m
+[0;32mI (43778) prot: adc read[0m
+[0;32mI (43828) prot: timer : 42900944[0m
+[0;32mI (43828) prot: adc read[0m
+[0;32mI (43878) prot: adc read[0m
+[0;32mI (43928) prot: timer : 43000944[0m
+[0;32mI (43928) prot: adc read[0m
+[0;32mI (43978) prot: adc read[0m
+[0;32mI (43988) prot: display out + 0[0m
+[0;32mI (44028) prot: timer : 43100946[0m
+[0;32mI (44028) prot: adc read[0m
+[0;32mI (44078) prot: adc read[0m
+[0;32mI (44128) prot: timer : 43200949[0m
+[0;32mI (44128) prot: adc read[0m
+[0;32mI (44178) prot: adc read[0m
+[0;32mI (44228) prot: timer : 43300944[0m
+[0;32mI (44228) prot: adc read[0m
+[0;32mI (44278) prot: adc read[0m
+[0;32mI (44328) prot: timer : 43400944[0m
+[0;32mI (44328) prot: adc read[0m
+[0;32mI (44338) prot: display out + 0[0m
+[0;32mI (44378) prot: adc read[0m
+[0;32mI (44428) prot: timer : 43500944[0m
+[0;32mI (44428) prot: adc read[0m
+[0;32mI (44478) prot: adc read[0m
+[0;32mI (44528) prot: timer : 43600944[0m
+[0;32mI (44528) prot: adc read[0m
+[0;32mI (44578) prot: adc read[0m
+[0;32mI (44628) prot: timer : 43700944[0m
+[0;32mI (44628) prot: adc read[0m
+[0;32mI (44678) prot: adc read[0m
+[0;32mI (44688) prot: display out + 0[0m
+[0;32mI (44728) prot: timer : 43800946[0m
+[0;32mI (44728) prot: adc read[0m
+[0;32mI (44778) prot: adc read[0m
+[0;32mI (44828) prot: timer : 43900949[0m
+[0;32mI (44828) prot: adc read[0m
+[0;32mI (44878) prot: adc read[0m
+[0;32mI (44928) prot: timer : 44000944[0m
+[0;32mI (44928) prot: adc read[0m
+[0;32mI (44978) prot: adc read[0m
+[0;32mI (45028) prot: timer : 44100944[0m
+[0;32mI (45028) prot: adc read[0m
+[0;32mI (45038) prot: display out + 0[0m
+[0;32mI (45078) prot: adc read[0m
+[0;32mI (45128) prot: timer : 44200944[0m
+[0;32mI (45128) prot: adc read[0m
+[0;32mI (45178) prot: adc read[0m
+[0;32mI (45228) prot: timer : 44300944[0m
+[0;32mI (45228) prot: adc read[0m
+[0;32mI (45278) prot: adc read[0m
+[0;32mI (45328) prot: timer : 44400944[0m
+[0;32mI (45328) prot: adc read[0m
+[0;32mI (45378) prot: adc read[0m
+[0;32mI (45388) prot: display out + 0[0m
+[0;32mI (45428) prot: timer : 44500946[0m
+[0;32mI (45428) prot: adc read[0m
+[0;32mI (45478) prot: adc read[0m
+[0;32mI (45528) prot: timer : 44600949[0m
+[0;32mI (45528) prot: adc read[0m
+[0;32mI (45578) prot: adc read[0m
+[0;32mI (45628) prot: timer : 44700944[0m
+[0;32mI (45628) prot: adc read[0m
+[0;32mI (45678) prot: adc read[0m
+[0;32mI (45728) prot: timer : 44800944[0m
+[0;32mI (45728) prot: adc read[0m
+[0;32mI (45738) prot: display out + 0[0m
+[0;32mI (45778) prot: adc read[0m
+[0;32mI (45828) prot: timer : 44900944[0m
+[0;32mI (45828) prot: adc read[0m
+[0;32mI (45878) prot: adc read[0m
+[0;32mI (45928) prot: timer : 45000944[0m
+[0;32mI (45928) prot: adc read[0m
+[0;32mI (45978) prot: adc read[0m
+[0;32mI (46028) prot: timer : 45100944[0m
+[0;32mI (46028) prot: adc read[0m
+[0;32mI (46078) prot: adc read[0m
+[0;32mI (46088) prot: display out + 0[0m
+[0;32mI (46128) prot: timer : 45200946[0m
+[0;32mI (46128) prot: adc read[0m
+[0;32mI (46178) prot: adc read[0m
+[0;32mI (46228) prot: timer : 45300949[0m
+[0;32mI (46228) prot: adc read[0m
+[0;32mI (46278) prot: adc read[0m
+[0;32mI (46328) prot: timer : 45400944[0m
+[0;32mI (46328) prot: adc read[0m
+[0;32mI (46378) prot: adc read[0m
+[0;32mI (46428) prot: timer : 45500944[0m
+[0;32mI (46428) prot: adc read[0m
+[0;32mI (46438) prot: display out + 0[0m
+[0;32mI (46478) prot: adc read[0m
+[0;32mI (46528) prot: timer : 45600944[0m
+[0;32mI (46528) prot: adc read[0m
+[0;32mI (46578) prot: adc read[0m
+[0;32mI (46628) prot: timer : 45700944[0m
+[0;32mI (46628) prot: adc read[0m
+[0;32mI (46678) prot: adc read[0m
+[0;32mI (46728) prot: timer : 45800944[0m
+[0;32mI (46728) prot: adc read[0m
+[0;32mI (46778) prot: adc read[0m
+[0;32mI (46788) prot: display out + 0[0m
+[0;32mI (46828) prot: timer : 45900946[0m
+[0;32mI (46828) prot: adc read[0m
+[0;32mI (46878) prot: adc read[0m
+[0;32mI (46928) prot: timer : 46000949[0m
+[0;32mI (46928) prot: adc read[0m
+[0;32mI (46978) prot: adc read[0m
+[0;32mI (47028) prot: timer : 46100944[0m
+[0;32mI (47028) prot: adc read[0m
+[0;32mI (47078) prot: adc read[0m
+[0;32mI (47128) prot: timer : 46200944[0m
+[0;32mI (47128) prot: adc read[0m
+[0;32mI (47138) prot: display out + 0[0m
+[0;32mI (47178) prot: adc read[0m
+[0;32mI (47228) prot: timer : 46300944[0m
+[0;32mI (47228) prot: adc read[0m
+[0;32mI (47278) prot: adc read[0m
+[0;32mI (47328) prot: timer : 46400944[0m
+[0;32mI (47328) prot: adc read[0m
+[0;32mI (47378) prot: adc read[0m
+[0;32mI (47428) prot: timer : 46500944[0m
+[0;32mI (47428) prot: adc read[0m
+[0;32mI (47478) prot: adc read[0m
+[0;32mI (47488) prot: display out + 0[0m
+[0;32mI (47528) prot: timer : 46600946[0m
+[0;32mI (47528) prot: adc read[0m
+[0;32mI (47578) prot: adc read[0m
+[0;32mI (47628) prot: timer : 46700949[0m
+[0;32mI (47628) prot: adc read[0m
+[0;32mI (47678) prot: adc read[0m
+[0;32mI (47728) prot: timer : 46800944[0m
+[0;32mI (47728) prot: adc read[0m
+[0;32mI (47778) prot: adc read[0m
+[0;32mI (47828) prot: timer : 46900944[0m
+[0;32mI (47828) prot: adc read[0m
+[0;32mI (47838) prot: display out + 0[0m
+[0;32mI (47878) prot: adc read[0m
+[0;32mI (47928) prot: timer : 47000944[0m
+[0;32mI (47928) prot: adc read[0m
+[0;32mI (47978) prot: adc read[0m
+[0;32mI (48028) prot: timer : 47100944[0m
+[0;32mI (48028) prot: adc read[0m
+[0;32mI (48078) prot: adc read[0m
+[0;32mI (48128) prot: timer : 47200944[0m
+[0;32mI (48128) prot: adc read[0m
+[0;32mI (48178) prot: adc read[0m
+[0;32mI (48188) prot: display out + 0[0m
+[0;32mI (48228) prot: timer : 47300946[0m
+[0;32mI (48228) prot: adc read[0m
+[0;32mI (48278) prot: adc read[0m
+[0;32mI (48328) prot: timer : 47400949[0m
+[0;32mI (48328) prot: adc read[0m
+[0;32mI (48378) prot: adc read[0m
+[0;32mI (48428) prot: timer : 47500944[0m
+[0;32mI (48428) prot: adc read[0m
+[0;32mI (48478) prot: adc read[0m
+[0;32mI (48528) prot: timer : 47600944[0m
+[0;32mI (48528) prot: adc read[0m
+[0;32mI (48538) prot: display out + 0[0m
+[0;32mI (48578) prot: adc read[0m
+[0;32mI (48628) prot: timer : 47700944[0m
+[0;32mI (48628) prot: adc read[0m
+[0;32mI (48678) prot: adc read[0m
+[0;32mI (48728) prot: timer : 47800944[0m
+[0;32mI (48728) prot: adc read[0m
+[0;32mI (48778) prot: adc read[0m
+[0;32mI (48828) prot: timer : 47900944[0m
+[0;32mI (48828) prot: adc read[0m
+[0;32mI (48878) prot: adc read[0m
+[0;32mI (48888) prot: display out + 0[0m
+[0;32mI (48928) prot: timer : 48000946[0m
+[0;32mI (48928) prot: adc read[0m
+[0;32mI (48978) prot: adc read[0m
+[0;32mI (49028) prot: timer : 48100949[0m
+[0;32mI (49028) prot: adc read[0m
+[0;32mI (49078) prot: adc read[0m
+[0;32mI (49128) prot: timer : 48200944[0m
+[0;32mI (49128) prot: adc read[0m
+[0;32mI (49178) prot: adc read[0m
+[0;32mI (49228) prot: timer : 48300944[0m
+[0;32mI (49228) prot: adc read[0m
+[0;32mI (49238) prot: display out + 0[0m
+[0;32mI (49278) prot: adc read[0m
+[0;32mI (49328) prot: timer : 48400944[0m
+[0;32mI (49328) prot: adc read[0m
+[0;32mI (49378) prot: adc read[0m
+[0;32mI (49428) prot: timer : 48500944[0m
+[0;32mI (49428) prot: adc read[0m
+[0;32mI (49478) prot: adc read[0m
+[0;32mI (49528) prot: timer : 48600944[0m
+[0;32mI (49528) prot: adc read[0m
+[0;32mI (49578) prot: adc read[0m
+[0;32mI (49588) prot: display out + 0[0m
+[0;32mI (49628) prot: timer : 48700946[0m
+[0;32mI (49628) prot: adc read[0m
+[0;32mI (49678) prot: adc read[0m
+[0;32mI (49728) prot: timer : 48800949[0m
+[0;32mI (49728) prot: adc read[0m
+[0;32mI (49778) prot: adc read[0m
+[0;32mI (49828) prot: timer : 48900944[0m
+[0;32mI (49828) prot: adc read[0m
+[0;32mI (49878) prot: adc read[0m
+[0;32mI (49928) prot: timer : 49000944[0m
+[0;32mI (49928) prot: adc read[0m
+[0;32mI (49938) prot: display out + 0[0m
+[0;32mI (49978) prot: adc read[0m
+[0;32mI (50028) prot: timer : 49100944[0m
+[0;32mI (50028) prot: adc read[0m
+[0;32mI (50078) prot: adc read[0m
+[0;32mI (50128) prot: timer : 49200944[0m
+[0;32mI (50128) prot: adc read[0m
+[0;32mI (50178) prot: adc read[0m
+[0;32mI (50228) prot: timer : 49300944[0m
+[0;32mI (50228) prot: adc read[0m
+[0;32mI (50278) prot: adc read[0m
+[0;32mI (50288) prot: display out + 0[0m
+[0;32mI (50328) prot: timer : 49400946[0m
+[0;32mI (50328) prot: adc read[0m
+[0;32mI (50378) prot: adc read[0m
+[0;32mI (50428) prot: timer : 49500949[0m
+[0;32mI (50428) prot: adc read[0m
+[0;32mI (50478) prot: adc read[0m
+[0;32mI (50528) prot: timer : 49600944[0m
+[0;32mI (50528) prot: adc read[0m
+[0;32mI (50578) prot: adc read[0m
+[0;32mI (50628) prot: timer : 49700944[0m
+[0;32mI (50628) prot: adc read[0m
+[0;32mI (50638) prot: display out + 0[0m
+[0;32mI (50678) prot: adc read[0m
+[0;32mI (50728) prot: timer : 49800944[0m
+[0;32mI (50728) prot: adc read[0m
+[0;32mI (50778) prot: adc read[0m
+[0;32mI (50828) prot: timer : 49900944[0m
+[0;32mI (50828) prot: adc read[0m
+[0;32mI (50878) prot: adc read[0m
+[0;32mI (50928) prot: timer : 50000944[0m
+[0;32mI (50928) prot: adc read[0m
+[0;32mI (50978) prot: adc read[0m
+[0;32mI (50988) prot: display out + 0[0m
+[0;32mI (51028) prot: timer : 50100946[0m
+[0;32mI (51028) prot: adc read[0m
+[0;32mI (51078) prot: adc read[0m
+[0;32mI (51128) prot: timer : 50200949[0m
+[0;32mI (51128) prot: adc read[0m
+[0;32mI (51178) prot: adc read[0m
+[0;32mI (51228) prot: timer : 50300944[0m
+[0;32mI (51228) prot: adc read[0m
+[0;32mI (51278) prot: adc read[0m
+[0;32mI (51328) prot: timer : 50400944[0m
+[0;32mI (51328) prot: adc read[0m
+[0;32mI (51338) prot: display out + 0[0m
+[0;32mI (51378) prot: adc read[0m
+[0;32mI (51428) prot: timer : 50500944[0m
+[0;32mI (51428) prot: adc read[0m
+[0;32mI (51478) prot: adc read[0m
+[0;32mI (51528) prot: timer : 50600944[0m
+[0;32mI (51528) prot: adc read[0m
+[0;32mI (51578) prot: adc read[0m
+[0;32mI (51628) prot: timer : 50700944[0m
+[0;32mI (51628) prot: adc read[0m
+[0;32mI (51678) prot: adc read[0m
+[0;32mI (51688) prot: display out + 0[0m
+[0;32mI (51728) prot: timer : 50800946[0m
+[0;32mI (51728) prot: adc read[0m
+[0;32mI (51778) prot: adc read[0m
+[0;32mI (51828) prot: timer : 50900949[0m
+[0;32mI (51828) prot: adc read[0m
+[0;32mI (51878) prot: adc read[0m
+[0;32mI (51928) prot: timer : 51000944[0m
+[0;32mI (51928) prot: adc read[0m
+[0;32mI (51978) prot: adc read[0m
+[0;32mI (52028) prot: timer : 51100944[0m
+[0;32mI (52028) prot: adc read[0m
+[0;32mI (52038) prot: display out + 0[0m
+[0;32mI (52078) prot: adc read[0m
+[0;32mI (52128) prot: timer : 51200944[0m
+[0;32mI (52128) prot: adc read[0m
+[0;32mI (52178) prot: adc read[0m
+[0;32mI (52228) prot: timer : 51300944[0m
+[0;32mI (52228) prot: adc read[0m
+[0;32mI (52278) prot: adc read[0m
+[0;32mI (52328) prot: timer : 51400944[0m
+[0;32mI (52328) prot: adc read[0m
+[0;32mI (52378) prot: adc read[0m
+[0;32mI (52388) prot: display out + 0[0m
+[0;32mI (52428) prot: timer : 51500946[0m
+[0;32mI (52428) prot: adc read[0m
+[0;32mI (52478) prot: adc read[0m
+[0;32mI (52528) prot: timer : 51600949[0m
+[0;32mI (52528) prot: adc read[0m
+[0;32mI (52578) prot: adc read[0m
+[0;32mI (52628) prot: timer : 51700944[0m
+[0;32mI (52628) prot: adc read[0m
+[0;32mI (52678) prot: adc read[0m
+[0;32mI (52728) prot: timer : 51800944[0m
+[0;32mI (52728) prot: adc read[0m
+[0;32mI (52738) prot: display out + 0[0m
+[0;32mI (52778) prot: adc read[0m
+[0;32mI (52828) prot: timer : 51900944[0m
+[0;32mI (52828) prot: adc read[0m
+[0;32mI (52878) prot: adc read[0m
+[0;32mI (52928) prot: timer : 52000944[0m
+[0;32mI (52928) prot: adc read[0m
+[0;32mI (52978) prot: adc read[0m
+[0;32mI (53028) prot: timer : 52100944[0m
+[0;32mI (53028) prot: adc read[0m
+[0;32mI (53078) prot: adc read[0m
+[0;32mI (53088) prot: display out + 0[0m
+[0;32mI (53128) prot: timer : 52200946[0m
+[0;32mI (53128) prot: adc read[0m
+[0;32mI (53178) prot: adc read[0m
+[0;32mI (53228) prot: timer : 52300949[0m
+[0;32mI (53228) prot: adc read[0m
+[0;32mI (53278) prot: adc read[0m
+[0;32mI (53328) prot: timer : 52400944[0m
+[0;32mI (53328) prot: adc read[0m
+[0;32mI (53378) prot: adc read[0m
+[0;32mI (53428) prot: timer : 52500944[0m
+[0;32mI (53428) prot: adc read[0m
+[0;32mI (53438) prot: display out + 0[0m
+[0;32mI (53478) prot: adc read[0m
+[0;32mI (53528) prot: timer : 52600944[0m
+[0;32mI (53528) prot: adc read[0m
+[0;32mI (53578) prot: adc read[0m
+[0;32mI (53628) prot: timer : 52700944[0m
+[0;32mI (53628) prot: adc read[0m
+[0;32mI (53678) prot: adc read[0m
+[0;32mI (53728) prot: timer : 52800944[0m
+[0;32mI (53728) prot: adc read[0m
+[0;32mI (53778) prot: adc read[0m
+[0;32mI (53788) prot: display out + 0[0m
+[0;32mI (53828) prot: timer : 52900946[0m
+[0;32mI (53828) prot: adc read[0m
+[0;32mI (53878) prot: adc read[0m
+[0;32mI (53928) prot: timer : 53000949[0m
+[0;32mI (53928) prot: adc read[0m
+[0;32mI (53978) prot: adc read[0m
+[0;32mI (54028) prot: timer : 53100944[0m
+[0;32mI (54028) prot: adc read[0m
+[0;32mI (54078) prot: adc read[0m
+[0;32mI (54128) prot: timer : 53200944[0m
+[0;32mI (54128) prot: adc read[0m
+[0;32mI (54138) prot: display out + 0[0m
+[0;32mI (54178) prot: adc read[0m
+[0;32mI (54228) prot: timer : 53300944[0m
+[0;32mI (54228) prot: adc read[0m
+[0;32mI (54278) prot: adc read[0m
+[0;32mI (54328) prot: timer : 53400944[0m
+[0;32mI (54328) prot: adc read[0m
+[0;32mI (54378) prot: adc read[0m
+[0;32mI (54428) prot: timer : 53500944[0m
+[0;32mI (54428) prot: adc read[0m
+[0;32mI (54478) prot: adc read[0m
+[0;32mI (54488) prot: display out + 0[0m
+[0;32mI (54528) prot: timer : 53600946[0m
+[0;32mI (54528) prot: adc read[0m
+[0;32mI (54578) prot: adc read[0m
+[0;32mI (54628) prot: timer : 53700949[0m
+[0;32mI (54628) prot: adc read[0m
+[0;32mI (54678) prot: adc read[0m
+[0;32mI (54728) prot: timer : 53800944[0m
+[0;32mI (54728) prot: adc read[0m
+[0;32mI (54778) prot: adc read[0m
+[0;32mI (54828) prot: timer : 53900944[0m
+[0;32mI (54828) prot: adc read[0m
+[0;32mI (54838) prot: display out + 0[0m
+[0;32mI (54878) prot: adc read[0m
+[0;32mI (54928) prot: timer : 54000944[0m
+[0;32mI (54928) prot: adc read[0m
+[0;32mI (54978) prot: adc read[0m
+[0;32mI (55028) prot: timer : 54100944[0m
+[0;32mI (55028) prot: adc read[0m
+[0;32mI (55078) prot: adc read[0m
+[0;32mI (55128) prot: timer : 54200944[0m
+[0;32mI (55128) prot: adc read[0m
+[0;32mI (55178) prot: adc read[0m
+[0;32mI (55188) prot: display out + 0[0m
+[0;32mI (55228) prot: timer : 54300946[0m
+[0;32mI (55228) prot: adc read[0m
+[0;32mI (55278) prot: adc read[0m
+[0;32mI (55328) prot: timer : 54400949[0m
+[0;32mI (55328) prot: adc read[0m
+[0;32mI (55378) prot: adc read[0m
+[0;32mI (55428) prot: timer : 54500944[0m
+[0;32mI (55428) prot: adc read[0m
+[0;32mI (55478) prot: adc read[0m
+[0;32mI (55528) prot: timer : 54600944[0m
+[0;32mI (55528) prot: adc read[0m
+[0;32mI (55538) prot: display out + 0[0m
+[0;32mI (55578) prot: adc read[0m
+[0;32mI (55628) prot: timer : 54700944[0m
+[0;32mI (55628) prot: adc read[0m
+[0;32mI (55678) prot: adc read[0m
+[0;32mI (55728) prot: timer : 54800944[0m
+[0;32mI (55728) prot: adc read[0m
+[0;32mI (55778) prot: adc read[0m
+[0;32mI (55828) prot: timer : 54900944[0m
+[0;32mI (55828) prot: adc read[0m
+[0;32mI (55878) prot: adc read[0m
+[0;32mI (55888) prot: display out + 0[0m
+[0;32mI (55928) prot: timer : 55000946[0m
+[0;32mI (55928) prot: adc read[0m
+[0;32mI (55978) prot: adc read[0m
+[0;32mI (56028) prot: timer : 55100949[0m
+[0;32mI (56028) prot: adc read[0m
+[0;32mI (56078) prot: adc read[0m
+[0;32mI (56128) prot: timer : 55200944[0m
+[0;32mI (56128) prot: adc read[0m
+[0;32mI (56178) prot: adc read[0m
+[0;32mI (56228) prot: timer : 55300944[0m
+[0;32mI (56228) prot: adc read[0m
+[0;32mI (56238) prot: display out + 0[0m
+[0;32mI (56278) prot: adc read[0m
+[0;32mI (56328) prot: timer : 55400944[0m
+[0;32mI (56328) prot: adc read[0m
+[0;32mI (56378) prot: adc read[0m
+[0;32mI (56428) prot: timer : 55500944[0m
+[0;32mI (56428) prot: adc read[0m
+[0;32mI (56478) prot: adc read[0m
+[0;32mI (56528) prot: timer : 55600944[0m
+[0;32mI (56528) prot: adc read[0m
+[0;32mI (56578) prot: adc read[0m
+[0;32mI (56588) prot: display out + 0[0m
+[0;32mI (56628) prot: timer : 55700946[0m
+[0;32mI (56628) prot: adc read[0m
+[0;32mI (56678) prot: adc read[0m
+[0;32mI (56728) prot: timer : 55800949[0m
+[0;32mI (56728) prot: adc read[0m
+[0;32mI (56778) prot: adc read[0m
+[0;32mI (56828) prot: timer : 55900944[0m
+[0;32mI (56828) prot: adc read[0m
+[0;32mI (56878) prot: adc read[0m
+[0;32mI (56928) prot: timer : 56000944[0m
+[0;32mI (56928) prot: adc read[0m
+[0;32mI (56938) prot: display out + 0[0m
+[0;32mI (56978) prot: adc read[0m
+[0;32mI (57028) prot: timer : 56100944[0m
+[0;32mI (57028) prot: adc read[0m
+[0;32mI (57078) prot: adc read[0m
+[0;32mI (57128) prot: timer : 56200944[0m
+[0;32mI (57128) prot: adc read[0m
+[0;32mI (57178) prot: adc read[0m
+[0;32mI (57228) prot: timer : 56300944[0m
+[0;32mI (57228) prot: adc read[0m
+[0;32mI (57278) prot: adc read[0m
+[0;32mI (57288) prot: display out + 0[0m
+[0;32mI (57328) prot: timer : 56400946[0m
+[0;32mI (57328) prot: adc read[0m
+[0;32mI (57378) prot: adc read[0m
+[0;32mI (57428) prot: timer : 56500949[0m
+[0;32mI (57428) prot: adc read[0m
+[0;32mI (57478) prot: adc read[0m
+[0;32mI (57528) prot: timer : 56600944[0m
+[0;32mI (57528) prot: adc read[0m
+[0;32mI (57578) prot: adc read[0m
+[0;32mI (57628) prot: timer : 56700944[0m
+[0;32mI (57628) prot: adc read[0m
+[0;32mI (57638) prot: display out + 0[0m
+[0;32mI (57678) prot: adc read[0m
+[0;32mI (57728) prot: timer : 56800944[0m
+[0;32mI (57728) prot: adc read[0m
+[0;32mI (57778) prot: adc read[0m
+[0;32mI (57828) prot: timer : 56900944[0m
+[0;32mI (57828) prot: adc read[0m
+[0;32mI (57878) prot: adc read[0m
+[0;32mI (57928) prot: timer : 57000944[0m
+[0;32mI (57928) prot: adc read[0m
+[0;32mI (57978) prot: adc read[0m
+[0;32mI (57988) prot: display out + 0[0m
+[0;32mI (58028) prot: timer : 57100946[0m
+[0;32mI (58028) prot: adc read[0m
+[0;32mI (58078) prot: adc read[0m
+[0;32mI (58128) prot: timer : 57200949[0m
+[0;32mI (58128) prot: adc read[0m
+[0;32mI (58178) prot: adc read[0m
+[0;32mI (58228) prot: timer : 57300944[0m
+[0;32mI (58228) prot: adc read[0m
+[0;32mI (58278) prot: adc read[0m
+[0;32mI (58328) prot: timer : 57400944[0m
+[0;32mI (58328) prot: adc read[0m
+[0;32mI (58338) prot: display out + 0[0m
+[0;32mI (58378) prot: adc read[0m
+[0;32mI (58428) prot: timer : 57500944[0m
+[0;32mI (58428) prot: adc read[0m
+[0;32mI (58478) prot: adc read[0m
+[0;32mI (58528) prot: timer : 57600944[0m
+[0;32mI (58528) prot: adc read[0m
+[0;32mI (58578) prot: adc read[0m
+[0;32mI (58628) prot: timer : 57700944[0m
+[0;32mI (58628) prot: adc read[0m
+[0;32mI (58678) prot: adc read[0m
+[0;32mI (58688) prot: display out + 0[0m
+[0;32mI (58728) prot: timer : 57800946[0m
+[0;32mI (58728) prot: adc read[0m
+[0;32mI (58778) prot: adc read[0m
+[0;32mI (58828) prot: timer : 57900949[0m
+[0;32mI (58828) prot: adc read[0m
+[0;32mI (58878) prot: adc read[0m
+[0;32mI (58928) prot: timer : 58000944[0m
+[0;32mI (58928) prot: adc read[0m
+[0;32mI (58978) prot: adc read[0m
+[0;32mI (59028) prot: timer : 58100944[0m
+[0;32mI (59028) prot: adc read[0m
+[0;32mI (59038) prot: display out + 0[0m
+[0;32mI (59078) prot: adc read[0m
+[0;32mI (59128) prot: timer : 58200944[0m
+[0;32mI (59128) prot: adc read[0m
+[0;32mI (59178) prot: adc read[0m
+[0;32mI (59228) prot: timer : 58300944[0m
+[0;32mI (59228) prot: adc read[0m
+[0;32mI (59278) prot: adc read[0m
+[0;32mI (59328) prot: timer : 58400944[0m
+[0;32mI (59328) prot: adc read[0m
+[0;32mI (59378) prot: adc read[0m
+[0;32mI (59388) prot: display out + 0[0m
+[0;32mI (59428) prot: timer : 58500946[0m
+[0;32mI (59428) prot: adc read[0m
+[0;32mI (59478) prot: adc read[0m
+[0;32mI (59528) prot: timer : 58600949[0m
+[0;32mI (59528) prot: adc read[0m
+[0;32mI (59578) prot: adc read[0m
+[0;32mI (59628) prot: timer : 58700944[0m
+[0;32mI (59628) prot: adc read[0m
+[0;32mI (59678) prot: adc read[0m
+[0;32mI (59728) prot: timer : 58800944[0m
+[0;32mI (59728) prot: adc read[0m
+[0;32mI (59738) prot: display out + 0[0m
+[0;32mI (59778) prot: adc read[0m
+[0;32mI (59828) prot: timer : 58900944[0m
+[0;32mI (59828) prot: adc read[0m
+[0;32mI (59878) prot: adc read[0m
+[0;32mI (59928) prot: timer : 59000944[0m
+[0;32mI (59928) prot: adc read[0m
+[0;32mI (59978) prot: adc read[0m
+[0;32mI (60028) prot: timer : 59100944[0m
+[0;32mI (60028) prot: adc read[0m
+[0;32mI (60078) prot: adc read[0m
+[0;32mI (60088) prot: display out + 0[0m
+[0;32mI (60128) prot: timer : 59200946[0m
+[0;32mI (60128) prot: adc read[0m
+[0;32mI (60178) prot: adc read[0m
+[0;32mI (60228) prot: timer : 59300949[0m
+[0;32mI (60228) prot: adc read[0m
+[0;32mI (60278) prot: adc read[0m
+[0;32mI (60328) prot: timer : 59400944[0m
+[0;32mI (60328) prot: adc read[0m
+[0;32mI (60378) prot: adc read[0m
+[0;32mI (60428) prot: timer : 59500944[0m
+[0;32mI (60428) prot: adc read[0m
+[0;32mI (60438) prot: display out + 0[0m
+[0;32mI (60478) prot: adc read[0m
+[0;32mI (60528) prot: timer : 59600944[0m
+[0;32mI (60528) prot: adc read[0m
+[0;32mI (60578) prot: adc read[0m
+[0;32mI (60628) prot: timer : 59700944[0m
+[0;32mI (60628) prot: adc read[0m
+[0;32mI (60678) prot: adc read[0m
+[0;32mI (60728) prot: timer : 59800944[0m
+[0;32mI (60728) prot: adc read[0m
+[0;32mI (60778) prot: adc read[0m
+[0;32mI (60788) prot: display out + 0[0m
+[0;32mI (60828) prot: timer : 59900946[0m
+[0;32mI (60828) prot: adc read[0m
+[0;32mI (60878) prot: adc read[0m
+[0;32mI (60928) prot: timer : 60000949[0m
+[0;32mI (60928) prot: adc read[0m
+[0;32mI (60978) prot: adc read[0m
+[0;32mI (61028) prot: timer : 60100944[0m
+[0;32mI (61028) prot: adc read[0m
+[0;32mI (61078) prot: adc read[0m
+[0;32mI (61128) prot: timer : 60200944[0m
+[0;32mI (61128) prot: adc read[0m
+[0;32mI (61138) prot: display out + 0[0m
+[0;32mI (61178) prot: adc read[0m
+[0;32mI (61228) prot: timer : 60300944[0m
+[0;32mI (61228) prot: adc read[0m
+[0;32mI (61278) prot: adc read[0m
+[0;32mI (61328) prot: timer : 60400944[0m
+[0;32mI (61328) prot: adc read[0m
+[0;32mI (61378) prot: adc read[0m
+[0;32mI (61428) prot: timer : 60500944[0m
+[0;32mI (61428) prot: adc read[0m
+[0;32mI (61478) prot: adc read[0m
+[0;32mI (61488) prot: display out + 0[0m
+[0;32mI (61528) prot: timer : 60600946[0m
+[0;32mI (61528) prot: adc read[0m
+[0;32mI (61578) prot: adc read[0m
+[0;32mI (61628) prot: timer : 60700949[0m
+[0;32mI (61628) prot: adc read[0m
+[0;32mI (61678) prot: adc read[0m
+[0;32mI (61728) prot: timer : 60800944[0m
+[0;32mI (61728) prot: adc read[0m
+[0;32mI (61778) prot: adc read[0m
+[0;32mI (61828) prot: timer : 60900944[0m
+[0;32mI (61828) prot: adc read[0m
+[0;32mI (61838) prot: display out + 0[0m
+[0;32mI (61878) prot: adc read[0m
+[0;32mI (61928) prot: timer : 61000944[0m
+[0;32mI (61928) prot: adc read[0m
+[0;32mI (61978) prot: adc read[0m
+[0;32mI (62028) prot: timer : 61100944[0m
+[0;32mI (62028) prot: adc read[0m
+[0;32mI (62078) prot: adc read[0m
+[0;32mI (62128) prot: timer : 61200944[0m
+[0;32mI (62128) prot: adc read[0m
+[0;32mI (62178) prot: adc read[0m
+[0;32mI (62188) prot: display out + 0[0m
+[0;32mI (62228) prot: timer : 61300946[0m
+[0;32mI (62228) prot: adc read[0m
+[0;32mI (62278) prot: adc read[0m
+[0;32mI (62328) prot: timer : 61400949[0m
+[0;32mI (62328) prot: adc read[0m
+[0;32mI (62378) prot: adc read[0m
+[0;32mI (62428) prot: timer : 61500944[0m
+[0;32mI (62428) prot: adc read[0m
+[0;32mI (62478) prot: adc read[0m
+[0;32mI (62528) prot: timer : 61600944[0m
+[0;32mI (62528) prot: adc read[0m
+[0;32mI (62538) prot: display out + 0[0m
+[0;32mI (62578) prot: adc read[0m
+[0;32mI (62628) prot: timer : 61700944[0m
+[0;32mI (62628) prot: adc read[0m
+[0;32mI (62678) prot: adc read[0m
+[0;32mI (62728) prot: timer : 61800944[0m
+[0;32mI (62728) prot: adc read[0m
+[0;32mI (62778) prot: adc read[0m
+[0;32mI (62828) prot: timer : 61900944[0m
+[0;32mI (62828) prot: adc read[0m
+[0;32mI (62878) prot: adc read[0m
+[0;32mI (62888) prot: display out + 0[0m
+[0;32mI (62928) prot: timer : 62000946[0m
+[0;32mI (62928) prot: adc read[0m
+[0;32mI (62978) prot: adc read[0m
+[0;32mI (63028) prot: timer : 62100949[0m
+[0;32mI (63028) prot: adc read[0m
+[0;32mI (63078) prot: adc read[0m
+[0;32mI (63128) prot: timer : 62200944[0m
+[0;32mI (63128) prot: adc read[0m
+[0;32mI (63178) prot: adc read[0m
+[0;32mI (63228) prot: timer : 62300944[0m
+[0;32mI (63228) prot: adc read[0m
+[0;32mI (63238) prot: display out + 0[0m
+[0;32mI (63278) prot: adc read[0m
+[0;32mI (63328) prot: timer : 62400944[0m
+[0;32mI (63328) prot: adc read[0m
+[0;32mI (63378) prot: adc read[0m
+[0;32mI (63428) prot: timer : 62500944[0m
+[0;32mI (63428) prot: adc read[0m
+[0;32mI (63478) prot: adc read[0m
+[0;32mI (63528) prot: timer : 62600944[0m
+[0;32mI (63528) prot: adc read[0m
+[0;32mI (63578) prot: adc read[0m
+[0;32mI (63588) prot: display out + 0[0m
+[0;32mI (63628) prot: timer : 62700946[0m
+[0;32mI (63628) prot: adc read[0m
+[0;32mI (63678) prot: adc read[0m
+[0;32mI (63728) prot: timer : 62800949[0m
+[0;32mI (63728) prot: adc read[0m
+[0;32mI (63778) prot: adc read[0m
+[0;32mI (63828) prot: timer : 62900944[0m
+[0;32mI (63828) prot: adc read[0m
+[0;32mI (63878) prot: adc read[0m
+[0;32mI (63928) prot: timer : 63000944[0m
+[0;32mI (63928) prot: adc read[0m
+[0;32mI (63938) prot: display out + 0[0m
+[0;32mI (63978) prot: adc read[0m
+[0;32mI (64028) prot: timer : 63100944[0m
+[0;32mI (64028) prot: adc read[0m
+[0;32mI (64078) prot: adc read[0m
+[0;32mI (64128) prot: timer : 63200944[0m
+[0;32mI (64128) prot: adc read[0m
+[0;32mI (64178) prot: adc read[0m
+[0;32mI (64228) prot: timer : 63300944[0m
+[0;32mI (64228) prot: adc read[0m
+[0;32mI (64278) prot: adc read[0m
+[0;32mI (64288) prot: display out + 0[0m
+[0;32mI (64328) prot: timer : 63400946[0m
+[0;32mI (64328) prot: adc read[0m
+[0;32mI (64378) prot: adc read[0m
+[0;32mI (64428) prot: timer : 63500949[0m
+[0;32mI (64428) prot: adc read[0m
+[0;32mI (64478) prot: adc read[0m
+[0;32mI (64528) prot: timer : 63600944[0m
+[0;32mI (64528) prot: adc read[0m
+[0;32mI (64578) prot: adc read[0m
+[0;32mI (64628) prot: timer : 63700944[0m
+[0;32mI (64628) prot: adc read[0m
+[0;32mI (64638) prot: display out + 0[0m
+[0;32mI (64678) prot: adc read[0m
+[0;32mI (64728) prot: timer : 63800944[0m
+[0;32mI (64728) prot: adc read[0m
+[0;32mI (64778) prot: adc read[0m
+[0;32mI (64828) prot: timer : 63900944[0m
+[0;32mI (64828) prot: adc read[0m
+[0;32mI (64878) prot: adc read[0m
+[0;32mI (64928) prot: timer : 64000944[0m
+[0;32mI (64928) prot: adc read[0m
+[0;32mI (64978) prot: adc read[0m
+[0;32mI (64988) prot: display out + 0[0m
+[0;32mI (65028) prot: timer : 64100946[0m
+[0;32mI (65028) prot: adc read[0m
+[0;32mI (65078) prot: adc read[0m
+[0;32mI (65128) prot: timer : 64200949[0m
+[0;32mI (65128) prot: adc read[0m
+[0;32mI (65178) prot: adc read[0m
+[0;32mI (65228) prot: timer : 64300944[0m
+[0;32mI (65228) prot: adc read[0m
+[0;32mI (65278) prot: adc read[0m
+[0;32mI (65328) prot: timer : 64400944[0m
+[0;32mI (65328) prot: adc read[0m
+[0;32mI (65338) prot: display out + 0[0m
+[0;32mI (65378) prot: adc read[0m
+[0;32mI (65428) prot: timer : 64500944[0m
+[0;32mI (65428) prot: adc read[0m
+[0;32mI (65478) prot: adc read[0m
+[0;32mI (65528) prot: timer : 64600944[0m
+[0;32mI (65528) prot: adc read[0m
+[0;32mI (65578) prot: adc read[0m
+[0;32mI (65628) prot: timer : 64700944[0m
+[0;32mI (65628) prot: adc read[0m
+[0;32mI (65678) prot: adc read[0m
+[0;32mI (65688) prot: display out + 0[0m
+[0;32mI (65728) prot: timer : 64800946[0m
+[0;32mI (65728) prot: adc read[0m
+[0;32mI (65778) prot: adc read[0m
+[0;32mI (65828) prot: timer : 64900949[0m
+[0;32mI (65828) prot: adc read[0m
+[0;32mI (65878) prot: adc read[0m
+[0;32mI (65928) prot: timer : 65000944[0m
+[0;32mI (65928) prot: adc read[0m
+[0;32mI (65978) prot: adc read[0m
+[0;32mI (66028) prot: timer : 65100944[0m
+[0;32mI (66028) prot: adc read[0m
+[0;32mI (66038) prot: display out + 0[0m
+[0;32mI (66078) prot: adc read[0m
+[0;32mI (66128) prot: timer : 65200944[0m
+[0;32mI (66128) prot: adc read[0m
+[0;32mI (66178) prot: adc read[0m
+[0;32mI (66228) prot: timer : 65300944[0m
+[0;32mI (66228) prot: adc read[0m
+[0;32mI (66278) prot: adc read[0m
+[0;32mI (66328) prot: timer : 65400944[0m
+[0;32mI (66328) prot: adc read[0m
+[0;32mI (66378) prot: adc read[0m
+[0;32mI (66388) prot: display out + 0[0m
+[0;32mI (66428) prot: timer : 65500946[0m
+[0;32mI (66428) prot: adc read[0m
+[0;32mI (66478) prot: adc read[0m
+[0;32mI (66528) prot: timer : 65600949[0m
+[0;32mI (66528) prot: adc read[0m
+[0;32mI (66578) prot: adc read[0m
+[0;32mI (66628) prot: timer : 65700944[0m
+[0;32mI (66628) prot: adc read[0m
+[0;32mI (66678) prot: adc read[0m
+[0;32mI (66728) prot: timer : 65800944[0m
+[0;32mI (66728) prot: adc read[0m
+[0;32mI (66738) prot: display out + 0[0m
+[0;32mI (66778) prot: adc read[0m
+[0;32mI (66828) prot: timer : 65900944[0m
+[0;32mI (66828) prot: adc read[0m
+[0;32mI (66878) prot: adc read[0m
+[0;32mI (66928) prot: timer : 66000944[0m
+[0;32mI (66928) prot: adc read[0m
+[0;32mI (66978) prot: adc read[0m
+[0;32mI (67028) prot: timer : 66100944[0m
+[0;32mI (67028) prot: adc read[0m
+[0;32mI (67078) prot: adc read[0m
+[0;32mI (67088) prot: display out + 0[0m
+[0;32mI (67128) prot: timer : 66200946[0m
+[0;32mI (67128) prot: adc read[0m
+[0;32mI (67178) prot: adc read[0m
+[0;32mI (67228) prot: timer : 66300949[0m
+[0;32mI (67228) prot: adc read[0m
+[0;32mI (67278) prot: adc read[0m
+[0;32mI (67328) prot: timer : 66400944[0m
+[0;32mI (67328) prot: adc read[0m
+[0;32mI (67378) prot: adc read[0m
+[0;32mI (67428) prot: timer : 66500944[0m
+[0;32mI (67428) prot: adc read[0m
+[0;32mI (67438) prot: display out + 0[0m
+[0;32mI (67478) prot: adc read[0m
+[0;32mI (67528) prot: timer : 66600944[0m
+[0;32mI (67528) prot: adc read[0m
+[0;32mI (67578) prot: adc read[0m
+[0;32mI (67628) prot: timer : 66700944[0m
+[0;32mI (67628) prot: adc read[0m
+[0;32mI (67678) prot: adc read[0m
+[0;32mI (67728) prot: timer : 66800944[0m
+[0;32mI (67728) prot: adc read[0m
+[0;32mI (67778) prot: adc read[0m
+[0;32mI (67788) prot: display out + 0[0m
+[0;32mI (67828) prot: timer : 66900946[0m
+[0;32mI (67828) prot: adc read[0m
+[0;32mI (67878) prot: adc read[0m
+[0;32mI (67928) prot: timer : 67000949[0m
+[0;32mI (67928) prot: adc read[0m
+[0;32mI (67978) prot: adc read[0m
+[0;32mI (68028) prot: timer : 67100944[0m
+[0;32mI (68028) prot: adc read[0m
+[0;32mI (68078) prot: adc read[0m
+[0;32mI (68128) prot: timer : 67200944[0m
+[0;32mI (68128) prot: adc read[0m
+[0;32mI (68138) prot: display out + 0[0m
+[0;32mI (68178) prot: adc read[0m
+[0;32mI (68228) prot: timer : 67300944[0m
+[0;32mI (68228) prot: adc read[0m
+[0;32mI (68278) prot: adc read[0m
+[0;32mI (68328) prot: timer : 67400944[0m
+[0;32mI (68328) prot: adc read[0m
+[0;32mI (68378) prot: adc read[0m
+[0;32mI (68428) prot: timer : 67500944[0m
+[0;32mI (68428) prot: adc read[0m
+[0;32mI (68478) prot: adc read[0m
+[0;32mI (68488) prot: display out + 0[0m
+[0;32mI (68528) prot: timer : 67600946[0m
+[0;32mI (68528) prot: adc read[0m
+[0;32mI (68578) prot: adc read[0m
+[0;32mI (68628) prot: timer : 67700949[0m
+[0;32mI (68628) prot: adc read[0m
+[0;32mI (68678) prot: adc read[0m
+[0;32mI (68728) prot: timer : 67800944[0m
+[0;32mI (68728) prot: adc read[0m
+[0;32mI (68778) prot: adc read[0m
+[0;32mI (68828) prot: timer : 67900944[0m
+[0;32mI (68828) prot: adc read[0m
+[0;32mI (68838) prot: display out + 0[0m
+[0;32mI (68878) prot: adc read[0m
+[0;32mI (68928) prot: timer : 68000944[0m
+[0;32mI (68928) prot: adc read[0m
+[0;32mI (68978) prot: adc read[0m
+[0;32mI (69028) prot: timer : 68100944[0m
+[0;32mI (69028) prot: adc read[0m
+[0;32mI (69078) prot: adc read[0m
+[0;32mI (69128) prot: timer : 68200944[0m
+[0;32mI (69128) prot: adc read[0m
+[0;32mI (69178) prot: adc read[0m
+[0;32mI (69188) prot: display out + 0[0m
+[0;32mI (69228) prot: timer : 68300946[0m
+[0;32mI (69228) prot: adc read[0m
+[0;32mI (69278) prot: adc read[0m
+[0;32mI (69328) prot: timer : 68400949[0m
+[0;32mI (69328) prot: adc read[0m
+[0;32mI (69378) prot: adc read[0m
+[0;32mI (69428) prot: timer : 68500944[0m
+[0;32mI (69428) prot: adc read[0m
+[0;32mI (69478) prot: adc read[0m
+[0;32mI (69528) prot: timer : 68600944[0m
+[0;32mI (69528) prot: adc read[0m
+[0;32mI (69538) prot: display out + 0[0m
+[0;32mI (69578) prot: adc read[0m
+[0;32mI (69628) prot: timer : 68700944[0m
+[0;32mI (69628) prot: adc read[0m
+[0;32mI (69678) prot: adc read[0m
+[0;32mI (69728) prot: timer : 68800944[0m
+[0;32mI (69728) prot: adc read[0m
+[0;32mI (69778) prot: adc read[0m
+[0;32mI (69828) prot: timer : 68900944[0m
+[0;32mI (69828) prot: adc read[0m
+[0;32mI (69878) prot: adc read[0m
+[0;32mI (69888) prot: display out + 0[0m
+[0;32mI (69928) prot: timer : 69000946[0m
+[0;32mI (69928) prot: adc read[0m
+[0;32mI (69978) prot: adc read[0m
+[0;32mI (70028) prot: timer : 69100949[0m
+[0;32mI (70028) prot: adc read[0m
+[0;32mI (70078) prot: adc read[0m
+[0;32mI (70128) prot: timer : 69200944[0m
+[0;32mI (70128) prot: adc read[0m
+[0;32mI (70178) prot: adc read[0m
+[0;32mI (70228) prot: timer : 69300944[0m
+[0;32mI (70228) prot: adc read[0m
+[0;32mI (70238) prot: display out + 0[0m
+[0;32mI (70278) prot: adc read[0m
+[0;32mI (70328) prot: timer : 69400944[0m
+[0;32mI (70328) prot: adc read[0m
+[0;32mI (70378) prot: adc read[0m
+[0;32mI (70428) prot: timer : 69500944[0m
+[0;32mI (70428) prot: adc read[0m
+[0;32mI (70478) prot: adc read[0m
+[0;32mI (70528) prot: timer : 69600944[0m
+[0;32mI (70528) prot: adc read[0m
+[0;32mI (70578) prot: adc read[0m
+[0;32mI (70588) prot: display out + 0[0m
+[0;32mI (70628) prot: timer : 69700946[0m
+[0;32mI (70628) prot: adc read[0m
+[0;32mI (70678) prot: adc read[0m
+[0;32mI (70728) prot: timer : 69800949[0m
+[0;32mI (70728) prot: adc read[0m
+[0;32mI (70778) prot: adc read[0m
+[0;32mI (70828) prot: timer : 69900944[0m
+[0;32mI (70828) prot: adc read[0m
+[0;32mI (70878) prot: adc read[0m
+[0;32mI (70928) prot: timer : 70000944[0m
+[0;32mI (70928) prot: adc read[0m
+[0;32mI (70938) prot: display out + 0[0m
+[0;32mI (70978) prot: adc read[0m
+[0;32mI (71028) prot: timer : 70100944[0m
+[0;32mI (71028) prot: adc read[0m
+[0;32mI (71078) prot: adc read[0m
+[0;32mI (71128) prot: timer : 70200944[0m
+[0;32mI (71128) prot: adc read[0m
+[0;32mI (71178) prot: adc read[0m
+[0;32mI (71228) prot: timer : 70300944[0m
+[0;32mI (71228) prot: adc read[0m
+[0;32mI (71278) prot: adc read[0m
+[0;32mI (71288) prot: display out + 0[0m
+[0;32mI (71328) prot: timer : 70400946[0m
+[0;32mI (71328) prot: adc read[0m
+[0;32mI (71378) prot: adc read[0m
+[0;32mI (71428) prot: timer : 70500949[0m
+[0;32mI (71428) prot: adc read[0m
+[0;32mI (71478) prot: adc read[0m
+[0;32mI (71528) prot: timer : 70600944[0m
+[0;32mI (71528) prot: adc read[0m
+[0;32mI (71578) prot: adc read[0m
+[0;32mI (71628) prot: timer : 70700944[0m
+[0;32mI (71628) prot: adc read[0m
+[0;32mI (71638) prot: display out + 0[0m
+[0;32mI (71678) prot: adc read[0m
+[0;32mI (71728) prot: timer : 70800944[0m
+[0;32mI (71728) prot: adc read[0m
+[0;32mI (71778) prot: adc read[0m
+[0;32mI (71828) prot: timer : 70900944[0m
+[0;32mI (71828) prot: adc read[0m
+[0;32mI (71878) prot: adc read[0m
+[0;32mI (71928) prot: timer : 71000944[0m
+[0;32mI (71928) prot: adc read[0m
+[0;32mI (71978) prot: adc read[0m
+[0;32mI (71988) prot: display out + 0[0m
+[0;32mI (72028) prot: timer : 71100946[0m
+[0;32mI (72028) prot: adc read[0m
+[0;32mI (72078) prot: adc read[0m
+[0;32mI (72128) prot: timer : 71200949[0m
+[0;32mI (72128) prot: adc read[0m
+[0;32mI (72178) prot: adc read[0m
+[0;32mI (72228) prot: timer : 71300944[0m
+[0;32mI (72228) prot: adc read[0m
+[0;32mI (72278) prot: adc read[0m
+[0;32mI (72328) prot: timer : 71400944[0m
+[0;32mI (72328) prot: adc read[0m
+[0;32mI (72338) prot: display out + 0[0m
+[0;32mI (72378) prot: adc read[0m
+[0;32mI (72428) prot: timer : 71500944[0m
+[0;32mI (72428) prot: adc read[0m
+[0;32mI (72478) prot: adc read[0m
+[0;32mI (72528) prot: timer : 71600944[0m
+[0;32mI (72528) prot: adc read[0m
+[0;32mI (72578) prot: adc read[0m
+[0;32mI (72628) prot: timer : 71700944[0m
+[0;32mI (72628) prot: adc read[0m
+[0;32mI (72678) prot: adc read[0m
+[0;32mI (72688) prot: display out + 0[0m
+[0;32mI (72728) prot: timer : 71800946[0m
+[0;32mI (72728) prot: adc read[0m
+[0;32mI (72778) prot: adc read[0m
+[0;32mI (72828) prot: timer : 71900949[0m
+[0;32mI (72828) prot: adc read[0m
+[0;32mI (72878) prot: adc read[0m
+[0;32mI (72928) prot: timer : 72000944[0m
+[0;32mI (72928) prot: adc read[0m
+[0;32mI (72978) prot: adc read[0m
+[0;32mI (73028) prot: timer : 72100944[0m
+[0;32mI (73028) prot: adc read[0m
+[0;32mI (73038) prot: display out + 0[0m
+[0;32mI (73078) prot: adc read[0m
+[0;32mI (73128) prot: timer : 72200944[0m
+[0;32mI (73128) prot: adc read[0m
+[0;32mI (73178) prot: adc read[0m
+[0;32mI (73228) prot: timer : 72300944[0m
+[0;32mI (73228) prot: adc read[0m
+[0;32mI (73278) prot: adc read[0m
+[0;32mI (73328) prot: timer : 72400944[0m
+[0;32mI (73328) prot: adc read[0m
+[0;32mI (73378) prot: adc read[0m
+[0;32mI (73388) prot: display out + 0[0m
+[0;32mI (73428) prot: timer : 72500946[0m
+[0;32mI (73428) prot: adc read[0m
+[0;32mI (73478) prot: adc read[0m
+[0;32mI (73528) prot: timer : 72600949[0m
+[0;32mI (73528) prot: adc read[0m
+[0;32mI (73578) prot: adc read[0m
+[0;32mI (73628) prot: timer : 72700944[0m
+[0;32mI (73628) prot: adc read[0m
+[0;32mI (73678) prot: adc read[0m
+[0;32mI (73728) prot: timer : 72800944[0m
+[0;32mI (73728) prot: adc read[0m
+[0;32mI (73738) prot: display out + 0[0m
+[0;32mI (73778) prot: adc read[0m
+[0;32mI (73828) prot: timer : 72900944[0m
+[0;32mI (73828) prot: adc read[0m
+[0;32mI (73878) prot: adc read[0m
+[0;32mI (73928) prot: timer : 73000944[0m
+[0;32mI (73928) prot: adc read[0m
+[0;32mI (73978) prot: adc read[0m
+[0;32mI (74028) prot: timer : 73100944[0m
+[0;32mI (74028) prot: adc read[0m
+[0;32mI (74078) prot: adc read[0m
+[0;32mI (74088) prot: display out + 0[0m
+[0;32mI (74128) prot: timer : 73200946[0m
+[0;32mI (74128) prot: adc read[0m
+[0;32mI (74178) prot: adc read[0m
+[0;32mI (74228) prot: timer : 73300949[0m
+[0;32mI (74228) prot: adc read[0m
+[0;32mI (74278) prot: adc read[0m
+[0;32mI (74328) prot: timer : 73400944[0m
+[0;32mI (74328) prot: adc read[0m
+[0;32mI (74378) prot: adc read[0m
+[0;32mI (74428) prot: timer : 73500944[0m
+[0;32mI (74428) prot: adc read[0m
+[0;32mI (74438) prot: display out + 0[0m
+[0;32mI (74478) prot: adc read[0m
+[0;32mI (74528) prot: timer : 73600944[0m
+[0;32mI (74528) prot: adc read[0m
+[0;32mI (74578) prot: adc read[0m
+[0;32mI (74628) prot: timer : 73700944[0m
+[0;32mI (74628) prot: adc read[0m
+[0;32mI (74678) prot: adc read[0m
+[0;32mI (74728) prot: timer : 73800944[0m
+[0;32mI (74728) prot: adc read[0m
+[0;32mI (74778) prot: adc read[0m
+[0;32mI (74788) prot: display out + 0[0m
+[0;32mI (74828) prot: timer : 73900946[0m
+[0;32mI (74828) prot: adc read[0m
+[0;32mI (74878) prot: adc read[0m
+[0;32mI (74928) prot: timer : 74000949[0m
+[0;32mI (74928) prot: adc read[0m
+[0;32mI (74978) prot: adc read[0m
+[0;32mI (75028) prot: timer : 74100944[0m
+[0;32mI (75028) prot: adc read[0m
+[0;32mI (75078) prot: adc read[0m
+[0;32mI (75128) prot: timer : 74200944[0m
+[0;32mI (75128) prot: adc read[0m
+[0;32mI (75138) prot: display out + 0[0m
+[0;32mI (75178) prot: adc read[0m
+[0;32mI (75228) prot: timer : 74300944[0m
+[0;32mI (75228) prot: adc read[0m
+[0;32mI (75278) prot: adc read[0m
+[0;32mI (75328) prot: timer : 74400944[0m
+[0;32mI (75328) prot: adc read[0m
+[0;32mI (75378) prot: adc read[0m
+[0;32mI (75428) prot: timer : 74500944[0m
+[0;32mI (75428) prot: adc read[0m
+[0;32mI (75478) prot: adc read[0m
+[0;32mI (75488) prot: display out + 0[0m
+[0;32mI (75528) prot: timer : 74600946[0m
+[0;32mI (75528) prot: adc read[0m
+[0;32mI (75578) prot: adc read[0m
+[0;32mI (75628) prot: timer : 74700949[0m
+[0;32mI (75628) prot: adc read[0m
+[0;32mI (75678) prot: adc read[0m
+[0;32mI (75728) prot: timer : 74800944[0m
+[0;32mI (75728) prot: adc read[0m
+[0;32mI (75778) prot: adc read[0m
+[0;32mI (75828) prot: timer : 74900944[0m
+[0;32mI (75828) prot: adc read[0m
+[0;32mI (75838) prot: display out + 0[0m
+[0;32mI (75878) prot: adc read[0m
+[0;32mI (75928) prot: timer : 75000944[0m
+[0;32mI (75928) prot: adc read[0m
+[0;32mI (75978) prot: adc read[0m
+[0;32mI (76028) prot: timer : 75100944[0m
+[0;32mI (76028) prot: adc read[0m
+[0;32mI (76078) prot: adc read[0m
+[0;32mI (76128) prot: timer : 75200944[0m
+[0;32mI (76128) prot: adc read[0m
+[0;32mI (76178) prot: adc read[0m
+[0;32mI (76188) prot: display out + 0[0m
+[0;32mI (76228) prot: timer : 75300946[0m
+[0;32mI (76228) prot: adc read[0m
+[0;32mI (76278) prot: adc read[0m
+[0;32mI (76328) prot: timer : 75400949[0m
+[0;32mI (76328) prot: adc read[0m
+[0;32mI (76378) prot: adc read[0m
+[0;32mI (76428) prot: timer : 75500944[0m
+[0;32mI (76428) prot: adc read[0m
+[0;32mI (76478) prot: adc read[0m
+[0;32mI (76528) prot: timer : 75600944[0m
+[0;32mI (76528) prot: adc read[0m
+[0;32mI (76538) prot: display out + 0[0m
+[0;32mI (76578) prot: adc read[0m
+[0;32mI (76628) prot: timer : 75700944[0m
+[0;32mI (76628) prot: adc read[0m
+[0;32mI (76678) prot: adc read[0m
+[0;32mI (76728) prot: timer : 75800944[0m
+[0;32mI (76728) prot: adc read[0m
+[0;32mI (76778) prot: adc read[0m
+[0;32mI (76828) prot: timer : 75900944[0m
+[0;32mI (76828) prot: adc read[0m
+[0;32mI (76878) prot: adc read[0m
+[0;32mI (76888) prot: display out + 0[0m
+[0;32mI (76928) prot: timer : 76000946[0m
+[0;32mI (76928) prot: adc read[0m
+[0;32mI (76978) prot: adc read[0m
+[0;32mI (77028) prot: timer : 76100949[0m
+[0;32mI (77028) prot: adc read[0m
+[0;32mI (77078) prot: adc read[0m
+[0;32mI (77128) prot: timer : 76200944[0m
+[0;32mI (77128) prot: adc read[0m
+[0;32mI (77178) prot: adc read[0m
+[0;32mI (77228) prot: timer : 76300944[0m
+[0;32mI (77228) prot: adc read[0m
+[0;32mI (77238) prot: display out + 0[0m
+[0;32mI (77278) prot: adc read[0m
+[0;32mI (77328) prot: timer : 76400944[0m
+[0;32mI (77328) prot: adc read[0m
+[0;32mI (77378) prot: adc read[0m
+[0;32mI (77428) prot: timer : 76500944[0m
+[0;32mI (77428) prot: adc read[0m
+[0;32mI (77478) prot: adc read[0m
+[0;32mI (77528) prot: timer : 76600944[0m
+[0;32mI (77528) prot: adc read[0m
+[0;32mI (77578) prot: adc read[0m
+[0;32mI (77588) prot: display out + 0[0m
+[0;32mI (77628) prot: timer : 76700946[0m
+[0;32mI (77628) prot: adc read[0m
+[0;32mI (77678) prot: adc read[0m
+[0;32mI (77728) prot: timer : 76800949[0m
+[0;32mI (77728) prot: adc read[0m
+[0;32mI (77778) prot: adc read[0m
+[0;32mI (77828) prot: timer : 76900944[0m
+[0;32mI (77828) prot: adc read[0m
+[0;32mI (77878) prot: adc read[0m
+[0;32mI (77928) prot: timer : 77000944[0m
+[0;32mI (77928) prot: adc read[0m
+[0;32mI (77938) prot: display out + 0[0m
+[0;32mI (77978) prot: adc read[0m
+[0;32mI (78028) prot: timer : 77100944[0m
+[0;32mI (78028) prot: adc read[0m
+[0;32mI (78078) prot: adc read[0m
+[0;32mI (78128) prot: timer : 77200944[0m
+[0;32mI (78128) prot: adc read[0m
+[0;32mI (78178) prot: adc read[0m
+[0;32mI (78228) prot: timer : 77300944[0m
+[0;32mI (78228) prot: adc read[0m
+[0;32mI (78278) prot: adc read[0m
+[0;32mI (78288) prot: display out + 0[0m
+[0;32mI (78328) prot: timer : 77400946[0m
+[0;32mI (78328) prot: adc read[0m
+[0;32mI (78378) prot: adc read[0m
+[0;32mI (78428) prot: timer : 77500949[0m
+[0;32mI (78428) prot: adc read[0m
+[0;32mI (78478) prot: adc read[0m
+[0;32mI (78528) prot: timer : 77600944[0m
+[0;32mI (78528) prot: adc read[0m
+[0;32mI (78578) prot: adc read[0m
+[0;32mI (78628) prot: timer : 77700944[0m
+[0;32mI (78628) prot: adc read[0m
+[0;32mI (78638) prot: display out + 0[0m
+[0;32mI (78678) prot: adc read[0m
+[0;32mI (78728) prot: timer : 77800944[0m
+[0;32mI (78728) prot: adc read[0m
+[0;32mI (78778) prot: adc read[0m
+[0;32mI (78828) prot: timer : 77900944[0m
+[0;32mI (78828) prot: adc read[0m
+[0;32mI (78878) prot: adc read[0m
+[0;32mI (78928) prot: timer : 78000944[0m
+[0;32mI (78928) prot: adc read[0m
+[0;32mI (78978) prot: adc read[0m
+[0;32mI (78988) prot: display out + 0[0m
+[0;32mI (79028) prot: timer : 78100944[0m
+[0;32mI (79028) prot: adc read[0m
+[0;32mI (79078) prot: adc read[0m
+[0;32mI (79128) prot: timer : 78200944[0m
+[0;32mI (79128) prot: adc read[0m
+[0;32mI (79178) prot: adc read[0m
+[0;32mI (79228) prot: timer : 78300944[0m
+[0;32mI (79228) prot: adc read[0m
+[0;32mI (79278) prot: adc read[0m
+[0;32mI (79328) prot: timer : 78400944[0m
+[0;32mI (79328) prot: adc read[0m
+[0;32mI (79338) prot: display out + 0[0m
+[0;32mI (79378) prot: adc read[0m
+[0;32mI (79428) prot: timer : 78500944[0m
+[0;32mI (79428) prot: adc read[0m
+[0;32mI (79478) prot: adc read[0m
+[0;32mI (79528) prot: timer : 78600944[0m
+[0;32mI (79528) prot: adc read[0m
+[0;32mI (79578) prot: adc read[0m
+[0;32mI (79628) prot: timer : 78700944[0m
+[0;32mI (79628) prot: adc read[0m
+[0;32mI (79678) prot: adc read[0m
+[0;32mI (79688) prot: display out + 0[0m
+[0;32mI (79728) prot: timer : 78800946[0m
+[0;32mI (79728) prot: adc read[0m
+[0;32mI (79778) prot: adc read[0m
+[0;32mI (79828) prot: timer : 78900949[0m
+[0;32mI (79828) prot: adc read[0m
+[0;32mI (79878) prot: adc read[0m
+[0;32mI (79928) prot: timer : 79000944[0m
+[0;32mI (79928) prot: adc read[0m
+[0;32mI (79978) prot: adc read[0m
+[0;32mI (80028) prot: timer : 79100944[0m
+[0;32mI (80028) prot: adc read[0m
+[0;32mI (80038) prot: display out + 0[0m
+[0;32mI (80078) prot: adc read[0m
+[0;32mI (80128) prot: timer : 79200944[0m
+[0;32mI (80128) prot: adc read[0m
+[0;32mI (80178) prot: adc read[0m
+[0;32mI (80228) prot: timer : 79300944[0m
+[0;32mI (80228) prot: adc read[0m
+[0;32mI (80278) prot: adc read[0m
+[0;32mI (80328) prot: timer : 79400944[0m
+[0;32mI (80328) prot: adc read[0m
+[0;32mI (80378) prot: adc read[0m
+[0;32mI (80388) prot: display out + 0[0m
+[0;32mI (80428) prot: timer : 79500946[0m
+[0;32mI (80428) prot: adc read[0m
+[0;32mI (80478) prot: adc read[0m
+[0;32mI (80528) prot: timer : 79600949[0m
+[0;32mI (80528) prot: adc read[0m
+[0;32mI (80578) prot: adc read[0m
+[0;32mI (80628) prot: timer : 79700944[0m
+[0;32mI (80628) prot: adc read[0m
+[0;32mI (80678) prot: adc read[0m
+[0;32mI (80728) prot: timer : 79800944[0m
+[0;32mI (80728) prot: adc read[0m
+[0;32mI (80738) prot: display out + 0[0m
+[0;32mI (80778) prot: adc read[0m
+[0;32mI (80828) prot: timer : 79900944[0m
+[0;32mI (80828) prot: adc read[0m
+[0;32mI (80878) prot: adc read[0m
+[0;32mI (80928) prot: timer : 80000944[0m
+[0;32mI (80928) prot: adc read[0m
+[0;32mI (80978) prot: adc read[0m
+[0;32mI (81028) prot: timer : 80100944[0m
+[0;32mI (81028) prot: adc read[0m
+[0;32mI (81078) prot: adc read[0m
+[0;32mI (81088) prot: display out + 0[0m
+[0;32mI (81128) prot: timer : 80200946[0m
+[0;32mI (81128) prot: adc read[0m
+[0;32mI (81178) prot: adc read[0m
+[0;32mI (81228) prot: timer : 80300949[0m
+[0;32mI (81228) prot: adc read[0m
+[0;32mI (81278) prot: adc read[0m
+[0;32mI (81328) prot: timer : 80400944[0m
+[0;32mI (81328) prot: adc read[0m
+[0;32mI (81378) prot: adc read[0m
+[0;32mI (81428) prot: timer : 80500944[0m
+[0;32mI (81428) prot: adc read[0m
+[0;32mI (81438) prot: display out + 0[0m
+[0;32mI (81478) prot: adc read[0m
+[0;32mI (81528) prot: timer : 80600944[0m
+[0;32mI (81528) prot: adc read[0m
+[0;32mI (81578) prot: adc read[0m
+[0;32mI (81628) prot: timer : 80700944[0m
+[0;32mI (81628) prot: adc read[0m
+[0;32mI (81678) prot: adc read[0m
+[0;32mI (81728) prot: timer : 80800944[0m
+[0;32mI (81728) prot: adc read[0m
+[0;32mI (81778) prot: adc read[0m
+[0;32mI (81788) prot: display out + 0[0m
+[0;32mI (81828) prot: timer : 80900946[0m
+[0;32mI (81828) prot: adc read[0m
+[0;32mI (81878) prot: adc read[0m
+[0;32mI (81928) prot: timer : 81000949[0m
+[0;32mI (81928) prot: adc read[0m
+[0;32mI (81978) prot: adc read[0m
+[0;32mI (82028) prot: timer : 81100944[0m
+[0;32mI (82028) prot: adc read[0m
+[0;32mI (82078) prot: adc read[0m
+[0;32mI (82128) prot: timer : 81200944[0m
+[0;32mI (82128) prot: adc read[0m
+[0;32mI (82138) prot: display out + 0[0m

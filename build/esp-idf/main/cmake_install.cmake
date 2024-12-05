@@ -1,4 +1,4 @@
-# Install script for directory: /home/suco/esp/web-hearth-rate/main
+# Install script for directory: /home/suco/sis-embarcados/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
