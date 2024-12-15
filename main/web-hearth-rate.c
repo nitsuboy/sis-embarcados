@@ -222,7 +222,7 @@ void task3()
   for(;;)
   {
     ESP_LOGI(TAG, "package sent");
-    vTaskDelay(50/portTICK_PERIOD_MS);
+    vTaskDelay(100/portTICK_PERIOD_MS);
   }
 }
 
@@ -427,6 +427,13 @@ void app_main(void) {
               NULL,
               1,
               &task4_handle,
+              1);
+  xTaskCreatePinnedToCore(task3,
+              "udp",
+              4096,
+              NULL,
+              1,
+              &task3_handle,
               1);
 
   // core 0
