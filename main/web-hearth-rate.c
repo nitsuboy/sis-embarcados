@@ -122,9 +122,9 @@ esp_netif_t *wifi_init_sta(void)
 // core 0
 void task2() 
 {
-  volatile int [10];
+  volatile int rate[10];
   volatile uint64_t samplecounter = 0;
-  volatile uint64_t lastbeattime  = 0;
+  volatile uint64_t lastbeatime  = 0;
   volatile int P = 512;
   volatile int T = 512;
   volatile int amp = 0;
@@ -136,32 +136,77 @@ void task2()
   volatile bool QS = false;
   for(;;)
   {
-    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw));
-    samplecounter += 2;
-    int n = samplecounter - lastbeattime;
+  ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw));
+  samplecounter += 2;                         // keep track of the time in mS with this variable
+  int N = samplecounter - lastbeatime;       // monitor the time since the last beat to avoid noise
 
-    if (adc_raw < pulse_threshool && N > (IBI/5)*3)
-    {
-      if (adc_raw < T)
-      {
-        T = adc_raw;
-      }
+    //  find the peak and trough of the pulse wave
+  if(adc_raw < thresh && N > (IBI/5)*3){       // avoid dichrotic noise by waiting 3/5 of last IBI
+    if (adc_raw < T){                        // T is the trough
+      T = adc_raw;                         // keep track of lowest point in pulse wave
     }
+  }
 
-    if (adc_raw > pulse_threshool && adc_raw > P)
-    {
-      P = adc_raw
-    }
-    
-    if (N > 250)
-    {
-      if ((adc_raw > pulse_threshool)&&(Pulse == false)&&(N>(IBI/5)*3))
-      {
-        Pulse = true;
-        
+  if(adc_raw > thresh && adc_raw > P){          // thresh condition helps avoid noise
+    P = adc_raw;                             // P is the peak
+  }                                        // keep track of highest point in pulse wave
+
+  //  NOW IT'S TIME TO LOOK FOR THE HEART BEAT
+  // signal surges up in value every time there is a pulse
+  if (N > 250){                                   // avoid high frequency noise
+    if ( (adc_raw > thresh) && (Pulse == false) && (N > (IBI/5)*3) ){
+      Pulse = true;                               // set the Pulse flag when we think there is a pulse
+      IBI = samplecounter - lastbeatime;         // measure time between beats in mS
+      lastbeatime = samplecounter;               // keep track of time for next pulse
+
+      if(sb){                        // if this is the second beat, if secondBeat == TRUE
+        sb = false;                  // clear secondBeat flag
+        for(int i=0; i<=9; i++){             // seed the running total to get a realisitic BPM at startup
+          rate[i] = IBI;
+        }
       }
-      
+
+      if(fb){                         // if it's the first time we found a beat, if firstBeat == TRUE
+        fb = false;                   // clear firstBeat flag
+        sb = true;                   // set the second beat flag
+        continue;                              // IBI value is unreliable so discard it
+      }
+
+
+      // keep a running total of the last 10 IBI values
+      word runningTotal = 0;                  // clear the runningTotal variable
+
+      for(int i=0; i<=8; i++){                // shift data in the rate array
+        rate[i] = rate[i+1];                  // and drop the oldest IBI value
+        runningTotal += rate[i];              // add up the 9 oldest IBI values
+      }
+
+      rate[9] = IBI;                          // add the latest IBI to the rate array
+      runningTotal += rate[9];                // add the latest IBI to runningTotal
+      runningTotal /= 10;                     // average the last 10 IBI values
+      BPMm = 60000/runningTotal;               // how many beats can fit into a minute? that's BPM!
+      QS = true;                              // set Quantified Self flag
+      // QS FLAG IS NOT CLEARED INSIDE THIS ISR
     }
+  }
+
+  if (adc_raw < thresh && Pulse == true){   // when the values are going down, the beat is over
+    digitalWrite(blinkPin,LOW);            // turn off pin 13 LED
+    Pulse = false;                         // reset the Pulse flag so we can do it again
+    amp = P - T;                           // get amplitude of the pulse wave
+    thresh = amp/2 + T;                    // set thresh at 50% of the amplitude
+    P = thresh;                            // reset these for next time
+    T = pulse_threshool;
+  }
+
+  if (N > 2500){                           // if 2.5 seconds go by without a beat
+    pulse_threshool = 530;                          // set thresh default
+    P = 512;                               // set P default
+    T = 512;                               // set T default
+    lastbeatime = samplecounter;          // bring the lastbeatime up to date
+    fb = true;                      // set these to avoid noise
+    sb = false;                    // when we get the heartbeat back
+  }
     
 
     /*
