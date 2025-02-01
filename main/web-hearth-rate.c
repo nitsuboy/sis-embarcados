@@ -33,257 +33,257 @@
 #include "lwip/err.h"
 #include "lwip/sys.h"
 
-//i2c
-#define PIN_SDA                             21
-#define PIN_SCL                             22
+// i2c
+#define PIN_SDA 21
+#define PIN_SCL 22
 
-//adc
-#define ADC2_CHAN0                          ADC_CHANNEL_0 // pin 24,D4
-#define ADC_ATTEN                           ADC_ATTEN_DB_12
+// adc
+#define ADC2_CHAN0 ADC_CHANNEL_0 // pin 24,D4
+#define ADC_ATTEN ADC_ATTEN_DB_12
 
-//wifi softap and station
-#define ESP_WIFI_STA_SSID                   "prototipo"
-#define ESP_WIFI_STA_PASSWD                 "mypassword"
-#define ESP_MAXIMUM_RETRY                   10
-#define ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD   WIFI_AUTH_WPA2_PSK
+// wifi softap and station
+#define ESP_WIFI_STA_SSID "prototipo"
+#define ESP_WIFI_STA_PASSWD "mypassword"
+#define ESP_MAXIMUM_RETRY 10
+#define ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD WIFI_AUTH_WPA2_PSK
 
-#define WIFI_CONNECTED_BIT                  BIT0
-#define WIFI_FAIL_BIT                       BIT1
+#define WIFI_CONNECTED_BIT BIT0
+#define WIFI_FAIL_BIT BIT1
 
-static EventGroupHandle_t                   s_wifi_event_group;
-static adc_oneshot_unit_handle_t            adc2_handle;
-static gptimer_handle_t                     gptimer_handle;
-static TaskHandle_t                         task1_handle;
-static TaskHandle_t                         task2_handle;
-static TaskHandle_t                         task3_handle;
-static TaskHandle_t                         task4_handle;
-static QueueHandle_t                        queue_raw_handle;
-static QueueHandle_t                        queue_BPM_handle;
-static u8g2_t                               u8g2;
-static const char* TAG =                    "Prot";
+static EventGroupHandle_t s_wifi_event_group;
+static adc_oneshot_unit_handle_t adc2_handle;
+static gptimer_handle_t gptimer_handle;
+static TaskHandle_t task1_handle;
+static TaskHandle_t task2_handle;
+static TaskHandle_t task3_handle;
+static TaskHandle_t task4_handle;
+static QueueHandle_t queue_raw_handle;
+static QueueHandle_t queue_BPM_handle;
+static u8g2_t u8g2;
+static const char *TAG = "Prot";
 
 uint8_t reads = 0;
 uint8_t beats = 0;
-uint16_t BPMa[8] = {0,0,0,0,0,0,0,0};
+uint16_t BPMa[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 bool BPMb = 0;
 int BPMm = 0;
 uint8_t s_retry_num = 0;
-volatile uint16_t pulse_threshool = 2280;
+volatile uint16_t pulse_threshool = 512;
 
 static void wifi_event_handler(void *arg, esp_event_base_t event_base,
                                int32_t event_id, void *event_data)
 {
-    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_AP_STACONNECTED) {
-        wifi_event_ap_staconnected_t *event = (wifi_event_ap_staconnected_t *) event_data;
-        ESP_LOGI(TAG, "Station "MACSTR" joined, AID=%d",
-                 MAC2STR(event->mac), event->aid);
-    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_AP_STADISCONNECTED) {
-        wifi_event_ap_stadisconnected_t *event = (wifi_event_ap_stadisconnected_t *) event_data;
-        ESP_LOGI(TAG, "Station "MACSTR" left, AID=%d, reason:%d",
-                 MAC2STR(event->mac), event->aid, event->reason);
-    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
-        esp_wifi_connect();
-        ESP_LOGI(TAG, "Station started");
-    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
-        ip_event_got_ip_t *event = (ip_event_got_ip_t *) event_data;
-        ESP_LOGI(TAG, "Got IP:" IPSTR, IP2STR(&event->ip_info.ip));
-        s_retry_num = 0;
-        xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
-    }
+  if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_AP_STACONNECTED)
+  {
+    wifi_event_ap_staconnected_t *event = (wifi_event_ap_staconnected_t *)event_data;
+    ESP_LOGI(TAG, "Station " MACSTR " joined, AID=%d",
+             MAC2STR(event->mac), event->aid);
+  }
+  else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_AP_STADISCONNECTED)
+  {
+    wifi_event_ap_stadisconnected_t *event = (wifi_event_ap_stadisconnected_t *)event_data;
+    ESP_LOGI(TAG, "Station " MACSTR " left, AID=%d, reason:%d",
+             MAC2STR(event->mac), event->aid, event->reason);
+  }
+  else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START)
+  {
+    esp_wifi_connect();
+    ESP_LOGI(TAG, "Station started");
+  }
+  else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP)
+  {
+    ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
+    ESP_LOGI(TAG, "Got IP:" IPSTR, IP2STR(&event->ip_info.ip));
+    s_retry_num = 0;
+    xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
+  }
 }
 
 esp_netif_t *wifi_init_sta(void)
 {
-    esp_netif_t *esp_netif_sta = esp_netif_create_default_wifi_sta();
+  esp_netif_t *esp_netif_sta = esp_netif_create_default_wifi_sta();
 
-    wifi_config_t wifi_sta_config = {
-        .sta = {
-            .ssid = ESP_WIFI_STA_SSID,
-            .password = ESP_WIFI_STA_PASSWD,
-            .scan_method = WIFI_ALL_CHANNEL_SCAN,
-            .failure_retry_cnt = ESP_MAXIMUM_RETRY,
-            /* Authmode threshold resets to WPA2 as default if password matches WPA2 standards (password len => 8).
-             * If you want to connect the device to deprecated WEP/WPA networks, Please set the threshold value
-             * to WIFI_AUTH_WEP/WIFI_AUTH_WPA_PSK and set the password with length and format matching to
-            * WIFI_AUTH_WEP/WIFI_AUTH_WPA_PSK standards.
-             */
-            .threshold.authmode = ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD,
-            .sae_pwe_h2e = WPA3_SAE_PWE_BOTH,
-        },
-    };
+  wifi_config_t wifi_sta_config = {
+      .sta = {
+          .ssid = ESP_WIFI_STA_SSID,
+          .password = ESP_WIFI_STA_PASSWD,
+          .scan_method = WIFI_ALL_CHANNEL_SCAN,
+          .failure_retry_cnt = ESP_MAXIMUM_RETRY,
+          /* Authmode threshold resets to WPA2 as default if password matches WPA2 standards (password len => 8).
+           * If you want to connect the device to deprecated WEP/WPA networks, Please set the threshold value
+           * to WIFI_AUTH_WEP/WIFI_AUTH_WPA_PSK and set the password with length and format matching to
+           * WIFI_AUTH_WEP/WIFI_AUTH_WPA_PSK standards.
+           */
+          .threshold.authmode = ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD,
+          .sae_pwe_h2e = WPA3_SAE_PWE_BOTH,
+      },
+  };
 
-    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_sta_config) );
+  ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_sta_config));
 
-    ESP_LOGI(TAG, "wifi_init_sta finished.");
+  ESP_LOGI(TAG, "wifi_init_sta finished.");
 
-    return esp_netif_sta;
+  return esp_netif_sta;
 }
 
 // core 0
-void task2() 
+void task2()
 {
   volatile int rate[10];
   volatile uint64_t samplecounter = 0;
-  volatile uint64_t lastbeatime  = 0;
+  volatile uint64_t lastbeatime = 0;
   volatile int P = 512;
   volatile int T = 512;
   volatile int amp = 0;
   volatile bool fb = true;
   volatile bool sb = false;
-  volatile int adc_raw = 0;
+  int adc_raw = 0;
   volatile int IBI = 600;
   volatile bool Pulse = false;
   volatile bool QS = false;
-  for(;;)
+  for (;;)
   {
-  ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw));
-  samplecounter += 2;                         // keep track of the time in mS with this variable
-  int N = samplecounter - lastbeatime;       // monitor the time since the last beat to avoid noise
+    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw));
+    samplecounter += 10;                  // keep track of the time in mS with this variable
+    int N = samplecounter - lastbeatime; // monitor the time since the last beat to avoid noise
 
     //  find the peak and trough of the pulse wave
-  if(adc_raw < thresh && N > (IBI/5)*3){       // avoid dichrotic noise by waiting 3/5 of last IBI
-    if (adc_raw < T){                        // T is the trough
-      T = adc_raw;                         // keep track of lowest point in pulse wave
+    if (adc_raw < pulse_threshool && N > (IBI / 5) * 3)
+    { // avoid dichrotic noise by waiting 3/5 of last IBI
+      if (adc_raw < T)
+      {              // T is the trough
+        T = adc_raw; // keep track of lowest point in pulse wave
+      }
     }
-  }
 
-  if(adc_raw > thresh && adc_raw > P){          // thresh condition helps avoid noise
-    P = adc_raw;                             // P is the peak
-  }                                        // keep track of highest point in pulse wave
+    if (adc_raw > pulse_threshool && adc_raw > P)
+    {              // thresh condition helps avoid noise
+      P = adc_raw; // P is the peak
+    } // keep track of highest point in pulse wave
 
-  //  NOW IT'S TIME TO LOOK FOR THE HEART BEAT
-  // signal surges up in value every time there is a pulse
-  if (N > 250){                                   // avoid high frequency noise
-    if ( (adc_raw > thresh) && (Pulse == false) && (N > (IBI/5)*3) ){
-      Pulse = true;                               // set the Pulse flag when we think there is a pulse
-      IBI = samplecounter - lastbeatime;         // measure time between beats in mS
-      lastbeatime = samplecounter;               // keep track of time for next pulse
+    //  NOW IT'S TIME TO LOOK FOR THE HEART BEAT
+    // signal surges up in value every time there is a pulse
+    if (N > 250)
+    { // avoid high frequency noise
+      if ((adc_raw > pulse_threshool) && (Pulse == false) && (N > (IBI / 5) * 3))
+      {
+        Pulse = true;                      // set the Pulse flag when we think there is a pulse
+        IBI = samplecounter - lastbeatime; // measure time between beats in mS
+        lastbeatime = samplecounter;       // keep track of time for next pulse
 
-      if(sb){                        // if this is the second beat, if secondBeat == TRUE
-        sb = false;                  // clear secondBeat flag
-        for(int i=0; i<=9; i++){             // seed the running total to get a realisitic BPM at startup
-          rate[i] = IBI;
+        if (sb)
+        {             // if this is the second beat, if secondBeat == TRUE
+          sb = false; // clear secondBeat flag
+          for (int i = 0; i <= 9; i++)
+          { // seed the running total to get a realisitic BPM at startup
+            rate[i] = IBI;
+          }
         }
+
+        if (fb)
+        {             // if it's the first time we found a beat, if firstBeat == TRUE
+          fb = false; // clear firstBeat flag
+          sb = true;  // set the second beat flag
+          continue;   // IBI value is unreliable so discard it
+        }
+
+        // keep a running total of the last 10 IBI values
+        uint32_t runningTotal = 0; // clear the runningTotal variable
+
+        for (int i = 0; i <= 8; i++)
+        {                          // shift data in the rate array
+          rate[i] = rate[i + 1];   // and drop the oldest IBI value
+          runningTotal += rate[i]; // add up the 9 oldest IBI values
+        }
+
+        rate[9] = IBI;               // add the latest IBI to the rate array
+        runningTotal += rate[9];     // add the latest IBI to runningTotal
+        runningTotal /= 10;          // average the last 10 IBI values
+        BPMm = 60000 / runningTotal; // how many beats can fit into a minute? that's BPM!
+        QS = true;                   // set Quantified Self flag
+        // QS FLAG IS NOT CLEARED INSIDE THIS ISR
       }
-
-      if(fb){                         // if it's the first time we found a beat, if firstBeat == TRUE
-        fb = false;                   // clear firstBeat flag
-        sb = true;                   // set the second beat flag
-        continue;                              // IBI value is unreliable so discard it
-      }
-
-
-      // keep a running total of the last 10 IBI values
-      word runningTotal = 0;                  // clear the runningTotal variable
-
-      for(int i=0; i<=8; i++){                // shift data in the rate array
-        rate[i] = rate[i+1];                  // and drop the oldest IBI value
-        runningTotal += rate[i];              // add up the 9 oldest IBI values
-      }
-
-      rate[9] = IBI;                          // add the latest IBI to the rate array
-      runningTotal += rate[9];                // add the latest IBI to runningTotal
-      runningTotal /= 10;                     // average the last 10 IBI values
-      BPMm = 60000/runningTotal;               // how many beats can fit into a minute? that's BPM!
-      QS = true;                              // set Quantified Self flag
-      // QS FLAG IS NOT CLEARED INSIDE THIS ISR
     }
-  }
 
-  if (adc_raw < thresh && Pulse == true){   // when the values are going down, the beat is over
-    digitalWrite(blinkPin,LOW);            // turn off pin 13 LED
-    Pulse = false;                         // reset the Pulse flag so we can do it again
-    amp = P - T;                           // get amplitude of the pulse wave
-    thresh = amp/2 + T;                    // set thresh at 50% of the amplitude
-    P = thresh;                            // reset these for next time
-    T = pulse_threshool;
-  }
-
-  if (N > 2500){                           // if 2.5 seconds go by without a beat
-    pulse_threshool = 530;                          // set thresh default
-    P = 512;                               // set P default
-    T = 512;                               // set T default
-    lastbeatime = samplecounter;          // bring the lastbeatime up to date
-    fb = true;                      // set these to avoid noise
-    sb = false;                    // when we get the heartbeat back
-  }
-    
-
-    /*
-    if(adc_raw>pulse_threshool&&BPMb)
-    {
-      ESP_ERROR_CHECK(gptimer_get_raw_count(gptimer_handle, &tmsp));
-      xQueueSend(queue_BPM_handle,&tmsp,( TickType_t ) 0);
-      BPMb = false;
+    if (adc_raw < pulse_threshool && Pulse == true)
+    {                                // when the values are going down, the beat is over
+      Pulse = false;                 // reset the Pulse flag so we can do it again
+      amp = P - T;                   // get amplitude of the pulse wave
+      pulse_threshool = amp / 2 + T; // set thresh at 50% of the amplitude
+      P = pulse_threshool;           // reset these for next time
+      T = pulse_threshool;
     }
-    else if (adc_raw<pulse_threshool&&!BPMb)
-    {
-      BPMb = true;
+
+    if (N > 2500)
+    {                              // if 2.5 seconds go by without a beat
+      pulse_threshool = 512;       // set thresh default
+      P = 512;                     // set P default
+      T = 512;                     // set T default
+      lastbeatime = samplecounter; // bring the lastbeatime up to date
+      fb = true;                   // set these to avoid noise
+      sb = false;                  // when we get the heartbeat back
     }
-    
-    xQueueSend(queue_raw_handle,&adc_raw,( TickType_t ) 0);
-    */
-    vTaskDelay(2/portTICK_PERIOD_MS);
+    xQueueSend(queue_raw_handle, &adc_raw, (TickType_t)0);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
   }
 }
 
 // core 1
-void task1() 
+void task1()
 {
   char BPM[12];
-  uint8_t posy      = 0;
+  uint8_t posy = 0;
   uint8_t last_read = 0;
-  uint8_t new_read  = 0;
+  uint8_t new_read = 0;
   int raw;
-  for(;;)
+  for (;;)
   {
     posy++;
-    snprintf(BPM, sizeof(BPM), "BPM:%0*d",7, BPMm);
-    //keep all lines
-    if(posy >=128)
+    snprintf(BPM, sizeof(BPM), "BPM:%0*d", 3, BPMm);
+    // keep all lines
+    if (posy >= 128)
     {
       posy = 0;
       u8g2_ClearBuffer(&u8g2);
     }
-    
-    //draw BPM
+
+    // draw BPM
     u8g2_SetFont(&u8g2, u8g2_font_6x13_tf);
     u8g2_DrawStr(&u8g2, 0, 9, BPM);
-    
-    //draw line
+
+    // draw line
     //(int) (adc_raw[i]*0.16) - 336
-    if( queue_raw_handle != 0 )
+    if (queue_raw_handle != 0)
     {
       uint8_t mw = uxQueueMessagesWaiting(queue_raw_handle);
-      for(uint8_t i = 0 ; i < mw;i++)
+      for (uint8_t i = 0; i < mw; i++)
       {
-        xQueueReceive( queue_raw_handle, &raw, ( TickType_t ) 10 );
-        new_read = (int) (raw*0.16) - 336;
-        u8g2_DrawLine(&u8g2, posy,64 - last_read, posy + 1, 64 - new_read);
+        xQueueReceive(queue_raw_handle, &raw, (TickType_t)10);
+        new_read = (int)(raw * 0.16) - 336;
+        u8g2_DrawLine(&u8g2, posy, 64 - last_read, posy + 1, 64 - new_read);
         last_read = new_read;
         posy++;
       }
     }
 
-    u8g2_DrawLine(&u8g2, 0,64 - ((pulse_threshool*0.16) - 336), 128, 64 - ((pulse_threshool*0.16) - 336));
+    u8g2_DrawLine(&u8g2, 0, 64 - ((pulse_threshool * 0.16) - 336), 128, 64 - ((pulse_threshool * 0.16) - 336));
 
     u8g2_SendBuffer(&u8g2);
-    ESP_LOGI(TAG,"%d",BPMm);
-    
-    vTaskDelay(100/portTICK_PERIOD_MS);
+
+    vTaskDelay(50 / portTICK_PERIOD_MS);
   }
 }
 
 void task3()
 {
   // send udp package trough sta
-  for(;;)
+  for (;;)
   {
-    //ESP_LOGI(TAG, "package sent");
-    vTaskDelay(100/portTICK_PERIOD_MS);
+    // ESP_LOGI(TAG, "package sent");
+    vTaskDelay(100 / portTICK_PERIOD_MS);
   }
 }
-
+/*
 void task4()
 {
   uint64_t count1 = 0;
@@ -315,17 +315,18 @@ void task4()
   }
 
 }
-
+*/
 void setup_wifi()
 {
   ESP_ERROR_CHECK(esp_netif_init());
   ESP_ERROR_CHECK(esp_event_loop_create_default());
 
-  //Initialize NVS
+  // Initialize NVS
   esp_err_t ret = nvs_flash_init();
-  if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-      ESP_ERROR_CHECK(nvs_flash_erase());
-      ret = nvs_flash_init();
+  if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
+  {
+    ESP_ERROR_CHECK(nvs_flash_erase());
+    ret = nvs_flash_init();
   }
   ESP_ERROR_CHECK(ret);
 
@@ -334,15 +335,15 @@ void setup_wifi()
 
   /* Register Event handler */
   ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,
-                  ESP_EVENT_ANY_ID,
-                  &wifi_event_handler,
-                  NULL,
-                  NULL));
+                                                      ESP_EVENT_ANY_ID,
+                                                      &wifi_event_handler,
+                                                      NULL,
+                                                      NULL));
   ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,
-                  IP_EVENT_STA_GOT_IP,
-                  &wifi_event_handler,
-                  NULL,
-                  NULL));
+                                                      IP_EVENT_STA_GOT_IP,
+                                                      &wifi_event_handler,
+                                                      NULL,
+                                                      NULL));
 
   /*Initialize WiFi */
   wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
@@ -353,42 +354,47 @@ void setup_wifi()
   esp_netif_t *esp_netif_sta = wifi_init_sta();
 
   /* Start WiFi */
-  ESP_ERROR_CHECK(esp_wifi_start() );
+  ESP_ERROR_CHECK(esp_wifi_start());
 
   /*
-    * Wait until either the connection is established (WIFI_CONNECTED_BIT) or
-    * connection failed for the maximum number of re-tries (WIFI_FAIL_BIT).
-    * The bits are set by event_handler() (see above)
-    */
+   * Wait until either the connection is established (WIFI_CONNECTED_BIT) or
+   * connection failed for the maximum number of re-tries (WIFI_FAIL_BIT).
+   * The bits are set by event_handler() (see above)
+   */
   EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
-                                          WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
-                                          pdFALSE,
-                                          pdFALSE,
-                                          portMAX_DELAY);
+                                         WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
+                                         pdFALSE,
+                                         pdFALSE,
+                                         portMAX_DELAY);
 
   /* xEventGroupWaitBits() returns the bits before the call returned,
-    * hence we can test which event actually happened. */
-  if (bits & WIFI_CONNECTED_BIT) {
-      ESP_LOGI(TAG, "connected to ap SSID:%s password:%s",
-                ESP_WIFI_STA_SSID, ESP_WIFI_STA_PASSWD);
-  } else if (bits & WIFI_FAIL_BIT) {
-      ESP_LOGI(TAG, "Failed to connect to SSID:%s, password:%s",
-                ESP_WIFI_STA_SSID, ESP_WIFI_STA_PASSWD);
-  } else {
-      ESP_LOGE(TAG, "UNEXPECTED EVENT");
-      return;
+   * hence we can test which event actually happened. */
+  if (bits & WIFI_CONNECTED_BIT)
+  {
+    ESP_LOGI(TAG, "connected to ap SSID:%s password:%s",
+             ESP_WIFI_STA_SSID, ESP_WIFI_STA_PASSWD);
+  }
+  else if (bits & WIFI_FAIL_BIT)
+  {
+    ESP_LOGI(TAG, "Failed to connect to SSID:%s, password:%s",
+             ESP_WIFI_STA_SSID, ESP_WIFI_STA_PASSWD);
+  }
+  else
+  {
+    ESP_LOGE(TAG, "UNEXPECTED EVENT");
+    return;
   }
 
   /* Set sta as the default interface */
   esp_netif_set_default_netif(esp_netif_sta);
 }
 
-void setup_timer() 
+void setup_timer()
 {
   gptimer_config_t timer_config = {
-    .clk_src = GPTIMER_CLK_SRC_DEFAULT,
-    .direction = GPTIMER_COUNT_UP,
-    .resolution_hz = 1000 * 10, // 10KHz, 1 tick = 0.1ms
+      .clk_src = GPTIMER_CLK_SRC_DEFAULT,
+      .direction = GPTIMER_COUNT_UP,
+      .resolution_hz = 1000 * 10, // 10KHz, 1 tick = 0.1ms
   };
   ESP_ERROR_CHECK(gptimer_new_timer(&timer_config, &gptimer_handle));
   ESP_ERROR_CHECK(gptimer_enable(gptimer_handle));
@@ -398,16 +404,16 @@ void setup_timer()
   // Retrieve the timestamp at any time
 }
 
-void setup_adc2() 
+void setup_adc2()
 {
   adc_oneshot_chan_cfg_t config = {
-    .bitwidth = ADC_BITWIDTH_DEFAULT,
-    .atten = ADC_ATTEN,
+      .bitwidth = ADC_BITWIDTH_DEFAULT,
+      .atten = ADC_ATTEN,
   };
 
   adc_oneshot_unit_init_cfg_t init_config2 = {
-    .unit_id = ADC_UNIT_2,
-    .ulp_mode = ADC_ULP_MODE_DISABLE,
+      .unit_id = ADC_UNIT_2,
+      .ulp_mode = ADC_ULP_MODE_DISABLE,
   };
 
   ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config2, &adc2_handle));
@@ -426,16 +432,16 @@ void setup_display()
 
   // a structure which will contain all the data for one display
   u8g2_Setup_ssd1306_i2c_128x64_noname_f(
-    &u8g2, U8G2_R0,
-    // u8x8_byte_sw_i2c,
-    u8g2_esp32_i2c_byte_cb,
-    u8g2_esp32_gpio_and_delay_cb);  // init u8g2 structure
+      &u8g2, U8G2_R0,
+      // u8x8_byte_sw_i2c,
+      u8g2_esp32_i2c_byte_cb,
+      u8g2_esp32_gpio_and_delay_cb); // init u8g2 structure
   u8x8_SetI2CAddress(&u8g2.u8x8, 0x78);
   ESP_LOGI(TAG, "u8g2_InitDisplay");
-  u8g2_InitDisplay(&u8g2);  // send init sequence to the display, display is in
-                            // sleep mode after this,
+  u8g2_InitDisplay(&u8g2); // send init sequence to the display, display is in
+                           // sleep mode after this,
   ESP_LOGI(TAG, "u8g2_SetPowerSave");
-  u8g2_SetPowerSave(&u8g2, 0);  // wake up display
+  u8g2_SetPowerSave(&u8g2, 0); // wake up display
   ESP_LOGI(TAG, "u8g2_ClearBuffer");
   u8g2_ClearBuffer(&u8g2);
   u8g2_SendBuffer(&u8g2);
@@ -451,31 +457,23 @@ void app_main(void)
   setup_adc2();
   setup_timer();
 
-  queue_raw_handle = xQueueCreate( 10, sizeof( int ) );
-  
-  if( queue_raw_handle == 0 )
+  queue_raw_handle = xQueueCreate(10, sizeof(int));
+
+  if (queue_raw_handle == 0)
   {
     ESP_LOGI(TAG, "Failed to create queue raw");
     return;
   }
 
-  queue_BPM_handle = xQueueCreate( 10 , sizeof( uint64_t ) );
-  
-  if( queue_BPM_handle == 0 )
-  {
-    ESP_LOGI(TAG, "Failed to create queue BPM");
-    return;
-  }
-
   // core 1
   xTaskCreatePinnedToCore(task1,
-                "refresh",
-                4096,
-                NULL,
-                1,
-                &task1_handle,
-                1);
-  
+                          "refresh",
+                          4096,
+                          NULL,
+                          1,
+                          &task1_handle,
+                          1);
+  /*
   xTaskCreatePinnedToCore(task4,
               "timer",
               4096,
@@ -483,22 +481,21 @@ void app_main(void)
               1,
               &task4_handle,
               1);
-
+  */
   xTaskCreatePinnedToCore(task3,
-              "udp",
-              4096,
-              NULL,
-              1,
-              &task3_handle,
-              1);
+                          "udp",
+                          4096,
+                          NULL,
+                          1,
+                          &task3_handle,
+                          1);
 
   // core 0
   xTaskCreatePinnedToCore(task2,
-              "beatrate",
-              4096,
-              NULL,
-              1,
-              &task2_handle,
-              0);
-
+                          "beatrate",
+                          4096,
+                          NULL,
+                          1,
+                          &task2_handle,
+                          0);
 }
