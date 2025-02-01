@@ -40,18 +40,12 @@
 //adc
 #define ADC2_CHAN0                          ADC_CHANNEL_0 // pin 24,D4
 #define ADC_ATTEN                           ADC_ATTEN_DB_12
-#define PULSE_THRESHOLD                     2400
 
 //wifi softap and station
 #define ESP_WIFI_STA_SSID                   "prototipo"
 #define ESP_WIFI_STA_PASSWD                 "mypassword"
 #define ESP_MAXIMUM_RETRY                   10
 #define ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD   WIFI_AUTH_WPA2_PSK
-
-#define ESP_WIFI_AP_SSID                    "prototipo"
-#define ESP_WIFI_AP_PASSWD                  "mypassword"
-#define ESP_WIFI_CHANNEL                    0
-#define MAX_STA_CONN                        1
 
 #define WIFI_CONNECTED_BIT                  BIT0
 #define WIFI_FAIL_BIT                       BIT1
@@ -70,8 +64,11 @@ static const char* TAG =                    "Prot";
 
 uint8_t reads = 0;
 uint8_t beats = 0;
-uint8_t BPMn = 0;
+uint16_t BPMa[8] = {0,0,0,0,0,0,0,0};
+bool BPMb = 0;
+int BPMm = 0;
 uint8_t s_retry_num = 0;
+volatile uint16_t pulse_threshool = 2280;
 
 static void wifi_event_handler(void *arg, esp_event_base_t event_base,
                                int32_t event_id, void *event_data)
@@ -93,36 +90,6 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
         s_retry_num = 0;
         xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
     }
-}
-
-esp_netif_t *wifi_init_softap(void)
-{
-    esp_netif_t *esp_netif_ap = esp_netif_create_default_wifi_ap();
-
-    wifi_config_t wifi_ap_config = {
-        .ap = {
-            .ssid = ESP_WIFI_AP_SSID,
-            .ssid_len = strlen(ESP_WIFI_AP_SSID),
-            .channel = ESP_WIFI_CHANNEL,
-            .password = ESP_WIFI_AP_PASSWD,
-            .max_connection = MAX_STA_CONN,
-            .authmode = WIFI_AUTH_WPA2_PSK,
-            .pmf_cfg = {
-                .required = false,
-            },
-        },
-    };
-
-    if (strlen(ESP_WIFI_AP_PASSWD) == 0) {
-        wifi_ap_config.ap.authmode = WIFI_AUTH_OPEN;
-    }
-
-    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_AP, &wifi_ap_config));
-
-    ESP_LOGI(TAG, "wifi_init_softap finished. SSID:%s password:%s channel:%d",
-             ESP_WIFI_AP_SSID, ESP_WIFI_AP_PASSWD, ESP_WIFI_CHANNEL);
-
-    return esp_netif_ap;
 }
 
 esp_netif_t *wifi_init_sta(void)
@@ -152,6 +119,70 @@ esp_netif_t *wifi_init_sta(void)
     return esp_netif_sta;
 }
 
+// core 0
+void task2() 
+{
+  volatile int [10];
+  volatile uint64_t samplecounter = 0;
+  volatile uint64_t lastbeattime  = 0;
+  volatile int P = 512;
+  volatile int T = 512;
+  volatile int amp = 0;
+  volatile bool fb = true;
+  volatile bool sb = false;
+  volatile int adc_raw = 0;
+  volatile int IBI = 600;
+  volatile bool Pulse = false;
+  volatile bool QS = false;
+  for(;;)
+  {
+    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw));
+    samplecounter += 2;
+    int n = samplecounter - lastbeattime;
+
+    if (adc_raw < pulse_threshool && N > (IBI/5)*3)
+    {
+      if (adc_raw < T)
+      {
+        T = adc_raw;
+      }
+    }
+
+    if (adc_raw > pulse_threshool && adc_raw > P)
+    {
+      P = adc_raw
+    }
+    
+    if (N > 250)
+    {
+      if ((adc_raw > pulse_threshool)&&(Pulse == false)&&(N>(IBI/5)*3))
+      {
+        Pulse = true;
+        
+      }
+      
+    }
+    
+
+    /*
+    if(adc_raw>pulse_threshool&&BPMb)
+    {
+      ESP_ERROR_CHECK(gptimer_get_raw_count(gptimer_handle, &tmsp));
+      xQueueSend(queue_BPM_handle,&tmsp,( TickType_t ) 0);
+      BPMb = false;
+    }
+    else if (adc_raw<pulse_threshool&&!BPMb)
+    {
+      BPMb = true;
+    }
+    
+    xQueueSend(queue_raw_handle,&adc_raw,( TickType_t ) 0);
+    */
+    vTaskDelay(2/portTICK_PERIOD_MS);
+  }
+}
+
+// core 1
 void task1() 
 {
   char BPM[12];
@@ -161,11 +192,11 @@ void task1()
   int raw;
   for(;;)
   {
-
     posy++;
-    snprintf(BPM, sizeof(BPM), "BPM:%0*d",3, BPMn);
+    snprintf(BPM, sizeof(BPM), "BPM:%0*d",7, BPMm);
     //keep all lines
-    if(posy >=128){
+    if(posy >=128)
+    {
       posy = 0;
       u8g2_ClearBuffer(&u8g2);
     }
@@ -181,9 +212,7 @@ void task1()
       uint8_t mw = uxQueueMessagesWaiting(queue_raw_handle);
       for(uint8_t i = 0 ; i < mw;i++)
       {
-        if( xQueueReceive( queue_raw_handle, &raw, ( TickType_t ) 10 ) )
-        {
-        }
+        xQueueReceive( queue_raw_handle, &raw, ( TickType_t ) 10 );
         new_read = (int) (raw*0.16) - 336;
         u8g2_DrawLine(&u8g2, posy,64 - last_read, posy + 1, 64 - new_read);
         last_read = new_read;
@@ -191,28 +220,12 @@ void task1()
       }
     }
 
+    u8g2_DrawLine(&u8g2, 0,64 - ((pulse_threshool*0.16) - 336), 128, 64 - ((pulse_threshool*0.16) - 336));
+
     u8g2_SendBuffer(&u8g2);
-    ESP_LOGI(TAG,"display out");
+    ESP_LOGI(TAG,"%d",BPMm);
     
     vTaskDelay(100/portTICK_PERIOD_MS);
-  }
-}
-
-void task2() 
-{
-  int adc_raw;
-  uint64_t tmsp;
-  for(;;)
-  {
-    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw));
-    if(adc_raw>2500)
-    {
-      ESP_ERROR_CHECK(gptimer_get_raw_count(gptimer_handle, &tmsp));
-      xQueueSend(queue_BPM_handle,&tmsp,( TickType_t ) 0);
-    }
-    ESP_LOGI(TAG, "adc read %d",adc_raw);
-    xQueueSend(queue_raw_handle,&adc_raw,( TickType_t ) 0);
-    vTaskDelay(50/portTICK_PERIOD_MS);
   }
 }
 
@@ -221,30 +234,37 @@ void task3()
   // send udp package trough sta
   for(;;)
   {
-    ESP_LOGI(TAG, "package sent");
+    //ESP_LOGI(TAG, "package sent");
     vTaskDelay(100/portTICK_PERIOD_MS);
   }
 }
 
 void task4()
 {
-  uint64_t count1;
-  uint64_t count2;
+  uint64_t count1 = 0;
+  uint64_t count2 = 0;
   for(;;)
   {
+    count1 = 0;
+    count2 = 0;
     if( queue_BPM_handle != 0 )
     {
       uint8_t mwb = uxQueueMessagesWaiting(queue_BPM_handle);
-      if (mwb > 2){
-        if( xQueueReceive( queue_BPM_handle, &count1, ( TickType_t ) 0 ) )
-        {
-        }
-        if( xQueueReceive( queue_BPM_handle, &count2, ( TickType_t ) 0 ) )
-        {
-        }
+      if (mwb > 1){
+        xQueueReceive( queue_BPM_handle, &count1, ( TickType_t ) 0 );
+        xQueueReceive( queue_BPM_handle, &count2, ( TickType_t ) 0 );
+        xQueueReset(queue_BPM_handle);
       }
     }
-    BPMn = (int)(2/(count2 - count1)) * 600000;
+    if(count1 > 0 && count2 > 0)
+    {
+      BPMa[0] = (int)((1200000/(count2 - count1)));
+      for(int i = 7 ; i > 1 ; i--)
+      {
+        BPMa[i] = i-1;
+      }
+      ESP_LOGI(TAG, "BPMa %d",BPMa[0]);
+    }
     ESP_LOGI(TAG, "BPMn %llu %llu",count1,count2);
     vTaskDelay(100/portTICK_PERIOD_MS);
   }
@@ -283,12 +303,6 @@ void setup_wifi()
   wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
   ESP_ERROR_CHECK(esp_wifi_init(&cfg));
 
-  ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_APSTA));
-
-  /* Initialize AP */
-  ESP_LOGI(TAG, "ESP_WIFI_MODE_AP");
-  esp_netif_t *esp_netif_ap = wifi_init_softap();
-
   /* Initialize STA */
   ESP_LOGI(TAG, "ESP_WIFI_MODE_STA");
   esp_netif_t *esp_netif_sta = wifi_init_sta();
@@ -322,11 +336,6 @@ void setup_wifi()
 
   /* Set sta as the default interface */
   esp_netif_set_default_netif(esp_netif_sta);
-
-  /* Enable napt on the AP netif */
-  if (esp_netif_napt_enable(esp_netif_ap) != ESP_OK) {
-    ESP_LOGE(TAG, "NAPT not enabled on the netif: %p", esp_netif_ap);
-  }
 }
 
 void setup_timer() 
@@ -334,7 +343,7 @@ void setup_timer()
   gptimer_config_t timer_config = {
     .clk_src = GPTIMER_CLK_SRC_DEFAULT,
     .direction = GPTIMER_COUNT_UP,
-    .resolution_hz = 1 * 1000*10, // 1MHz, 1 tick = 1us
+    .resolution_hz = 1000 * 10, // 10KHz, 1 tick = 0.1ms
   };
   ESP_ERROR_CHECK(gptimer_new_timer(&timer_config, &gptimer_handle));
   ESP_ERROR_CHECK(gptimer_enable(gptimer_handle));
@@ -364,17 +373,18 @@ void setup_adc2()
 
 void setup_display()
 {
+
   u8g2_esp32_hal_t u8g2_esp32_hal = U8G2_ESP32_HAL_DEFAULT;
   u8g2_esp32_hal.bus.i2c.sda = PIN_SDA;
   u8g2_esp32_hal.bus.i2c.scl = PIN_SCL;
   u8g2_esp32_hal_init(u8g2_esp32_hal);
 
-    // a structure which will contain all the data for one display
+  // a structure which will contain all the data for one display
   u8g2_Setup_ssd1306_i2c_128x64_noname_f(
-      &u8g2, U8G2_R0,
-      // u8x8_byte_sw_i2c,
-      u8g2_esp32_i2c_byte_cb,
-      u8g2_esp32_gpio_and_delay_cb);  // init u8g2 structure
+    &u8g2, U8G2_R0,
+    // u8x8_byte_sw_i2c,
+    u8g2_esp32_i2c_byte_cb,
+    u8g2_esp32_gpio_and_delay_cb);  // init u8g2 structure
   u8x8_SetI2CAddress(&u8g2.u8x8, 0x78);
   ESP_LOGI(TAG, "u8g2_InitDisplay");
   u8g2_InitDisplay(&u8g2);  // send init sequence to the display, display is in
@@ -388,7 +398,8 @@ void setup_display()
   ESP_LOGI(TAG, "Display setup done");
 }
 
-void app_main(void) {
+void app_main(void)
+{
 
   //setup_wifi();
   setup_display();
@@ -403,14 +414,13 @@ void app_main(void) {
     return;
   }
 
-  queue_BPM_handle = xQueueCreate( 4, sizeof( uint64_t ) );
+  queue_BPM_handle = xQueueCreate( 10 , sizeof( uint64_t ) );
   
   if( queue_BPM_handle == 0 )
   {
     ESP_LOGI(TAG, "Failed to create queue BPM");
     return;
   }
-
 
   // core 1
   xTaskCreatePinnedToCore(task1,
@@ -428,6 +438,7 @@ void app_main(void) {
               1,
               &task4_handle,
               1);
+
   xTaskCreatePinnedToCore(task3,
               "udp",
               4096,

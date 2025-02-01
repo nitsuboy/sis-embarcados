@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/suco/esp/esp-idf/components",
+                "/home/suco/esp/esp-idf/components/esp_adc/include",
+                "/home/suco/esp/esp-idf/components/esp_driver_gptimer/include",
+                "/home/suco/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include",
+                "/home/suco/esp/esp-idf/components/freertos/config/include/freertos",
+                "/home/suco/esp/esp-idf/components/esp_driver_spi/include",
+                "/home/suco/esp/esp-idf/components/esp_netif/include",
+                "/home/suco/esp/esp-idf/components/log/include",
+                "/home/suco/esp/esp-idf/components/lwip/lwip/src/include",
+                "/home/suco/esp/esp-idf/components/nvs_flash/include",
+                "/home/suco/esp/esp-idf/components/lwip/port/include",
+                "/home/suco/esp/esp-idf/components/esp_common/include",
+                "/home/suco/esp/esp-idf/components/hal/include"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
