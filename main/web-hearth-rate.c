@@ -141,10 +141,11 @@ void task2()
   volatile int IBI = 600;
   volatile bool Pulse = false;
   volatile bool QS = false;
+  volatile bool unr = false;
   for (;;)
   {
     ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, ADC2_CHAN0, &adc_raw));
-    samplecounter += 10;                  // keep track of the time in mS with this variable
+    samplecounter += 10;                 // keep track of the time in mS with this variable
     int N = samplecounter - lastbeatime; // monitor the time since the last beat to avoid noise
 
     //  find the peak and trough of the pulse wave
@@ -184,44 +185,48 @@ void task2()
         {             // if it's the first time we found a beat, if firstBeat == TRUE
           fb = false; // clear firstBeat flag
           sb = true;  // set the second beat flag
-          continue;   // IBI value is unreliable so discard it
+          unr = true; // IBI value is unreliable so discard it
         }
+        if (unr)
+        {
+          // keep a running total of the last 10 IBI values
+          uint32_t runningTotal = 0; // clear the runningTotal variable
 
-        // keep a running total of the last 10 IBI values
-        uint32_t runningTotal = 0; // clear the runningTotal variable
+          for (int i = 0; i <= 8; i++)
+          {                          // shift data in the rate array
+            rate[i] = rate[i + 1];   // and drop the oldest IBI value
+            runningTotal += rate[i]; // add up the 9 oldest IBI values
+          }
 
-        for (int i = 0; i <= 8; i++)
-        {                          // shift data in the rate array
-          rate[i] = rate[i + 1];   // and drop the oldest IBI value
-          runningTotal += rate[i]; // add up the 9 oldest IBI values
+          rate[9] = IBI;               // add the latest IBI to the rate array
+          runningTotal += rate[9];     // add the latest IBI to runningTotal
+          runningTotal /= 10;          // average the last 10 IBI values
+          BPMm = 60000 / runningTotal; // how many beats can fit into a minute? that's BPM!
+          QS = true;                   // set Quantified Self flag
+          // QS FLAG IS NOT CLEARED INSIDE THIS ISR
         }
-
-        rate[9] = IBI;               // add the latest IBI to the rate array
-        runningTotal += rate[9];     // add the latest IBI to runningTotal
-        runningTotal /= 10;          // average the last 10 IBI values
-        BPMm = 60000 / runningTotal; // how many beats can fit into a minute? that's BPM!
-        QS = true;                   // set Quantified Self flag
-        // QS FLAG IS NOT CLEARED INSIDE THIS ISR
       }
     }
+    if (unr)
+    {
+      if (adc_raw < pulse_threshool && Pulse == true)
+      {                                // when the values are going down, the beat is over
+        Pulse = false;                 // reset the Pulse flag so we can do it again
+        amp = P - T;                   // get amplitude of the pulse wave
+        pulse_threshool = amp / 2 + T; // set thresh at 50% of the amplitude
+        P = pulse_threshool;           // reset these for next time
+        T = pulse_threshool;
+      }
 
-    if (adc_raw < pulse_threshool && Pulse == true)
-    {                                // when the values are going down, the beat is over
-      Pulse = false;                 // reset the Pulse flag so we can do it again
-      amp = P - T;                   // get amplitude of the pulse wave
-      pulse_threshool = amp / 2 + T; // set thresh at 50% of the amplitude
-      P = pulse_threshool;           // reset these for next time
-      T = pulse_threshool;
-    }
-
-    if (N > 2500)
-    {                              // if 2.5 seconds go by without a beat
-      pulse_threshool = 512;       // set thresh default
-      P = 512;                     // set P default
-      T = 512;                     // set T default
-      lastbeatime = samplecounter; // bring the lastbeatime up to date
-      fb = true;                   // set these to avoid noise
-      sb = false;                  // when we get the heartbeat back
+      if (N > 2500)
+      {                              // if 2.5 seconds go by without a beat
+        pulse_threshool = 512;       // set thresh default
+        P = 512;                     // set P default
+        T = 512;                     // set T default
+        lastbeatime = samplecounter; // bring the lastbeatime up to date
+        fb = true;                   // set these to avoid noise
+        sb = false;                  // when we get the heartbeat back
+      }
     }
     xQueueSend(queue_raw_handle, &adc_raw, (TickType_t)0);
     vTaskDelay(10 / portTICK_PERIOD_MS);
@@ -452,7 +457,7 @@ void setup_display()
 void app_main(void)
 {
 
-  //setup_wifi();
+  // setup_wifi();
   setup_display();
   setup_adc2();
   setup_timer();
