@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>ESP-IDF SSE Demo</title>
+</head>
+
+<style type="text/css">
+    .card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px 16px 16px 16px;
+        width: 272px;
+
+        box-shadow: 2px 7px 13px 0px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+
+        border-style: solid;
+        border-width: 2px;
+        background-color: #000000;
+        border-color: #000000;
+    }
+
+    .card-body {
+        background-color: #fffcfc;
+        flex-grow: 1;
+        padding: 24px;
+    }
+
+    .card-title {
+        color: #000000;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    .card-text {
+        line-height: 1.4;
+        margin: 10px 0px 0px 0px;
+        font-size: 17px;
+        color: #000000;
+
+    }
+</style>
+
+
+<body>
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">BPM</h2>  
+            <p class="card-text" id="target">---</p>
+        </div>
+    </div>
+</body>
+<script>
+    var source = new EventSource('/sse');
+    source.addEventListener('message', function (e) {
+        document.getElementById('target').innerHTML = e.data;
+    }, false)
+</script>
+
+</html>
